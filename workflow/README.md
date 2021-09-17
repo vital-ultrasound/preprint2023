@@ -1,45 +1,99 @@
 # Workflow for ci and local built of TeX files
 
-## Using github-latex action
-### Create Github Actions
-**01.** Add `shh-rsa` key in https://github.com/REPOSITORYNAME/settings/keys following [the documentation](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) in github.
+## Create repository and essential files and branches
+**00.** Create repository    
+**01.** clone it locally   
+```
+git clone git@github.com:free-cortex/framework.git
+cd framework
+git init
+```
 
-**02.** Add a new secret variable called `DEPLOY_KEY` in 
-`gift-surg/unt-manuscript-2021/settings/secrets/actions`
+**03.** Create a pdfs branch for the pdf files [(see more)](https://www.freecodecamp.org/forum/t/push-a-new-local-branch-to-a-remote-git-repository-and-track-it-too/13222).
+```
+git checkout -b pdfs
+rm -rf * README.md .github .gitignore *swp ~.git .idea 
+git add -A
+git commit -m 'clean pdfs branch'
+git push origin pdfs
+ ```
 
-`DEPLOY_KEY` is taken from `id_rsa` using    
-vim ~/.ssh/id_rsa   
+**02.** create .gitignore  
+Download and edit `.gitignore`
+```
+# Ignored paths and directories
+## pycharm project path
+.idea
+
+## vim temporal files
+**/*.swp
+
+## temporal TeX files
+**/*.aux
+**/*.fdb_latexmk
+**/*.fls
+**/*.log
+**/*.nav
+**/slides/main.pdf
+**/*.snm
+**/*.synctex.gz
+**/*.toc
+**/*.vrb
+**/slides/_minted-main/*.*
+```
+
+
+
+## Create Github Actions
+**01** Create a deploy key with `ssh-keygen -m PEM -t rsa -b 4096 -C "your_email@example.com"` [:link:](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)
+[:link:](https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html)
+
+**02.** Add a new secret variable called `DEPLOY_KEY` in
+`https://github.com/$PROJECT_NAME/$REPO_NAME/settings/secrets/actions` where `DEPLOY_KEY` is taken from `id_rsa` using    
+```
+xclip -selection clipboard < ~/.ssh/id_rsa
+```
 which looks like:  
 ```
 -----BEGIN RSA PRIVATE KEY-----
 ...
 -----END RSA PRIVATE KEY-----
 ```
+* Don't forget to "Adding your SSH key to the ssh-agent" and be authentified [:link:](https://docs.github.com/en/enterprise/2.13/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent)
+```
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+ssh -T git@github.com 
+```
 
-### Create Github workflow
+## Create Github workflow
 **03.** Create github action workflow
 `.github/workflow/*.yml` and then create main.yml 
 ```
 mkdir -p .github/workflows
-cd .github/workflows && wget https://raw.githubusercontent.com/free-cortex/framework/main/.github/workflows/slides.yml
+cd .github/workflows && wget https://raw.githubusercontent.com/free-cortex/framework/main/.github/workflows/template.yml
+mv template.yml $DESIRED_NAME.yml
 ```
 * Setting up variables for pdf documents and keys in .github/workflows/main.yml. 
-See this [slides.yml](https://raw.githubusercontent.com/free-cortex/framework/main/.github/workflows/slides.yml) as example.
-Edit `*.yml` by amending skip message such as `[skip-slides]`, rename branches and repository names.
+See this [template.yml](../.github/workflows/template.yml) as example.
+Edit `template.yml` by changing branches and repository name.
 
-**04.** Commit genesis in the main branch using `[skip-joi2021]` in the commit 
+**04.** Commit genesis in the main branch using `CI-CV` for CV (or no capital flags for CI build) in the commit 
 ```
 git add . 
-git commit -m "genesis commit [skip-joi2021]"
+git commit -m "genesis commit CI-CV"
 git branch -M main
 git remote add origin git@github.com:free-cortex/framework.git
 git push -u origin main
 ```
 
-### Adding new updates to the manuscript
-**00.** Raise a new [issue](https://github.com/gift-surg/unt-manuscript-2021/issues/new)
 
-**01.** checkout and pull main branch
+
+## Create a new LaTeX doc
+
+**00.** Raise a new issue
+
+**01.** checkout and pull main
 ```
 git checkout main
 git pull
@@ -50,7 +104,15 @@ git pull
 git checkout -b $ISSUENUMBER-$BRANCHNAME
 ```
 
-**03.** Copy, paste and edit ci workflow variables [workflows](https://github.com/free-cortex/framework/tree/main/.github/workflows)
+**03.** Create github action workflow
+`.github/workflow/*.yml` and then create main.yml 
+```
+mkdir -p .github/workflows
+cd .github/workflows && wget https://raw.githubusercontent.com/free-cortex/framework/main/.github/workflows/template.yml
+mv template.yml $DESIRED_NAME.yml
+```
+* Setting up variables for pdf documents and keys in `.github/workflows/*.yml`. 
+For instance, 
 ```
 name: Compiling-TeX-$BRANCHNAME
 on:
@@ -60,31 +122,44 @@ on:
       - 05-$BRANCHNAME
 jobs:
   build:
-    if: "!contains(github.event.head_commit.message, '[skip $BRANCHNAME]')"
+    if: "contains(github.event.head_commit.message, 'CI-$BRANCHNAME')"
 ```
+See this [template.yml](../.github/workflows/template.yml) as example.
 
-**04.** add path/files and push them
-* Edit README for new actions and readme icons
-```
 
-```
-* commit and push
+**04.** commit genesis and add path/files and push them
 ```
 git add -A
-git commit -m 'genesis of $BRANCHNAME [skip branches]'
+git commit -m ':fire: genesis of $BRANCHNAME [skip branches]'
 git push origin $ISSUENUMBER-$BRANCHNAME
+```
+
+* Edit README for new actions and readme icons
+```
+## Slides
+[![GitHub Actions Status](https://github.com/free-cortex/framework/workflows/Compiling-TeX-Slides/badge.svg)](https://github.com/free-cortex/framework/actions) [![ieee-poster](https://img.shields.io/badge/read-slides-blue.svg)](https://github.com/free-cortex/framework/blob/pdfs/slides.pdf)
 ```
 
 **05.** Create pull request
 ```
 Title: [WIP] Drafting $BRANCHNAME
 Content: Resolves #$ISSUENUMBER
-If CI is successful, tex file will be build [here](https://github.com/free-cortex/framework/blob/generated-pdfs/$PDFFILE.pdf)
+If CI is successful, tex file will be built [here](https://github.com/free-cortex/framework/blob/pdfs/$PDFFILE.pdf)
 ```
+
+**06.** keep making commit until the issue is sorted out
+```
+git add -A
+git commit -m ':fire: genesis of $BRANCHNAME'
+git push origin $ISSUENUMBER-$BRANCHNAME
+```
+You can add capital CI and the type of document for its CI build or nothing 
+See workflows [`*.yml`](../.github/workflows/) 
+
+
 
 ## Local build in Ubuntu 18.04 x64
 ### Installation of dependencies
-
 ```
 mkdir -p $HOME/Downloads/latex && cd $HOME/Downloads/latex
 wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
@@ -153,13 +228,13 @@ make clean && make && explorer main.pdf
 
 ### Local build using Cygwin64 
 01. Open Cygwin64
-02. Go to with `cd /cygdrive/c/Users/$USERNAME/UNT/gift-surg/unt-manuscript-2021/journal-of-imaging-2021/manuscript-tex`
+02. Go to with `cd /cygdrive/c/Users/$USERNAME/UNT/$MAIN_REPO/$REPONAME/$JOURNAL/manuscript-tex`
 03. Built, clean and view
     * `make` 
     * cygstart.exe main.pdf #to view pdf
     * `make clean`
 04. commit changes 
-    * add `[skip-joi2021]` anywhere in the commit message, when you do not build tex files with github action. 
+    * add `CITEX` anywhere in the commit message, when you do not build tex files with github action. 
     
 ## Multiple users working in the same branch 
 ### In pycharm
@@ -167,7 +242,7 @@ make clean && make && explorer main.pdf
 02. Click on the blue arrow (Ctrt+T) and choose `merge in coming changes into the current branch`  
     * 02.01 If one accidentally forgot to pull latest commits creating error when pushing files, one can do `git reset --hard HEAD~1`.
     For this case, be sure to copy your progress in a different file and put it back once you update the latest commits. 
-03. Make your changes and commit with a message adding [skip-joi2021].  
+03. Make your changes and commit with a message adding CITEX.  
 :warning: User would try to avoid working on the same file as it might create conflicts (recommended to have a chat).
    
 ### Figures workflow using vector images
