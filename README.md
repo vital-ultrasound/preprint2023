@@ -6,7 +6,7 @@
 ## Clone repo
 After generating your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), then you can clone the repository by typing (or copying) the following in a terminal:
 ```
-git clone git@github.com:vital-ultrasound/isbi-2022-proceedings.git
+git clone git@github.com:vital-ultrasound/2022-proceedings.git
 ```
 
 ## Workflow 
