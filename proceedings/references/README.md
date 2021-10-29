@@ -53,9 +53,9 @@ Open [new-literature.tex](new-literature.bib) and add bibtex of the paper.
 Then add a summary of the paper using citing the author in [/venues/new-literature/main.tex](../venues/new-literature/main.tex). 
 For instance: `Laumer et al. proposed a novel autoencoder-based framework to learn human interpretable representation of cardiac cycles from cardiac ultrasound data \cite{laumer2020}`.
 
-5. Commit changes to branch 10-new-literature 
+4. Commit changes to branch 10-new-literature 
 ```
 git add .
-git commit -m #10 adds 2020-laumer-in-NeurIPS-PMLR; CITEX'
-git push origin 
+git commit -m '#10 adds 2020-laumer-in-NeurIPS-PMLR; CITEX'
+git push origin 10-new-literature  
 ```
