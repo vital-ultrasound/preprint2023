@@ -50,7 +50,7 @@ https://slideslive.com/38941017/deepheartbeat-latent-trajectory-learning-of-card
 
 3. Add bibtex file to the latex new-literature document
 Open [new-literature.tex](new-literature.bib) and add bibtex of the paper. 
-Then add a summary of the paper using citing the author in [/venues/new-literature/main.tex](../venues/new-literature/main.tex). 
+Then add a summary of the paper using citing the author in [../content-tex/new-literature.tex](../content-tex/new-literature.tex). 
 For instance: `Laumer et al. proposed a novel autoencoder-based framework to learn human interpretable representation of cardiac cycles from cardiac ultrasound data \cite{laumer2020}`.
 
 4. Commit changes to branch 10-new-literature 
