@@ -1,0 +1,30 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper]{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\usepackage{graphicx}
+\usepackage[square,numbers]{natbib}
+\graphicspath{{../../figures/}}
+\usepackage{pgfgantt}
+\usepackage{import} %%%USAGE: \import{../../../content-tex/}{abstract}
+
+\title{New literature for real-time AI-empowered echochardiography}
+\author{
+Miguel Xochicale, Ph.D.
+}
+\date{
+\today
+}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty} %No number
+
+%\import{../../content-tex/}{abstract}
+\tableofcontents
+\import{../../content-tex/}{new-literature}
+
+%\bibliographystyle{apalike}
+\bibliographystyle{abbrvnat}
+\bibliography{../../references/references}
+
+\end{document}
