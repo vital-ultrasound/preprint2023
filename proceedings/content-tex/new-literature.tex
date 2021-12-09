@@ -1,16 +1,21 @@
-\section{Introduction}
-\label{sec:intro}
-In the last decades the use of echocardiography is crucial in Intensive Care Units (ICU) advances of smaller US clinical devices, US image quality and functions and its real-time capabilities to access cardiac anatomy and functions \cite{Feigenbaum1996, Vieillard-Baron2008, singh2007, cambell2018}.
-However, despite the previous advances there is still challenges on finding standard views from experienced sonograpehrs that sometimes  such quantifcations are qualitative and subjective \cite{Feigenbaum1996}.
-
-Assessing left ventricular ejection fraction (LVEF) is done at the point of care by clinicians with different expertise which is impacted on the rhythm and structural varations \cite{liu2021}.
-However, automatic quantification of LVEF is still challenging at the point of care due to variation of protocols, skills levels \cite{field2011} and the nature of proving feedback on real-time \cite{liu2021}.
-
-\section{Methods and materials}
-Rank-2 non-negative matrix factorization \cite{yuan2017} and recently Robust Non-negative Matrix Factorization
-\cite{dukler2018} are low-computation cost algorithms to automatic segment mitral valve.
-Clustering techniques \cite{zhang2018} \cite{kusunose2021}.
-Laumer et al. proposed a novel autoencoder-based framework to learn human interpretable representation of cardiac cycles from cardiac ultrasound data \cite{laumer2020},
+\section{Introduction} \label{sec:intro}
+In the last decades the use of echocardiography is a crucial clinical approach in Intensive Care Units (ICU) because of the advances of smaller US clinical devices, US image quality and its real-time capabilities to access cardiac anatomy \cite{Feigenbaum1996, Vieillard-Baron2008, singh2007, cambell2018}.
+However, despite the previous advances there is still challenges on finding standard views from experienced sonograpehrs that sometimes such quantifcations are qualitative and subjective \cite{Feigenbaum1996}.
+Similarly, automatic quantification of left ventricular ejection fraction (LVEF) is still challenging at the point of care due to variation of protocols, skills levels \cite{field2011} and the nature of proving feedback on real-time \cite{liu2021}.
 
 \subsection{Image Quality Assessment}
 \cite{labs2021_in_miua} considers chamber clarity, depth gain, on-axis attributes, apical foreshoredness.
+
+\subsection{Clustering techniques}
+Zhang et al. mentioned that 23 view classes from 7168 individually labeled videos that ware classified with a 13-layer CNN to then viewed with the use of t-Distributed Stochastic Neighbor Embedding \cite{zhang2018}.
+Kusunose et al. mentioned that other authors have reached an acciracy of 91-94 for 15-view classification while their work mentioned a 98.1 accuracy for five-prederminted views \cite{kusunose2021}.
+
+\subsection{Auto-encoders}
+Laumer et al. proposed a novel autoencoder-based framework to learn human interpretable representation of cardiac cycles from cardiac ultrasound data \cite{laumer2020},
+
+\subsection{Others}
+Rank-2 non-negative matrix factorization \cite{yuan2017} to generate End-Systole and End-Diastole for apical 4 view.  
+Recently Robust Non-negative Matrix Factorization seems to be implement low-computation cost algorithms to automatic segment mitral valve \cite{dukler2018}.
+
+
+\section{Methods and materials}
