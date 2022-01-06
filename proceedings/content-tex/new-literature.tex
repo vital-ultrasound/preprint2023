@@ -13,6 +13,13 @@ Kusunose et al. mentioned that other authors have reached an acciracy of 91-94 f
 \subsection{Auto-encoders}
 Laumer et al. proposed a novel autoencoder-based framework to learn human interpretable representation of cardiac cycles from cardiac ultrasound data \cite{laumer2020},
 
+
+\subsection{Contrastive Learning}
+Methods on Contrastive Learning apparently address the challenge of required labelled data to identify pathologies in the images of dectect certain cardiac views.
+Recently, Chartsias et al. use contrastive learning to train imbalanced cardiac datasets and they compared a naive baseline model to achieve a F1 score of up to 26 \$% \cite{chartsias2021-ASMUS}
+Saeed et al. recently investigated contrastive pretraining to improve the DeepLabV3 and UNET segmentation networks of cardiac structers in ultrasound imaging.
+Authors showed comparable results with state-of-the-art fully supervised algorithms and presents better results compared to EchoNet-Dynamic and CAMUS \cite{saeed2021MIDL}
+
 \subsection{Others}
 Rank-2 non-negative matrix factorization \cite{yuan2017} to generate End-Systole and End-Diastole for apical 4 view.  
 Recently Robust Non-negative Matrix Factorization seems to be implement low-computation cost algorithms to automatic segment mitral valve \cite{dukler2018}.
