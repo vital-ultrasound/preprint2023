@@ -14,15 +14,38 @@ Kusunose et al. mentioned that other authors have reached an acciracy of 91-94 f
 Laumer et al. proposed a novel autoencoder-based framework to learn human interpretable representation of cardiac cycles from cardiac ultrasound data \cite{laumer2020},
 
 
+
+Ouyang et al. presented echo-dynamic dataset as the first annotated medical video dataset with 10,036 videos. 
+Additionally, authors reported the use of three CNN arquitectures varing filters in each layer to assess ejection fraction to near-expert performance.
+It is worthwhile to note that authors got best performance with mean absolute error of 5.44\% using clip lenght of 16 and frame rate of 4.
+Such error is near-expert perfonace as they can get 4-5\% for skilled echochardiographers in cotrolled settings 
+\cite{ouyang-NeuripsML4H2019}.
+
+
+Ghorbani et al. applied convolutional neural networks of cardiac ultrasound to identify local structures, estimate cardiac function and predict pathologies.
+Their deep learning model, EchoNet, can identify up to 10 cardiac biometrics which results in decreasing repetitive task in the clinical flow, provide interpretation to less experienced cardiologist, and predict phenotipes. This work can predict age, sex, weight and heigth from echocardiogram images. 
+Authors mention that the increase of date does not improve model traiining. The homogenisation of cadiac views prior to model training improved training speed and computaitonla time
+\cite{Ghorbani-DigitalMedicineNature-JAN2020}
+
+
+\subsection{Segmentation}
+With the challenges of limited sampling of cardiac cycles and the considerable inter-observer variability, Ouyang et al. presented a CNN model with residual connections and spatiotemporal convolutions that surpase human performance of segmentaion of left ventricle, estimation of ejection fraction and assessment of cardiomyophaty. 
+Their model reached Dice similarity coefficient of 0.92, predicts ejection fraction with mean absolute error of 4.1\% and clasify heart failure based on reduced ejection fraction 
+%Wonder is relevant to predic and classify with our datasets in the ICU?  Fri  7 Jan 14:42:23 GMT 2022
+\cite{Ouyang-Nature-APR2020}.
+
+
 \subsection{Contrastive Learning}
 Methods on Contrastive Learning apparently address the challenge of required labelled data to identify pathologies in the images of dectect certain cardiac views.
-Recently, Chartsias et al. use contrastive learning to train imbalanced cardiac datasets and they compared a naive baseline model to achieve a F1 score of up to 26 \$% \cite{chartsias2021-ASMUS}
+Recently, Chartsias et al. use contrastive learning to train imbalanced cardiac datasets and they compared a naive baseline model to achieve a F1 score of up to 26\% \cite{chartsias2021-ASMUS}
 Saeed et al. recently investigated contrastive pretraining to improve the DeepLabV3 and UNET segmentation networks of cardiac structers in ultrasound imaging.
 Authors showed comparable results with state-of-the-art fully supervised algorithms and presents better results compared to EchoNet-Dynamic and CAMUS \cite{saeed2021MIDL}
 
 \subsection{Others}
 Rank-2 non-negative matrix factorization \cite{yuan2017} to generate End-Systole and End-Diastole for apical 4 view.  
 Recently Robust Non-negative Matrix Factorization seems to be implement low-computation cost algorithms to automatic segment mitral valve \cite{dukler2018}.
+
+
 
 
 \section{Methods and materials}
