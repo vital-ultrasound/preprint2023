@@ -68,11 +68,65 @@ Cheema et al.  reported that such feature was the first cardiac aotorhisedd by F
 Authors presented five cases covid-19 intensive care unit (ICU) to illustrate "how desition making affect in patient care" and how the use of AI-enabled provided real-time guidance to acquire desired cardiac UL with the sterting of user's transducer position and hand movevemnt \cite{CHEEMA2021JACCCaseReports}.
 
 
-\subsection{Spatiotemporal Features transformers}
 
 \subsection{Others}
 Rank-2 non-negative matrix factorization \cite{yuan2017} to generate End-Systole and End-Diastole for apical 4 view.  
 Recently Robust Non-negative Matrix Factorization seems to be implement low-computation cost algorithms to automatic segment mitral valve \cite{dukler2018}.
+
+
+Leclerc et al. 2019 presented the largest publicy-available and fully-annotated dataset of two and four-chamber adquistion from 500 patients \cite{leclerc2019-IEEETransMedicalImaging}.
+Non-deep-learning techniques analyse cardiac cycles to analysis end-diastole and end-systolic left ventricular volumes with a mean correlation of 0.95 and absolute mean error of 9.5ml.
+
+
+Salte et al. classified three standard appical views from data of 200 patients to peformf straing measurements with deep learning arquitectures \cite{SALTE2021-JACC}.
+Salte el al. made use of the work \cite{ostvik2021-TMI} inception and dense network were used to clasity, recurrent network to detect event timing and u-net-based network for segmentation \cite{SALTE2021-JACC}.
+Authors compared the results with the commenrially avaible semiautomatic speckle-tracking software (EchoPAC v202), reporting evinde of the comparable GLS measurmentes to other semiatuomatic methods \cite{SALTE2021-JACC}.
+
+
+
+
+
+\subsection{Annotation tools}
+Recently, Smistad et al. 2021 published the first web-based tool for annoration of medical ultrasound video to do image classification, segmentation, bouding box and landmark annotation  \cite{smistad2021-A-IUS}. 
+AW tool has been used since 2016 at different projects to perform segmentation of the left ventricle, cardiac view classification, and detection of nerves and blood vesels
+\cite{smistad2021-A-IUS}.
+
+
+
+\section{Spatiotemporal Features}
+
+\subsection{LSTM}
+Recently, Smistad et al. 2021 presented the use of LSTM to address the single frame segmentation of end-diastole and end-systole to address segmentation fricklering and reduce tmeporal errors \cite{smistad2021-C-IUS}.
+One of the challenges is architecture design to add ConvLSTMs to whcih authors experiment at the location at the endocer, decoder, last layer and in bottlenet, to which authors mentiosn that the use of the ConvLSTM layers in the encoder of the temporal NN gave the best results \cite{smistad2021-C-IUS}.
+Authors mention that interpolation of the annorations of the entire cardiac cycle did not captured the complex motion witht he use of 7 frames to which they suggest to use advance speckle tracking such as Echo-PWC-Net  \cite{ostvik2021-TMI}.
+
+
+\subsection{3D US}
+Smistad et al. 2021 made use of CETUS 3D US LV segmentation dataset and weakly annorated datasets for real-time 3D left ventricle segmentation and estiomation of ejection fraction \cite{smistad2021-D-IUS}.
+Authors presented the impact of pre-training that resulted in an improvement of Dice score. 
+It is imporant to note that VoxelAlasGAN and AtlasNet by Dong el al. presented a better dice score.
+Smistad et al. 2021 concluded that a limited labelled datasets of 15 patiens demostrate good accuracy and models were able to generalise to new data and ultrasoudn scanners \cite{smistad2021-D-IUS}.
+
+%TODO for 3D US
+%It is imporant to note that VoxelAlasGAN and AtlasNet by Dong el al. presented a better dice score.
+%https://scholar.google.com/scholar?cites=7164201117154328523&as_sdt=2005&sciodt=0,5&hl=en
+%https://scholar.google.com/scholar?cites=17967898420856199463&as_sdt=2005&sciodt=0,5&hl=en
+
+
+\subsection{transformers}
+
+
+\section{datasets}
+
+\subsection{2D echochardiography}
+CAMUS and EchoNet-Dynamic 
+
+\subsection{3D echochardiography}
+https://www.creatis.insa-lyon.fr/EvaluationPlatform/CETUS/about_database.html
+https://www.creatis.insa-lyon.fr/EvaluationPlatform/CETUS/index.html
+
+
+
 
 
 
