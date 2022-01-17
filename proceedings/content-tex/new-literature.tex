@@ -12,20 +12,19 @@ Kusunose et al. mentioned that other authors have reached an acciracy of 91-94 f
 
 \subsection{Auto-encoders}
 Laumer et al. proposed a novel autoencoder-based framework to learn human interpretable representation of cardiac cycles from cardiac ultrasound data \cite{laumer2020},
-
-
+%Further reading:
+%https://arxiv.org/pdf/2112.02102.pdf
+%https://ieeexplore.ieee.org/abstract/document/8051114
 
 Ouyang et al. presented echo-dynamic dataset as the first annotated medical video dataset with 10,036 videos. 
 Additionally, authors reported the use of three CNN arquitectures varing filters in each layer to assess ejection fraction to near-expert performance.
 It is worthwhile to note that authors got best performance with mean absolute error of 5.44\% using clip lenght of 16 and frame rate of 4.
-Such error is near-expert perfonace as they can get 4-5\% for skilled echochardiographers in cotrolled settings 
-\cite{ouyang-NeuripsML4H2019}.
+Such error is near-expert perfonace as they can get 4-5\% for skilled echochardiographers in cotrolled settings \cite{ouyang-NeuripsML4H2019}.
 
 
 Ghorbani et al. applied convolutional neural networks of cardiac ultrasound to identify local structures, estimate cardiac function and predict pathologies.
 Their deep learning model, EchoNet, can identify up to 10 cardiac biometrics which results in decreasing repetitive task in the clinical flow, provide interpretation to less experienced cardiologist, and predict phenotipes. This work can predict age, sex, weight and heigth from echocardiogram images. 
-Authors mention that the increase of date does not improve model traiining. The homogenisation of cadiac views prior to model training improved training speed and computaitonla time
-\cite{Ghorbani-DigitalMedicineNature-JAN2020}
+Authors mention that the increase of date does not improve model traiining. The homogenisation of cadiac views prior to model training improved training speed and computaitonla time \cite{Ghorbani-DigitalMedicineNature-JAN2020}
 
 
 \subsection{Segmentation}
@@ -74,10 +73,6 @@ Rank-2 non-negative matrix factorization \cite{yuan2017} to generate End-Systole
 Recently Robust Non-negative Matrix Factorization seems to be implement low-computation cost algorithms to automatic segment mitral valve \cite{dukler2018}.
 
 
-Leclerc et al. 2019 presented the largest publicy-available and fully-annotated dataset of two and four-chamber adquistion from 500 patients \cite{leclerc2019-IEEETransMedicalImaging}.
-Non-deep-learning techniques analyse cardiac cycles to analysis end-diastole and end-systolic left ventricular volumes with a mean correlation of 0.95 and absolute mean error of 9.5ml.
-
-
 Salte et al. classified three standard appical views from data of 200 patients to peformf straing measurements with deep learning arquitectures \cite{SALTE2021-JACC}.
 Salte el al. made use of the work \cite{ostvik2021-TMI} inception and dense network were used to clasity, recurrent network to detect event timing and u-net-based network for segmentation \cite{SALTE2021-JACC}.
 Authors compared the results with the commenrially avaible semiautomatic speckle-tracking software (EchoPAC v202), reporting evinde of the comparable GLS measurmentes to other semiatuomatic methods \cite{SALTE2021-JACC}.
@@ -116,18 +111,29 @@ Smistad et al. 2021 concluded that a limited labelled datasets of 15 patiens dem
 \subsection{transformers}
 
 
-\section{datasets}
+\section{Datasets}
 
 \subsection{2D echochardiography}
-CAMUS and EchoNet-Dynamic 
+\subsubsection{CAMUS: Cardiac Acquisitions for Multi-structure Ultrasound Segmentation}
+Leclerc et al. 2019 presented the largest publicy-available and fully-annotated dataset of two and four-chamber adquistion from 500 patients \cite{leclerc2019-IEEETransMedicalImaging}.
+Datasets is cathegorised in image quality (good, medium, and poor) and $LV_{EF}$ (\leq 45\% (phatological risk) , \geq 55\%, else).
+The dataset reflects a daily clinical practice data where images quality and a range of phatological cases.
+Dataset was collected with GE Vivid E95 ultrasound scanners (GE Vingmed Ultrasound, Horten Norway) with a GE M5S probe (GE Healthcare, US).
+The datasets is available electronically to download at \url{https://www.creatis.insa-lyon.fr/Challenge/camus/}.
+%Non-deep-learning techniques analyse cardiac cycles to analysis end-diastole and end-systolic left ventricular volumes with a mean correlation of 0.95 and absolute mean error of 9.5 ml.
+
+\subsubsection{EchoNet-Dynamic}
+Ouyang et al. published a large datasets of 10,030 annotated echocardiogram videos \cite{ouyang-NeuripsML4H2019, Ouyang-Nature-APR2020}.
+Datasets were labelled left ventricle volumes by sonographers to calculate ejection fraction.
+Datasets were acquired by skilled sonographers using iE33, Sonos, Acuson SC2000, Epiq 5G or Epiq 7C ultrasound machines and processed images were stored in a Philips Xcelera system.
+The datasets is available electronically to download at \url{https://echonet.github.io/dynamic/index.html#dataset}.
+%he resulting square images wereeither 600 × 600 or 768 × 768 pixels depending on the ultrasoundmachine and down sampled by cubic interpolation using OpenCVinto standardized 112 × 112 pixel videos.
 
 \subsection{3D echochardiography}
-\url{https://www.creatis.insa-lyon.fr/EvaluationPlatform/CETUS/about_database.html}
-\url{https://www.creatis.insa-lyon.fr/EvaluationPlatform/CETUS/index.html}
-
-
-
-
+\subsubsection{CETUS: Challenge on Endocardial Three-dimensional Ultrasound Segmentation}
+45 sequences of 3D ultrasound volumes of one cardiac cycle from 45 patients were equally acquired from three different hospitals with three different brands of ultrasound machines (GE, Philips and Siemens) \cite{bernard2016TMI}.
+The studied population of 45 participants is composed of 15 healthy subjects, 15 with previous myocardial infartation, 15 with dilated cardiography.
+The datasets is available electronically to download at \url{https://www.creatis.insa-lyon.fr/EvaluationPlatform/CETUS/about_database.html}.
 
 
 \section{Methods and materials}
