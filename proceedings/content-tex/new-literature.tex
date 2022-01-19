@@ -3,6 +3,8 @@ In the last decades the use of echocardiography is a crucial clinical approach i
 However, despite the previous advances there is still challenges on finding standard views from experienced sonograpehrs that sometimes such quantifcations are qualitative and subjective \cite{Feigenbaum1996}.
 Similarly, automatic quantification of left ventricular ejection fraction (LVEF) is still challenging at the point of care due to variation of protocols, skills levels \cite{field2011} and the nature of proving feedback on real-time \cite{liu2021}.
 
+\section{AI-empowered methods}
+
 \subsection{Image Quality Assessment}
 \cite{labs2021_in_miua} considers chamber clarity, depth gain, on-axis attributes, apical foreshoredness.
 
@@ -68,23 +70,21 @@ Authors presented five cases covid-19 intensive care unit (ICU) to illustrate "h
 
 
 
+\subsection{Annotation tools}
+Recently, Smistad et al. 2021 published the first web-based tool for annoration of medical ultrasound video to do image classification, segmentation, bouding box and landmark annotation  \cite{smistad2021-A-IUS}. 
+AW tool has been used since 2016 at different projects to perform segmentation of the left ventricle, cardiac view classification, and detection of nerves and blood vesels
+\cite{smistad2021-A-IUS}.
+
+\subsection{Transformers}
+
 \subsection{Others}
 Rank-2 non-negative matrix factorization \cite{yuan2017} to generate End-Systole and End-Diastole for apical 4 view.  
 Recently Robust Non-negative Matrix Factorization seems to be implement low-computation cost algorithms to automatic segment mitral valve \cite{dukler2018}.
-
 
 Salte et al. classified three standard appical views from data of 200 patients to peformf straing measurements with deep learning arquitectures \cite{SALTE2021-JACC}.
 Salte el al. made use of the work \cite{ostvik2021-TMI} inception and dense network were used to clasity, recurrent network to detect event timing and u-net-based network for segmentation \cite{SALTE2021-JACC}.
 Authors compared the results with the commenrially avaible semiautomatic speckle-tracking software (EchoPAC v202), reporting evinde of the comparable GLS measurmentes to other semiatuomatic methods \cite{SALTE2021-JACC}.
 
-
-
-
-
-\subsection{Annotation tools}
-Recently, Smistad et al. 2021 published the first web-based tool for annoration of medical ultrasound video to do image classification, segmentation, bouding box and landmark annotation  \cite{smistad2021-A-IUS}. 
-AW tool has been used since 2016 at different projects to perform segmentation of the left ventricle, cardiac view classification, and detection of nerves and blood vesels
-\cite{smistad2021-A-IUS}.
 
 
 
@@ -108,14 +108,14 @@ Smistad et al. 2021 concluded that a limited labelled datasets of 15 patiens dem
 %https://scholar.google.com/scholar?cites=17967898420856199463&as_sdt=2005&sciodt=0,5&hl=en
 
 
-\subsection{transformers}
 
 
-\section{Datasets}
+\section{Open datasets}
 
 \subsection{2D echochardiography}
-\subsubsection{CAMUS: Cardiac Acquisitions for Multi-structure Ultrasound Segmentation}
-Leclerc et al. 2019 presented the largest publicy-available and fully-annotated dataset of two and four-chamber adquistion from 500 patients \cite{leclerc2019-IEEETransMedicalImaging}.
+\subsubsection{CAMUS}
+CAMUS dataset, Cardiac Acquisitions for Multi-structure Ultrasound Segmentation, was publised in 2019 by Leclerc et al. 2019 \cite{leclerc2019-IEEETransMedicalImaging}.
+CAMUS is the largest publicy-available and fully-annotated dataset of two and four-chamber adquistion from 500 patients.
 Datasets is cathegorised in image quality (good, medium, and poor) and $LV_{EF}$ ($\leq$ 45\% (phatological risk) , $\geq$ 55\%, else).
 The dataset reflects a daily clinical practice data where images quality and a range of phatological cases.
 Dataset was collected with GE Vivid E95 ultrasound scanners (GE Vingmed Ultrasound, Horten Norway) with a GE M5S probe (GE Healthcare, US).
@@ -130,10 +130,10 @@ The datasets is available electronically to download at \url{https://echonet.git
 %he resulting square images wereeither 600 × 600 or 768 × 768 pixels depending on the ultrasoundmachine and down sampled by cubic interpolation using OpenCVinto standardized 112 × 112 pixel videos.
 
 \subsection{3D echochardiography}
-\subsubsection{CETUS: Challenge on Endocardial Three-dimensional Ultrasound Segmentation}
-45 sequences of 3D ultrasound volumes of one cardiac cycle from 45 patients were equally acquired from three different hospitals with three different brands of ultrasound machines (GE, Philips and Siemens) \cite{bernard2016TMI}.
+\subsubsection{CETUS}
+CETUS datset, Challenge on Endocardial Three-dimensional Ultrasound Segmentation, was published in 2016 by Bernard et al. \cite{bernard2016TMI}.
+CETUS contains 45 sequences of 3D ultrasound volumes of one cardiac cycle from 45 patients were equally acquired from three different hospitals with three different brands of ultrasound machines (GE, Philips and Siemens) \cite{bernard2016TMI}.
 The studied population of 45 participants is composed of 15 healthy subjects, 15 with previous myocardial infartation, 15 with dilated cardiography.
 The datasets is available electronically to download at \url{https://www.creatis.insa-lyon.fr/EvaluationPlatform/CETUS/about_database.html}.
-
 
 \section{Methods and materials}
