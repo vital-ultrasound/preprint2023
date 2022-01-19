@@ -76,7 +76,23 @@ Recently, Smistad et al. 2021 published the first web-based tool for annoration 
 AW tool has been used since 2016 at different projects to perform segmentation of the left ventricle, cardiac view classification, and detection of nerves and blood vesels
 \cite{smistad2021-A-IUS}.
 
+\subsection{3D US}
+Considering that 3D left ventricle (LV) can provide full volume information of the hearth than 2D echordaiography,  Dong et al. proposed a real-time framework VoxelAtlasGAN that made use of cGAN \cite{dong2018-MICCAI}. 
+VoxelAtlasGAN framework with mean surface distance of 1.85 mm, mean hausdorff distance of 7.66mm, mean dice 0.953 and correlation of EF 0.918 and the mean inference speed of 0.1 s demostrated potential for clinical applicaiton \cite{dong2018-MICCAI}.
+Dong et al. in 2020 applied tranformers to obtain translations parematers that passed to VoxelAtlasGAN \cite{dong2020-MIA}.
+AlasNET framework  ended up with "mean surface distance, mean hausdorff surface distance, and mean dice index were 1.52 mm, 5.6 mm and 0.97 respectively" \cite{dong2020-MIA}
+
+Smistad et al. 2021 made use of CETUS 3D US LV segmentation dataset and weakly annorated datasets for real-time 3D left ventricle segmentation and estiomation of ejection fraction \cite{smistad2021-D-IUS}.
+Authors presented the impact of pre-training that resulted in an improvement of Dice score. 
+It is imporant to note that VoxelAlasGAN and AtlasNet by Dong el al. presented a better dice score.
+Smistad et al. 2021 concluded that a limited labelled datasets of 15 patiens demostrate good accuracy and models were able to generalise to new data and ultrasoudn scanners \cite{smistad2021-D-IUS}.
+
+
+
+
 \subsection{Transformers}
+
+
 
 \subsection{Others}
 Rank-2 non-negative matrix factorization \cite{yuan2017} to generate End-Systole and End-Diastole for apical 4 view.  
@@ -118,17 +134,6 @@ Recently, Smistad et al. 2021 presented the use of LSTM to address the single fr
 One of the challenges is architecture design to add ConvLSTMs to whcih authors experiment at the location at the endocer, decoder, last layer and in bottlenet, to which authors mentiosn that the use of the ConvLSTM layers in the encoder of the temporal NN gave the best results \cite{smistad2021-C-IUS}.
 Authors mention that interpolation of the annorations of the entire cardiac cycle did not captured the complex motion witht he use of 7 frames to which they suggest to use advance speckle tracking such as Echo-PWC-Net  \cite{ostvik2021-TMI}.
 
-
-\subsection{3D US}
-Smistad et al. 2021 made use of CETUS 3D US LV segmentation dataset and weakly annorated datasets for real-time 3D left ventricle segmentation and estiomation of ejection fraction \cite{smistad2021-D-IUS}.
-Authors presented the impact of pre-training that resulted in an improvement of Dice score. 
-It is imporant to note that VoxelAlasGAN and AtlasNet by Dong el al. presented a better dice score.
-Smistad et al. 2021 concluded that a limited labelled datasets of 15 patiens demostrate good accuracy and models were able to generalise to new data and ultrasoudn scanners \cite{smistad2021-D-IUS}.
-
-%TODO for 3D US
-%It is imporant to note that VoxelAlasGAN and AtlasNet by Dong el al. presented a better dice score.
-%https://scholar.google.com/scholar?cites=7164201117154328523&as_sdt=2005&sciodt=0,5&hl=en
-%https://scholar.google.com/scholar?cites=17967898420856199463&as_sdt=2005&sciodt=0,5&hl=en
 
 
 \section{Open datasets}
