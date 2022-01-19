@@ -3,6 +3,7 @@ In the last decades the use of echocardiography is a crucial clinical approach i
 However, despite the previous advances there is still challenges on finding standard views from experienced sonograpehrs that sometimes such quantifcations are qualitative and subjective \cite{Feigenbaum1996}.
 Similarly, automatic quantification of left ventricular ejection fraction (LVEF) is still challenging at the point of care due to variation of protocols, skills levels \cite{field2011} and the nature of proving feedback on real-time \cite{liu2021}.
 
+
 \section{AI-empowered methods}
 
 \subsection{Image Quality Assessment}
@@ -90,6 +91,28 @@ Authors compared the results with the commenrially avaible semiautomatic speckle
 
 \section{Spatiotemporal Features}
 
+
+\subsections{Deep Residual Learning}
+Ouyang et. al. benmarked various spatiotemporal convolutions (Sports-1M, Kinetics, UCF101, and HMDB51) \cite{ouyang-NeuripsML4H2019}  based on deep residual learning (He et al. 2015 and Tran et al. 2018).
+
+%"In the interest of creating high performance baselines on standard videos with gray-scale images without
+%proprocessing or creation of optical flow frames, we evaluated the performance of three architectures
+%which combine 3D convolutions over spatiotemporal video volume with residual connections between
+%layers[32]. Each model uses ResNet-18 as the base architecture and consists of 18 convolutional
+%layers with residual connections connecting odd numbered layers [16].
+
+%32:  
+%A Closer Look at Spatiotemporal Convolutions for Action Recognition
+%single type of network (ResNet) and a homogenous use of our (2+1)D spatiotemporal decomposition
+%https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html32: 
+%https://arxiv.org/pdf/1711.11248.pdf
+
+%16:
+%Deep Residual Learning for Image Recognition 
+%He et al. 2015
+%https://arxiv.org/abs/1512.03385
+
+
 \subsection{LSTM}
 Recently, Smistad et al. 2021 presented the use of LSTM to address the single frame segmentation of end-diastole and end-systole to address segmentation fricklering and reduce tmeporal errors \cite{smistad2021-C-IUS}.
 One of the challenges is architecture design to add ConvLSTMs to whcih authors experiment at the location at the endocer, decoder, last layer and in bottlenet, to which authors mentiosn that the use of the ConvLSTM layers in the encoder of the temporal NN gave the best results \cite{smistad2021-C-IUS}.
@@ -106,8 +129,6 @@ Smistad et al. 2021 concluded that a limited labelled datasets of 15 patiens dem
 %It is imporant to note that VoxelAlasGAN and AtlasNet by Dong el al. presented a better dice score.
 %https://scholar.google.com/scholar?cites=7164201117154328523&as_sdt=2005&sciodt=0,5&hl=en
 %https://scholar.google.com/scholar?cites=17967898420856199463&as_sdt=2005&sciodt=0,5&hl=en
-
-
 
 
 \section{Open datasets}
