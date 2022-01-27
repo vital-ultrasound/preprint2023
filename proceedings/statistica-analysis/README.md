@@ -12,7 +12,7 @@ The following are relevant columns names on the ADM files.
 * HEGITH
 
 
-%RELATED TO DISSEASES
+%RELATED TO DISEASES
 HYPERTENSION
 ANGINA
 MYOCARDIAL

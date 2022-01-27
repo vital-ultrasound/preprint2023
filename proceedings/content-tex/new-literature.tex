@@ -100,6 +100,17 @@ Smistad et al. 2021 concluded that a limited labelled datasets of 15 patiens dem
 
 \subsection{Transformers}
 
+Rubin et al. noted the shortcoming of transformers of extensive compation for training that lead to use detection transformer (DETR) which make smaller models reducing model size and acceleration inference \cite{rubin2021-PMLH}.,
+Rubin et al. considered the detection of needles in real-time ultrasound video sequences 12,000 needle insertions (2 million of individual frames).
+Video sequences (up to 60 sec in time) were divided into 30-frame clips (1 sec in time).
+
+
+Reynaud et al. 2021 adapted Residual Autoencoder Network and BERT model to predict ejection fraction which is different from what is commonly use with segmentation methods \cite{reynaud2021-MICCAI}.
+Reynaud et al. applied their model to Echonet-Dynamic dataset which only constains 10,030 echocardiograms containing one to three or more cadiac cycles with only cardiac cycle with ES and ED annorations.
+Due to the distribution between ES and ED, the sequence legnth was 128 frames.
+As Echonet-Dynamic datasets contains unlabelled ES and ED, Reynaud et al. applied (a) Guided Random Sampling (b) Mirroring Methods.
+Code is available at \url{https://github.com/HReynaud/UVT}.
+
 
 
 \subsection{Others}
@@ -141,6 +152,9 @@ Ouyang et. al. benmarked various spatiotemporal convolutions (Sports-1M, Kinetic
 Recently, Smistad et al. 2021 presented the use of LSTM to address the single frame segmentation of end-diastole and end-systole to address segmentation fricklering and reduce tmeporal errors \cite{smistad2021-C-IUS}.
 One of the challenges is architecture design to add ConvLSTMs to whcih authors experiment at the location at the endocer, decoder, last layer and in bottlenet, to which authors mentiosn that the use of the ConvLSTM layers in the encoder of the temporal NN gave the best results \cite{smistad2021-C-IUS}.
 Authors mention that interpolation of the annorations of the entire cardiac cycle did not captured the complex motion witht he use of 7 frames to which they suggest to use advance speckle tracking such as Echo-PWC-Net  \cite{ostvik2021-TMI}.
+
+Lu et al. made use of U-Net and LSTM to model Left Ventricular cardiac motion \cite{lu2020-MIUA}.
+
 
 
 
