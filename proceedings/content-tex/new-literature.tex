@@ -20,8 +20,17 @@ Studies in the management of tetanus in low- and middle-income countries (LMICs)
 \subsection{Image Quality Assessment}
 \cite{labs2021_in_miua} considers chamber clarity, depth gain, on-axis attributes, apical foreshoredness.
 
+\subsection{Classification of echochardiograms}
+Khamis et al. considered 309 clinical echocardiogram of apical viewss which were visiually classified and labelled by two experts into three classes: 103 a2c views, 103 a4c views and 103 alx views to then applied spatio-temporal feature extraction (Cuboic Detector) and supervised learning dictionary (LC-KSVD) resulting in an overall recognition rate of 95\% \cite{KHAMIS201715}.
+
+Zhang et al. performed view classification with 277 echochardiograms to create a 23-class models (including a4c no occlusions, a4c ocluded LA, a4c ocluded LV, etc) using 13-layer CNN with 5-fold cross-validation for accuracy assement and resulting in 84\% for overall accuracy where challenges for partial obscured LVs for a2c, a3c and a4c \cite{zhang2018}.
+Similarly, Zhang et al. applied U-net to segment 5 views (a2c, a3c, a4c, PSAX, PLAX) and CNN model for 3 chardiac disseases with the use of A4c captuting most of the information for the diseases.
+Zhang et al. mentioned the challenges of having A4c view with partially osbcured left atrium which might not help to compute left atrial volumes but would help to estimate LV volumes, mass, ejection and longitudinal strain \cite{zhang2018}.
+
+
 \subsection{Clustering techniques}
 Zhang et al. mentioned that 23 view classes from 7168 individually labeled videos that ware classified with a 13-layer CNN to then viewed with the use of t-Distributed Stochastic Neighbor Embedding \cite{zhang2018}.
+Zhang et al. made use of 277 echochardiograms collected over a 10-year period for view classification.
 Kusunose et al. mentioned that other authors have reached an acciracy of 91-94 for 15-view classification while their work mentioned a 98.1 accuracy for five-prederminted views \cite{kusunose2021}.
 
 \subsection{Auto-encoders}
