@@ -13,6 +13,16 @@ Studies in the management of tetanus in low- and middle-income countries (LMICs)
     %https://scholar.google.com/citations?user=gjZ_bDkAAAAJ
     %https://scholar.google.com/citations?user=YLCVWQoAAAAJ
 
+\section{Challenges in Echochardiography in the ICU}
+The following points summaries various challenges of performing echochardiography \cite{khamis2017}.
+\begin{enumerate}
+  \item Intra-view variability of echochardiograms (physiological variations of subjects and adquisition parameters) and sonographer expertise,
+  \item Inter-view similarity of echochardiograms (similar views of valve motion, wall motion, left ventricle, etc) and transducer position during adquision,
+  \item Redudant information in the clinical echo system (icons, date, frame rate, etc).
+\end{enumerate}
+Zhang et al. mentioned the challenges of having A4c view with partially osbcured left atrium which might not help to compute left atrial volumes but would help to estimate LV volumes, mass, ejection and longitudinal strain \cite{zhang2018}.
+
+
 
 
 \section{AI-empowered methods}
@@ -21,11 +31,11 @@ Studies in the management of tetanus in low- and middle-income countries (LMICs)
 \cite{labs2021_in_miua} considers chamber clarity, depth gain, on-axis attributes, apical foreshoredness.
 
 \subsection{Classification of echochardiograms}
-Khamis et al. considered 309 clinical echocardiogram of apical viewss which were visiually classified and labelled by two experts into three classes: 103 a2c views, 103 a4c views and 103 alx views to then applied spatio-temporal feature extraction (Cuboic Detector) and supervised learning dictionary (LC-KSVD) resulting in an overall recognition rate of 95\% \cite{KHAMIS201715}.
+Khamis et al. considered 309 clinical echocardiogram of apical viewss which were visiually classified and labelled by two experts into three classes: 103 a2c views, 103 a4c views and 103 alx views to then applied spatio-temporal feature extraction (Cuboic Detector) and supervised learning dictionary (LC-KSVD) resulting in an overall recognition rate of 95\% \cite{khamis2017}.
 
 Zhang et al. performed view classification with 277 echochardiograms to create a 23-class models (including a4c no occlusions, a4c ocluded LA, a4c ocluded LV, etc) using 13-layer CNN with 5-fold cross-validation for accuracy assement and resulting in 84\% for overall accuracy where challenges for partial obscured LVs for a2c, a3c and a4c \cite{zhang2018}.
 Similarly, Zhang et al. applied U-net to segment 5 views (a2c, a3c, a4c, PSAX, PLAX) and CNN model for 3 chardiac disseases with the use of A4c captuting most of the information for the diseases.
-Zhang et al. mentioned the challenges of having A4c view with partially osbcured left atrium which might not help to compute left atrial volumes but would help to estimate LV volumes, mass, ejection and longitudinal strain \cite{zhang2018}.
+
 
 
 \subsection{Clustering techniques}
@@ -90,11 +100,6 @@ Cheema et al.  reported that such feature was the first cardiac aotorhisedd by F
 Authors presented five cases covid-19 intensive care unit (ICU) to illustrate "how desition making affect in patient care" and how the use of AI-enabled provided real-time guidance to acquire desired cardiac UL with the sterting of user's transducer position and hand movevemnt \cite{CHEEMA2021JACCCaseReports}.
 
 
-
-\subsection{Annotation tools}
-Recently, Smistad et al. 2021 published the first web-based tool for annoration of medical ultrasound video to do image classification, segmentation, bouding box and landmark annotation  \cite{smistad2021-A-IUS}. 
-AW tool has been used since 2016 at different projects to perform segmentation of the left ventricle, cardiac view classification, and detection of nerves and blood vesels
-\cite{smistad2021-A-IUS}.
 
 \subsection{3D US}
 Considering that 3D left ventricle (LV) can provide full volume information of the hearth than 2D echordaiography,  Dong et al. proposed a real-time framework VoxelAtlasGAN that made use of cGAN \cite{dong2018-MICCAI}. 
@@ -170,10 +175,15 @@ Lu et al. made use of U-Net and LSTM to model Left Ventricular cardiac motion \c
 
 
 
-\section{Open datasets}
+\section{Tools and open datasets}
 
-\subsection{2D echochardiography}
-\subsubsection{CAMUS}
+\subsection{Annotation tools}
+Recently, Smistad et al. 2021 published the first web-based tool for annoration of medical ultrasound video to do image classification, segmentation, bouding box and landmark annotation  \cite{smistad2021-A-IUS}. 
+AW tool has been used since 2016 at different projects to perform segmentation of the left ventricle, cardiac view classification, and detection of nerves and blood vesels
+\cite{smistad2021-A-IUS}.
+
+\subsection{Open datasets}
+\subsubsection{CAMUS (2D US)}
 CAMUS dataset, Cardiac Acquisitions for Multi-structure Ultrasound Segmentation, was publised in 2019 by Leclerc et al. 2019 \cite{leclerc2019-IEEETransMedicalImaging}.
 CAMUS is the largest publicy-available and fully-annotated dataset of two and four-chamber adquistion from 500 patients.
 Datasets is cathegorised in image quality (good, medium, and poor) and $LV_{EF}$ ($\leq$ 45\% (phatological risk) , $\geq$ 55\%, else).
@@ -182,19 +192,19 @@ Dataset was collected with GE Vivid E95 ultrasound scanners (GE Vingmed Ultrasou
 The datasets is available electronically to download at \url{https://www.creatis.insa-lyon.fr/Challenge/camus/}.
 %Non-deep-learning techniques analyse cardiac cycles to analysis end-diastole and end-systolic left ventricular volumes with a mean correlation of 0.95 and absolute mean error of 9.5 ml.
 
-\subsubsection{EchoNet-Dynamic}
+\subsubsection{EchoNet-Dynamic (2D US)}
 Ouyang et al. published a large datasets of 10,030 annotated echocardiogram videos \cite{ouyang-NeuripsML4H2019, Ouyang-Nature-APR2020}.
 Datasets were labelled left ventricle volumes by sonographers to calculate ejection fraction.
 Datasets were acquired by skilled sonographers using iE33, Sonos, Acuson SC2000, Epiq 5G or Epiq 7C ultrasound machines and processed images were stored in a Philips Xcelera system.
 The datasets is available electronically to download at \url{https://echonet.github.io/dynamic/index.html#dataset}.
 %he resulting square images wereeither 600 × 600 or 768 × 768 pixels depending on the ultrasoundmachine and down sampled by cubic interpolation using OpenCVinto standardized 112 × 112 pixel videos.
 
-\subsection{3D echochardiography}
-\subsubsection{CETUS}
+\subsubsection{CETUS (3D US)}
 CETUS datset, Challenge on Endocardial Three-dimensional Ultrasound Segmentation, was published in 2016 by Bernard et al. \cite{bernard2016TMI}.
 CETUS contains 45 sequences of 3D ultrasound volumes of one cardiac cycle from 45 patients were equally acquired from three different hospitals with three different brands of ultrasound machines (GE, Philips and Siemens) \cite{bernard2016TMI}.
 The studied population of 45 participants is composed of 15 healthy subjects, 15 with previous myocardial infartation, 15 with dilated cardiography.
 The datasets is available electronically to download at \url{https://www.creatis.insa-lyon.fr/EvaluationPlatform/CETUS/about_database.html}.
+
 
 \section{Methods and materials}
 
