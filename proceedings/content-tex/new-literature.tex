@@ -67,6 +67,10 @@ Their model reached Dice similarity coefficient of 0.92, predicts ejection fract
 \cite{Ouyang-Nature-APR2020}.
 
 
+Meyer et al. used Prominence Iterative Dijkstra’s algorithm (ProID), based on the identification of ventricle boundaries with iterative Dijkstra's algorithm, for ventricle detection and volumen estimation \cite{Meyers2020}.
+ProID employs echochardiogram-specific cost-matrix to address contrast-to-noise and resolution limitations problems \cite{brindise2020unsupervised}.
+
+
 \subsection{Contrastive Learning}
 Methods on Contrastive Learning apparently address the challenge of required labelled data to identify pathologies in the images of dectect certain cardiac views.
 Recently, Chartsias et al. use contrastive learning to train imbalanced cardiac datasets and they compared a naive baseline model to achieve a F1 score of up to 26\% \cite{chartsias2021-ASMUS}
@@ -205,6 +209,10 @@ CETUS contains 45 sequences of 3D ultrasound volumes of one cardiac cycle from 4
 The studied population of 45 participants is composed of 15 healthy subjects, 15 with previous myocardial infartation, 15 with dilated cardiography.
 The datasets is available electronically to download at \url{https://www.creatis.insa-lyon.fr/EvaluationPlatform/CETUS/about_database.html}.
 
+\subsection{Synthetic cardiac motion}
+Alessandrini et al. in 2018 published "a open access library of 105 synthetic sequences encompassing i) healthy and ischemic motion patterns, ii) most common apical probe orientations iii) vendor specific image quality from 7 different systems" \cite{alessandrini2018}.
+See previuos work of Alessandrini et al. in 2015  \cite{alessandrini2015_isbi}.
+%TOCHECK: https://ieeexplore.ieee.org/abstract/document/9594689
 
 \section{Methods and materials}
 
@@ -217,3 +225,7 @@ The collection was done with the clinical device GE Venue Go machine and GE conv
 \subsection{Ethics statement}
 This study was approved by ... and the ethics committee ...
 All participants gave written informed consent to participate before enrollment.
+
+\section{Potential future work}
+2D velocity vector fields of flow blow can help to detect abnormal flow patterns as done in fetal and neonatal echochardiograhy \cite{Meyers2020}.
+Use LV A4C echos that can create synthetic Ulstraound images for GE Vivid E9, Hitachi Prosound U7, Philips iE 33 Vision, Siemens SC2000, and Toshiba Artida ultrasound systems \cite{brindise2020unsupervised}. 
