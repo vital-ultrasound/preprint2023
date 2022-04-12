@@ -11,25 +11,21 @@ Studies in the management of tetanus in low- and middle-income countries (LMICs)
 Ghorbani et al. in 2020 reported the first deep learning model to predict age, sex, weight and height from echocardiogram images and make use of such models to understand how models predicts systematic phenotypes which are difficul for human interpreters \cite{Ghorbani-DigitalMedicineNature-JAN2020}.
 Authors trained CCN models with 2.6 million echocardiogram images from 2850 patients with the extraction of labels local strucutre and features (e.g. pacemaker lead, dilation of left atrium, hypertrophy for left ventricular) and labels from the physician-interpreted report (e.g, catheters, pacemaker, and deﬁbrillator leads). 
 
+\subsection{Clinical AI-based models}
+
 \cite{behnami2020} applied DenseNet-like network for feature learning and RNN unit with bidirectional Gated Recurrent Units to alivate loss of information from the ealier frames of echos to automatically detect high risk or low risk of heart failure with reduced ejection fraction with an overall accuracy of 83.15\%, precision of 82.6\% and recall of 81.1\%.
 \cite{behnami2020} mentioned that EF is highly user-dependant to which they propose to collect more data, 
+
+\cite{ulloaCerna2021} made use of DNN to learn spatiotemporal features from echocardiography video data to enhance clinical prediction of 1 yr all-cause mortality where video echo data linked to EHR data that included hand-crafted echocardiography-derived measurements (EDMs), additional clinical variables and individual outcomes.
+The DNN model presents "superior prediction performance" over four cardiologist and two benchmark clinical models: the pooled cohort equations (PCE) and Seattle Heart Failure (SHF) risk score \cite{ulloaCerna2021}. 
+\cite{ulloaCerna2021} used "full, raw (annotation-free) echocardiographic videos to make predictions by learning from more than 812,278 clinically acquired echocardiography videos of the heart (50 million images)."
+
+
 
 %TODO
 %* Read relevant work of sophie yacoub and C Louise Thwaites that can be related to our work!
     %https://scholar.google.com/citations?user=gjZ_bDkAAAAJ
     %https://scholar.google.com/citations?user=YLCVWQoAAAAJ
-
-\begin{figure}[h]
-\centerline{
-\includegraphics[width=\columnwidth]{../figures/VGG-based-arquitecture/versions/drawing-v00}
-}
-\caption{
-	VGG-based arquitecture
-	(\textbf{a}) description...
-	(\textbf{b}) description...
-	Figure is adapted from the works of %\cite{}.
-}
-\end{figure}
 
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{../figures/patient-demographics-and-diseases/versions/drawing-v00}
@@ -44,7 +40,7 @@ Authors trained CCN models with 2.6 million echocardiogram images from 2850 pati
 
 
 
-\section{Challenges in Echochardiography in the ICU}
+\subsection{Challenges in Echochardiography in the ICU}
 The following points summaries various challenges of performing echochardiography \cite{khamis2017}.
 \begin{enumerate}
   \item Intra-view variability of echochardiograms (physiological variations of subjects and adquisition parameters) and sonographer expertise,
@@ -53,6 +49,20 @@ The following points summaries various challenges of performing echochardiograph
 \end{enumerate}
 Zhang et al. mentioned the challenges of having A4c view with partially osbcured left atrium which might not help to compute left atrial volumes but would help to estimate LV volumes, mass, ejection and longitudinal strain \cite{zhang2018}.
 
+
+
+\section{Proposed model}
+\begin{figure}[h]
+\centerline{
+\includegraphics[width=\columnwidth]{../figures/VGG-based-arquitecture/versions/drawing-v00}
+}
+\caption{
+	VGG-based arquitecture
+	(\textbf{a}) description...
+	(\textbf{b}) description...
+	Figure is adapted from the works of %\cite{}.
+}
+\end{figure}
 
 
 
