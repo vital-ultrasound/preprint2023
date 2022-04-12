@@ -59,12 +59,17 @@ Zhang et al. mentioned the challenges of having A4c view with partially osbcured
 \subsection{Image Quality Assessment}
 \cite{labs2021_in_miua} considers chamber clarity, depth gain, on-axis attributes, apical foreshoredness.
 
+
 \subsection{Classification of echochardiograms}
-Khamis et al. considered 309 clinical echocardiogram of apical viewss which were visiually classified and labelled by two experts into three classes: 103 a2c views, 103 a4c views and 103 alx views to then applied spatio-temporal feature extraction (Cuboic Detector) and supervised learning dictionary (LC-KSVD) resulting in an overall recognition rate of 95\% \cite{khamis2017}.
+
+\cite{woudenberg2018} applied DenseNet and LSTM to extract temporal information on sequences of 16K echo cine frames to classify 14 heart views with an average accuracy of 92.35\%.
+\cite{woudenberg2018} also presents timing diagrams to quantify frame arrival and real-time performance to operate at 30 frames per second, while providing feedback with a mean latency of 352.91 ± 38.27 ms.
 
 Zhang et al. performed view classification with 277 echochardiograms to create a 23-class models (including a4c no occlusions, a4c ocluded LA, a4c ocluded LV, etc) using 13-layer CNN with 5-fold cross-validation for accuracy assement and resulting in 84\% for overall accuracy where challenges for partial obscured LVs for a2c, a3c and a4c \cite{zhang2018}.
 Similarly, Zhang et al. applied U-net to segment 5 views (a2c, a3c, a4c, PSAX, PLAX) and CNN model for 3 chardiac disseases with the use of A4c captuting most of the information for the diseases.
 
+
+Khamis et al. considered 309 clinical echocardiogram of apical viewss which were visiually classified and labelled by two experts into three classes: 103 a2c views, 103 a4c views and 103 alx views to then applied spatio-temporal feature extraction (Cuboic Detector) and supervised learning dictionary (LC-KSVD) resulting in an overall recognition rate of 95\% \cite{khamis2017}.
 
 
 \subsection{Clustering techniques}
