@@ -37,6 +37,10 @@ The DNN model presents "superior prediction performance" over four cardiologist 
 \cite{jafari2021} made use of 2,680 patients with PSAX-PM echo cine acquired by a variety of ultrasound devices, namely iE33, Vivid i/7/9/95, Sonosite, and Sequoia (only 554 echo cines were considered as ground truth with LV mask delineated by an experienced level III
 echocardiographer).
 
+
+Tromp et al. classified a dataset of 1145 2D echocardiography videos as apical 4 chamber (A4C) view, apical 2 chamber (A2C) view, parasternal long axis (PLAX) view, or 2D other views and focused versions of the main views. Authors used CNN of four layers, dense network and softmax output layer, trained with categorical cross-entropy loss function, then a second classifier of an unsupervised deep learning clustering CNN, trained with mean square error and Kullback-Leibler loss functions \cite{Tromp2022}.
+
+
 %For the remaining dataset (2,126 PSAX-PM echo cines), while the LV segmentation is not available, the ground truth LVEF values are acquired from the patients’ archived information.
 
 
