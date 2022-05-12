@@ -97,7 +97,8 @@ Zhang et al. mentioned the challenges of having A4c view with partially osbcured
 \subsection{Classification of echochardiograms}
 
 \cite{woudenberg2018} applied DenseNet and LSTM to extract temporal information on sequences of 16K echo cine frames to classify 14 heart views with an average accuracy of 92.35\%.
-\cite{woudenberg2018} also presents timing diagrams to quantify frame arrival and real-time performance to operate at 30 frames per second, while providing feedback with a mean latency of 352.91 ± 38.27 ms.
+\cite{woudenberg2018} implemented a Tensorflow runner that performs contrast enhancement to then sent each frame to three identical CNNs running in separated threads to prevent lag during inference times. Then a shared buffer collects extracted features from CNNs to then awake the thread for the LSTM network from the previous ten frames to produce classification and quality prediction.
+\cite{woudenberg2018} also presents timing diagrams to quantify frame arrival and real-time performance to operate at 30 frames per second, while providing feedback with a mean latency of 352.91 ± 38.27 ms when measured from the middle of the ten-frame sequence.
 
 Zhang et al. performed view classification with 277 echochardiograms to create a 23-class models (including a4c no occlusions, a4c ocluded LA, a4c ocluded LV, etc) using 13-layer CNN with 5-fold cross-validation for accuracy assement and resulting in 84\% for overall accuracy where challenges for partial obscured LVs for a2c, a3c and a4c \cite{zhang2018}.
 Similarly, Zhang et al. applied U-net to segment 5 views (a2c, a3c, a4c, PSAX, PLAX) and CNN model for 3 chardiac disseases with the use of A4c captuting most of the information for the diseases.
