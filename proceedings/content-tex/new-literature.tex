@@ -38,7 +38,8 @@ The DNN model presents "superior prediction performance" over four cardiologist 
 echocardiographer).
 
 
-Tromp et al. classified a dataset of 1145 2D echocardiography videos as apical 4 chamber (A4C) view, apical 2 chamber (A2C) view, parasternal long axis (PLAX) view, or 2D other views and focused versions of the main views. Authors used CNN of four layers, dense network and softmax output layer, trained with categorical cross-entropy loss function, then a second classifier of an unsupervised deep learning clustering CNN, trained with mean square error and Kullback-Leibler loss functions \cite{Tromp2022}.
+Tromp et al. classified a dataset of 1145 2D echocardiography videos as apical 4 chamber (A4C) view, apical 2 chamber (A2C) view, parasternal long axis (PLAX) view, or 2D other views and focused versions of the main views \cite{tromp2022}.
+Authors used CNN of four layers, dense network and softmax output layer, trained with categorical cross-entropy loss function, then a second classifier of an unsupervised deep learning clustering CNN, trained with mean square error and Kullback-Leibler loss functions \cite{tromp2022}.
 
 
 %For the remaining dataset (2,126 PSAX-PM echo cines), while the LV segmentation is not available, the ground truth LVEF values are acquired from the patients’ archived information.
@@ -250,15 +251,16 @@ Bar et al. assessed surgical workflow recongnition and report a deep learning sy
 \section{Validation and Usability Studies}
 Francesconi et al. 2021 presented technical vaidation by intra-operator reproducbility of two measuremnts (intima-media thickness and distension) by one expert and usability of integrated system in a laboratory setting with 12 healthy volunteers \cite{francesconi2021}.
 
-\section{Tools and open datasets}
 
-\subsection{Annotation tools}
-Recently, Smistad et al. 2021 published the first web-based tool for annoration of medical ultrasound video to do image classification, segmentation, bouding box and landmark annotation  \cite{smistad2021-A-IUS}. 
-AW tool has been used since 2016 at different projects to perform segmentation of the left ventricle, cardiac view classification, and detection of nerves and blood vesels
-\cite{smistad2021-A-IUS}.
 
-\subsection{Open datasets}
-\subsubsection{CAMUS (2D US)}
+\section{Datasets in echocardiography}
+
+%\subsection{}
+%* Alberta Heart Failure Etiology and Analysis Research Team; HEART; n=1029 echocardiograms), a
+%* real-world dataset from Taiwan (n=31 241)
+%\cite{tromp2022}.
+
+\subsection{CAMUS (2D US)}
 CAMUS dataset, Cardiac Acquisitions for Multi-structure Ultrasound Segmentation, was publised in 2019 by Leclerc et al. 2019 \cite{leclerc2019-IEEETransMedicalImaging}.
 CAMUS is the largest publicy-available and fully-annotated dataset of two and four-chamber adquistion from 500 patients.
 Datasets is cathegorised in image quality (good, medium, and poor) and $LV_{EF}$ ($\leq$ 45\% (phatological risk) , $\geq$ 55\%, else).
@@ -267,15 +269,15 @@ Dataset was collected with GE Vivid E95 ultrasound scanners (GE Vingmed Ultrasou
 The datasets is available electronically to download at \url{https://www.creatis.insa-lyon.fr/Challenge/camus/}.
 %Non-deep-learning techniques analyse cardiac cycles to analysis end-diastole and end-systolic left ventricular volumes with a mean correlation of 0.95 and absolute mean error of 9.5 ml.
 
-\subsubsection{EchoNet-Dynamic (2D US)}
+\subsection{EchoNet-Dynamic (2D US)}
 Ouyang et al. published a large datasets of 10,030 annotated echocardiogram videos \cite{ouyang-NeuripsML4H2019, Ouyang-Nature-APR2020}.
 Datasets were labelled left ventricle volumes by sonographers to calculate ejection fraction.
 Datasets were acquired by skilled sonographers using iE33, Sonos, Acuson SC2000, Epiq 5G or Epiq 7C ultrasound machines and processed images were stored in a Philips Xcelera system.
 The datasets is available electronically to download at \url{https://echonet.github.io/dynamic/index.html#dataset}.
 %he resulting square images wereeither 600 × 600 or 768 × 768 pixels depending on the ultrasoundmachine and down sampled by cubic interpolation using OpenCVinto standardized 112 × 112 pixel videos.
 
-\subsubsection{CETUS (3D US)}
-CETUS datset, Challenge on Endocardial Three-dimensional Ultrasound Segmentation, was published in 2016 by Bernard et al. \cite{bernard2016TMI}.
+\subsection{CETUS (3D US)}
+Challenge on Endocardial Three-dimensional Ultrasound Segmentation (CETUS) dataset was published in 2016 by Bernard et al. \cite{bernard2016TMI}.
 CETUS contains 45 sequences of 3D ultrasound volumes of one cardiac cycle from 45 patients were equally acquired from three different hospitals with three different brands of ultrasound machines (GE, Philips and Siemens) \cite{bernard2016TMI}.
 The studied population of 45 participants is composed of 15 healthy subjects, 15 with previous myocardial infartation, 15 with dilated cardiography.
 The datasets is available electronically to download at \url{https://www.creatis.insa-lyon.fr/EvaluationPlatform/CETUS/about_database.html}.
@@ -285,6 +287,11 @@ Alessandrini et al. in 2018 published "a open access library of 105 synthetic se
 See previuos work of Alessandrini et al. in 2015  \cite{alessandrini2015_isbi}.
 %TOCHECK: https://ieeexplore.ieee.org/abstract/document/9594689
 
+\section{Tools}
+
+\subsection{Annotation tools}
+Recently, Smistad et al. 2021 published the first web-based tool for annoration of medical ultrasound video to do image classification, segmentation, bouding box and landmark annotation  \cite{smistad2021-A-IUS}.
+AW tool has been used since 2016 at different projects to perform segmentation of the left ventricle, cardiac view classification, and detection of nerves and blood vesels \cite{smistad2021-A-IUS}.
 
 \section{Methods and materials}
 
