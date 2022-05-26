@@ -44,6 +44,14 @@ Authors used CNN of four layers, dense network and softmax output layer, trained
 
 %For the remaining dataset (2,126 PSAX-PM echo cines), while the LV segmentation is not available, the ground truth LVEF values are acquired from the patients’ archived information.
 
+Ono et al. applied differen models where Unet++ demonstrated good performance for automatic endocardial border detection and left ventrical assesment in 2D echocardiographu videos \cite{ono2022}.
+The datasets to train networks was made of 2798 images from 118 videos of which 22 videos with 465 frames were for 4CV \cite{ono2022}.
+Ono et al. also touched on the challenges of providing explainable AI for US imaging.
+
+Wu et al. 2022 applied baselines of UNET with temporal context-aware encoder (TCE) and bidirectional spatiotemporal semantics fusion (BSSF) modules to EchoDynamic (10030 video sequences with of 200frames of 112x112 pixes) and CAMUS datasets  (450 video of 20 frames of 778x594 pixels) with evaluation metrics of Dice score (DS), Hausdorff Distance (HD), and area under the curve (AUC) \cite{wu20222}.
+Wu et al. 2022, ensuring low latency and real-time performance, presented speed analysis againts eight methods using calculations number FLOPS (G), number of parameters (M) and speed ($ms/f$) which lowest one was 32 $ms/f$  \cite{wu20222}.
+%\cite{wu20222}
+
 
 %TODO
 %* Read relevant work of sophie yacoub and C Louise Thwaites that can be related to our work!
