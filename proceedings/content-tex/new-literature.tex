@@ -23,34 +23,46 @@ Similarly, \cite{hong2022} identified 20 of the most fequent variables in machin
 \cite{hong2022} mentioned that typical outcomes in the ICU are mortality, survival, and long-term quality of life and included typical patient outcomes, specific diseases, and stay of time evaluation. 
 %For specific diseases, the most studied are sepsis, infection and kidney injury; and trends with liver diseases and severe cancerl and others like cardica diseases, brain diseases;
 
-\subsection{Clinical AI-based models}
+\subsection{Real-time AI models for echocardiography}
 
-\cite{behnami2020} applied DenseNet-like network for feature learning and RNN unit with bidirectional Gated Recurrent Units to alivate loss of information from the ealier frames of echos to automatically detect high risk or low risk of heart failure with reduced ejection fraction with an overall accuracy of 83.15\%, precision of 82.6\% and recall of 81.1\%.
-\cite{behnami2020} mentioned that EF is highly user-dependant to which they propose to collect more data, 
+Wu et al. 2022 applied baselines of UNET with temporal context-aware encoder (TCE) and bidirectional spatiotemporal semantics fusion (BSSF) modules to EchoDynamic (10030 video sequences with of 200frames of 112x112 pixes) and CAMUS datasets  (450 video of 20 frames of 778x594 pixels) with evaluation metrics of Dice score (DS), Hausdorff Distance (HD), and area under the curve (AUC) \cite{wu20222}.
+Wu et al. 2022, ensuring low latency and real-time performance, presented speed analysis againts eight methods using calculations number FLOPS (G), number of parameters (M) and speed ($ms/f$) which lowest one was 32 $ms/f$  \cite{wu20222}.
+%
+
+\begin{table}[]
+\begin{tabular}{llllllll}
+Authors, year          & Datasets                            & Input frames & Flops(G) & Model/Params (M) & Latency   & Hyperparameters               & Code \\
+\cite{wu20222}         & EchoDynamic (10Kc) and CAMUS (.5Kc) & 3            & 56.359   & 74.798           & 32 (ms/f) & lr=10e-4;epochs=100;CR=5-fold & -    \\
+\cite{woudenberg2018}  & AP4(2Kc)                            & 10           & -        & DenseNet-LSTM    & 352.91ms  & -                             & -    \\
+                       &                                     &              &          &                  &           &                               &
+\end{tabular}
+\end{table}
+%by https://www.tablesgenerator.com/
+
+%EchoDynamic (10030 clips with of 200frames of 112x112 pixes)
+%CAMUS (450 clips of 20 frames of 778x594 pixels)
+
+
+
+ \cite{behnami2020} applied DenseNet-like network for feature learning and RNN unit with bidirectional Gated Recurrent Units to alivate loss of information from the ealier frames of echos to automatically detect high risk or low risk of heart failure with reduced ejection fraction with an overall accuracy of 83.15\%, precision of 82.6\% and recall of 81.1\%.
+\cite{behnami2020} mentioned that EF is highly user-dependant to which they propose to collect more data,
 
 \cite{ulloaCerna2021} made use of DNN to learn spatiotemporal features from echocardiography video data to enhance clinical prediction of 1 yr all-cause mortality where video echo data linked to EHR data that included hand-crafted echocardiography-derived measurements (EDMs), additional clinical variables and individual outcomes.
 The DNN model presents "superior prediction performance" over four cardiologist and two benchmark clinical models: the pooled cohort equations (PCE) and Seattle Heart Failure (SHF) risk score \cite{ulloaCerna2021}. 
 \cite{ulloaCerna2021} used "full, raw (annotation-free) echocardiographic videos to make predictions by learning from more than 812,278 clinically acquired echocardiography videos of the heart (50 million images)."
 
-
 \cite{jafari2021} pointed out the challenges of obtained high quality for less experience operators and the hight variablity or echo quality adn cardiovascular structures accross different patients to which authors proposed "Bayesian deep learning approach for fully automatic LVEF estimation based on segmentation of the left ventricle (LV) in parasternal short-axis papillary muscles (PSAX-PM) level". 
 \cite{jafari2021} made use of 2,680 patients with PSAX-PM echo cine acquired by a variety of ultrasound devices, namely iE33, Vivid i/7/9/95, Sonosite, and Sequoia (only 554 echo cines were considered as ground truth with LV mask delineated by an experienced level III
 echocardiographer).
 
-
 Tromp et al. classified a dataset of 1145 2D echocardiography videos as apical 4 chamber (A4C) view, apical 2 chamber (A2C) view, parasternal long axis (PLAX) view, or 2D other views and focused versions of the main views \cite{tromp2022}.
 Authors used CNN of four layers, dense network and softmax output layer, trained with categorical cross-entropy loss function, then a second classifier of an unsupervised deep learning clustering CNN, trained with mean square error and Kullback-Leibler loss functions \cite{tromp2022}.
-
 
 %For the remaining dataset (2,126 PSAX-PM echo cines), while the LV segmentation is not available, the ground truth LVEF values are acquired from the patients’ archived information.
 
 Ono et al. applied differen models where Unet++ demonstrated good performance for automatic endocardial border detection and left ventrical assesment in 2D echocardiographu videos \cite{ono2022}.
 The datasets to train networks was made of 2798 images from 118 videos of which 22 videos with 465 frames were for 4CV \cite{ono2022}.
 Ono et al. also touched on the challenges of providing explainable AI for US imaging.
-
-Wu et al. 2022 applied baselines of UNET with temporal context-aware encoder (TCE) and bidirectional spatiotemporal semantics fusion (BSSF) modules to EchoDynamic (10030 video sequences with of 200frames of 112x112 pixes) and CAMUS datasets  (450 video of 20 frames of 778x594 pixels) with evaluation metrics of Dice score (DS), Hausdorff Distance (HD), and area under the curve (AUC) \cite{wu20222}.
-Wu et al. 2022, ensuring low latency and real-time performance, presented speed analysis againts eight methods using calculations number FLOPS (G), number of parameters (M) and speed ($ms/f$) which lowest one was 32 $ms/f$  \cite{wu20222}.
-%\cite{wu20222}
 
 
 %TODO
@@ -71,22 +83,6 @@ The following points summaries various challenges of performing echochardiograph
 Zhang et al. mentioned the challenges of having A4c view with partially osbcured left atrium which might not help to compute left atrial volumes but would help to estimate LV volumes, mass, ejection and longitudinal strain \cite{zhang2018}.
 
 
-
-\section{Proposed model}
-\begin{figure}[h]
-\centerline{
-\includegraphics[width=\columnwidth]{../figures/VGG-based-arquitecture/versions/drawing-v00}
-}
-\caption{
-	VGG-based arquitecture
-	(\textbf{a}) description...
-	(\textbf{b}) description...
-	Figure is adapted from the works of %\cite{}.
-}
-\end{figure}
-
-
-
 \section{AI-empowered methods}
 
 \subsection{Image Quality Assessment}
@@ -94,17 +90,15 @@ Zhang et al. mentioned the challenges of having A4c view with partially osbcured
 
 
 \subsection{Classification of echochardiograms}
-
 \cite{woudenberg2018} applied DenseNet and LSTM to extract temporal information on sequences of 16K echo cine frames to classify 14 heart views with an average accuracy of 92.35\%.
-\cite{woudenberg2018} implemented a Tensorflow runner that performs contrast enhancement to then sent each frame to three identical CNNs running in separated threads to prevent lag during inference times. Then a shared buffer collects extracted features from CNNs to then awake the thread for the LSTM network from the previous ten frames to produce classification and quality prediction.
+\cite{woudenberg2018} implemented a Tensorflow runner that performs contrast enhancement to then sent each frame to three identical CNNs running in separated threads to prevent lag during inference times.
+Then a shared buffer collects extracted features from CNNs to then awake the thread for the LSTM network from the previous ten frames to produce classification and quality prediction.
 \cite{woudenberg2018} also presents timing diagrams to quantify frame arrival and real-time performance to operate at 30 frames per second, while providing feedback with a mean latency of 352.91 ± 38.27 ms when measured from the middle of the ten-frame sequence.
 
 Zhang et al. performed view classification with 277 echochardiograms to create a 23-class models (including a4c no occlusions, a4c ocluded LA, a4c ocluded LV, etc) using 13-layer CNN with 5-fold cross-validation for accuracy assement and resulting in 84\% for overall accuracy where challenges for partial obscured LVs for a2c, a3c and a4c \cite{zhang2018}.
 Similarly, Zhang et al. applied U-net to segment 5 views (a2c, a3c, a4c, PSAX, PLAX) and CNN model for 3 chardiac disseases with the use of A4c captuting most of the information for the diseases.
 
-
 Khamis et al. considered 309 clinical echocardiogram of apical viewss which were visiually classified and labelled by two experts into three classes: 103 a2c views, 103 a4c views and 103 alx views to then applied spatio-temporal feature extraction (Cuboic Detector) and supervised learning dictionary (LC-KSVD) resulting in an overall recognition rate of 95\% \cite{khamis2017}.
-
 
 \subsection{Clustering techniques}
 Zhang et al. mentioned that 23 view classes from 7168 individually labeled videos that ware classified with a 13-layer CNN to then viewed with the use of t-Distributed Stochastic Neighbor Embedding \cite{zhang2018}.
@@ -296,6 +290,21 @@ Recently, Smistad et al. 2021 published the first web-based tool for annoration 
 AW tool has been used since 2016 at different projects to perform segmentation of the left ventricle, cardiac view classification, and detection of nerves and blood vesels \cite{smistad2021-A-IUS}.
 
 \section{Methods and materials}
+
+\subsection{Proposed model}
+\begin{figure}[h]
+\centerline{
+\includegraphics[width=\columnwidth]{../figures/VGG-based-arquitecture/versions/drawing-v00}
+}
+\caption{
+	VGG-based arquitecture
+	(\textbf{a}) description...
+	(\textbf{b}) description...
+	Figure is adapted from the works of %\cite{}.
+}
+\end{figure}
+
+
 
 \section{Datasets}
 
