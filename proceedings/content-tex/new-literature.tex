@@ -27,14 +27,13 @@ Similarly, \cite{hong2022} identified 20 of the most fequent variables in machin
 
 Wu et al. 2022 applied baselines of UNET with temporal context-aware encoder (TCE) and bidirectional spatiotemporal semantics fusion (BSSF) modules to EchoDynamic (10030 video sequences with of 200frames of 112x112 pixes) and CAMUS datasets  (450 video of 20 frames of 778x594 pixels) with evaluation metrics of Dice score (DS), Hausdorff Distance (HD), and area under the curve (AUC) \cite{wu20222}.
 Wu et al. 2022, ensuring low latency and real-time performance, presented speed analysis againts eight methods using calculations number FLOPS (G), number of parameters (M) and speed ($ms/f$) which lowest one was 32 $ms/f$  \cite{wu20222}.
-%
 
 \begin{table}[]
 \begin{tabular}{llllllll}
-Authors, year          & Datasets                            & Input frames & Flops(G) & Model/Params (M) & Latency   & Hyperparameters               & Code \\
-\cite{wu20222}         & EchoDynamic (10Kc) and CAMUS (.5Kc) & 3            & 56.359   & 74.798           & 32 (ms/f) & lr=10e-4;epochs=100;CR=5-fold & -    \\
-\cite{woudenberg2018}  & AP4(2Kc)                            & 10           & -        & DenseNet-LSTM    & 352.91ms  & -                             & -    \\
-                       &                                     &              &          &                  &           &                               &
+\textbf{Author(s), year} & \textbf{Datasets}                   & \textbf{Input \\ frames} & \textbf{Flops} & \textbf{Model;Params} & \textbf{Latency} & \textbf{Hyperparameters}      & \textbf{Code} \\
+\cite{wu20222}           &  EchoDynamic (10Kc) \\ CAMUS (.5Kc) & 3                     & 56.359            & 74.798                    & 32 (ms/f)        & lr=10e-4;epochs=100;CR=5-fold & -             \\
+\cite{woudenberg2018}    & AP4(2Kc)                            & 10                    & -                 & DenseNet-LSTM;            & 352.91ms         & -                             & -             \\
+                         &                                     &                       &                   &                           &                  &                               &
 \end{tabular}
 \end{table}
 %by https://www.tablesgenerator.com/
