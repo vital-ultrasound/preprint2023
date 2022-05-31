@@ -31,9 +31,9 @@ Wu et al. 2022, ensuring low latency and real-time performance, presented speed 
 \begin{table}[]
 \tiny
 \begin{tabular}{llllllll}
-\textbf{Author(s), year} & \textbf{Datasets}                   & \textbf{Input}        & \textbf{Flops} & \textbf{Model;Params} & \textbf{Latency}  & \textbf{Hyper-}      & \textbf{Code} \\
-                         &                                     & \textbf{frames}       &                & \textbf{;Params}      &                   & \textbf{parameters}  &               \\
-\cite{wu20222}           &  EchoDynamic (10Kc)                 & 3                     & 56.359         & ?;74.798              & 32 (ms/f)         & lr=10e-4;epochs=100; & -             \\
+\textbf{Author(s), year} & \textbf{Datasets (clips)}           & \textbf{Input}        & \textbf{Flops} & \textbf{Model;} & \textbf{Latency}  & \textbf{Hyper-}      & \textbf{Code} \\
+                         &                                     & \textbf{frames}       &                & \textbf{Params}      &                   & \textbf{parameters}  &               \\
+\cite{wu20222}           &  EchoDynamic (10Kc)                 & 3                     & 56.359         & TCE-BSSF;74.798      & 32 (ms/f)         & lr=10e-4;epochs=100; & -             \\
                          &  CAMUS (.5Kc)                       &                       &                &                       &                   & CR=5-fold            &          \\
 \cite{woudenberg2018}    & AP4(2Kc)                            & 10                    & -              & DenseNet-LSTM;        & 352.91ms          & -                    & -             \\
                          &                                     &                       &                &                       &                   &                      & -
@@ -43,6 +43,7 @@ Wu et al. 2022, ensuring low latency and real-time performance, presented speed 
 
 %EchoDynamic (10030 clips with of 200frames of 112x112 pixes)
 %CAMUS (450 clips of 20 frames of 778x594 pixels)
+%TCE: temporal context-aware encoder. BSSF: bi-directional spatiotemporal semantics fusion
 
 
 
