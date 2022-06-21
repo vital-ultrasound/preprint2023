@@ -1,13 +1,36 @@
 \section{Introduction} \label{sec:intro}
 In the last decades the use of echocardiography is an important clinical approach in Intensive Care Units (ICU) because of the adtages of US devices such as portability, low cost, low radiation and its real-time capabilities to access cardiac anatomy \cite{Feigenbaum1996, Vieillard-Baron2008, singh2007, cambell2018}.
-Despite the previous advances, the current practices of clinical ultrasound are user and patient dependant which can lead to uncertan diagnosis 
-diagnostic. 
-Particularly, the challenge of locating the right standard views from sonograpehrs of different experiences \cite{Feigenbaum1996}.
-There are addiotional challenges in "low- and middle-income countries (LMICs)" where limited number of expert clinitians can perform such US imaging analysis and therfore accurate diagnosis.
+Despite the previous advances, there various challenges in the current practices of clinical ultrasound: 
+%are user and patient dependant which can lead to uncertan diagnosis diagnostic.
+%\subsection{Challenges in Echochardiography in the ICU}
+%\cite{khamis2017} 
+%summaries various challenges related to performing echochardiography.
+
+\begin{itemize}
+\setlength\itemsep{0em}
+
+\item Intra-view variability of echochardiograms (physiological variations of subjects and adquisition parameters) and sonographer expertise,
+ \cite{khamis2017, Feigenbaum1996}.
+
+\item Inter-view similarity of echochardiograms (similar views of valve motion, wall motion, left ventricle, etc) and transducer position during adquision,
+\cite{zhang2018}.
+
+\item Redudant information in the clinical echo system (icons, date, frame rate, etc).
+
+\item Limited number of expert clinitians can perform such US imaging analysis and therfore accurate diagnosis, and equipment and hospitalisation requirements in low- and middle-income countries (LMICs)
+\cite{hao2021-wellcome}.
+
+\end{itemize}
+%Zhang et al. mentioned the challenges of having A4C view with partially osbcured left atrium which might not help to compute left atrial volumes but would help to estimate LV volumes, mass, ejection and longitudinal strain 
+%\cite{zhang2018}.
+%Particularly, the challenge of locating the right standard views from sonograpehrs of different experiences 
+%\cite{Feigenbaum1996}.
 
 Recent advament of automatic quantificaon if ehcochariography metrics lead to improve such challenges. 
 However, automatic quantification of left ventricular ejection fraction (LVEF) is still challenging at the point of care due to variation of protocols, skills levels \cite{field2011} and the nature of proving feedback on real-time \cite{liu2021}.
-Studies in the management of tetanus in low- and middle-income countries (LMICs) emphasised the importance and requirement of duration of hospitalisation and mechanical ventilation requirements \cite{hao2021-wellcome}.
+
+%Studies in the management of tetanus in low- and middle-income countries (LMICs) emphasised the importance and requirement of duration of hospitalisation and mechanical ventilation requirements 
+%\cite{hao2021-wellcome}.
 
 On quasi real-time, non-real-time, analysis of echoardiography, Ghorbani et al. in 2020 reported the first deep learning model to predict age, sex, weight and height from echocardiogram images and make use of such models to understand how models predicts systematic phenotypes which are difficul for human interpreters \cite{Ghorbani-DigitalMedicineNature-JAN2020}.
 Authors trained CCN models with 2.6 million echocardiogram images from 2850 patients with the extraction of labels local strucutre and features (e.g. pacemaker lead, dilation of left atrium, hypertrophy for left ventricular) and labels from the physician-interpreted report (e.g, catheters, pacemaker, and deﬁbrillator leads). 
@@ -69,6 +92,8 @@ Wu et al. 2022, ensuring low latency and real-time performance, presented speed 
 \end{table}
 %by https://www.tablesgenerator.com/
 
+%TOADDEcho-PWC-Net [Østvik et al., 2021].
+
 %EchoDynamic (10030 clips with of 200frames of 112x112 pixes)
 %CAMUS (450 clips of 20 frames of 778x594 pixels)
 %TCE: temporal context-aware encoder. BSSF: bi-directional spatiotemporal semantics fusion
@@ -78,15 +103,6 @@ Wu et al. 2022, ensuring low latency and real-time performance, presented speed 
     %https://scholar.google.com/citations?user=gjZ_bDkAAAAJ
     %https://scholar.google.com/citations?user=YLCVWQoAAAAJ
 
-
-\subsection{Challenges in Echochardiography in the ICU}
-\cite{khamis2017} summaries various challenges related to performing echochardiography.
-\begin{enumerate}
-  \item Intra-view variability of echochardiograms (physiological variations of subjects and adquisition parameters) and sonographer expertise,
-  \item Inter-view similarity of echochardiograms (similar views of valve motion, wall motion, left ventricle, etc) and transducer position during adquision,
-  \item Redudant information in the clinical echo system (icons, date, frame rate, etc).
-\end{enumerate}
-Zhang et al. mentioned the challenges of having A4C view with partially osbcured left atrium which might not help to compute left atrial volumes but would help to estimate LV volumes, mass, ejection and longitudinal strain \cite{zhang2018}.
 
 
 \section{AI-empowered methods}
