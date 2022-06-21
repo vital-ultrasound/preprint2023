@@ -1,3 +1,18 @@
+
+@article{zhang2022-mdpi,
+AUTHOR = {Zhang, Zisang and Zhu, Ye and Liu, Manwei and Zhang, Ziming and Zhao, Yang and Yang, Xin and Xie, Mingxing and Zhang, Li},
+TITLE = {Artificial Intelligence-Enhanced Echocardiography for Systolic Function Assessment},
+JOURNAL = {Journal of Clinical Medicine},
+VOLUME = {11},
+YEAR = {2022},
+NUMBER = {10},
+ARTICLE-NUMBER = {2893},
+URL = {https://www.mdpi.com/2077-0383/11/10/2893},
+PubMedID = {35629019},
+ISSN = {2077-0383},
+DOI = {10.3390/jcm11102893}
+}
+
 @article{liu2021JMIA,
 title = {Deep pyramid local attention neural network for cardiac structure segmentation in two-dimensional echocardiography},
 journal = {Medical Image Analysis},
@@ -9,7 +24,6 @@ doi = {https://doi.org/10.1016/j.media.2020.101873},
 url = {https://www.sciencedirect.com/science/article/pii/S1361841520302371},
 author = {Fei Liu and Kun Wang and Dan Liu and Xin Yang and Jie Tian},
 keywords = {2D echocardiography, Cardiac structure segmentation, Pyramid local attention, Label coherence learning},
-abstract = {Automatic semantic segmentation in 2D echocardiography is vital in clinical practice for assessing various cardiac functions and improving the diagnosis of cardiac diseases. However, two distinct problems have persisted in automatic segmentation in 2D echocardiography, namely the lack of an effective feature enhancement approach for contextual feature capture and lack of label coherence in category prediction for individual pixels. Therefore, in this study, we propose a deep learning model, called deep pyramid local attention neural network (PLANet), to improve the segmentation performance of automatic methods in 2D echocardiography. Specifically, we propose a pyramid local attention module to enhance features by capturing supporting information within compact and sparse neighboring contexts. We also propose a label coherence learning mechanism to promote prediction consistency for pixels and their neighbors by guiding the learning with explicit supervision signals. The proposed PLANet was extensively evaluated on the dataset of cardiac acquisitions for multi-structure ultrasound segmentation (CAMUS) and sub-EchoNet-Dynamic, which are two large-scale and public 2D echocardiography datasets. The experimental results show that PLANet performs better than traditional and deep learning-based segmentation methods on geometrical and clinical metrics. Moreover, PLANet can complete the segmentation of heart structures in 2D echocardiography in real time, indicating a potential to assist cardiologists accurately and efficiently.}
 }
 
 @Article{ahn2022,
@@ -40,7 +54,6 @@ publisher={IOP Publishing},
 volume={62},
 number={12},
 pages={4831-4851},
-abstract={Cardiac motion estimation is an important diagnostic tool for detecting heart diseases and it has been explored with modalities such as MRI and conventional ultrasound (US) sequences. US cardiac motion estimation still presents challenges because of complex motion patterns and the presence of noise. In this work, we propose a novel approach to estimate cardiac motion using ultrafast ultrasound data. Our solution is based on a variational formulation characterized by the L2-regularized class. Displacement is represented by a lattice of b-splines and we ensure robustness, in the sense of eliminating outliers, by applying a maximum likelihood type estimator. While this is an important part of our solution, the main object of this work is to combine low-rank data representation with topology preservation. Low-rank data representation (achieved by finding the k-dominant singular values of a Casorati matrix arranged from the data sequence) speeds up the global solution and achieves noise reduction. On the other hand, topology preservation (achieved by monitoring the Jacobian determinant) allows one to radically rule out distortions while carefully controlling the size of allowed expansions and contractions. Our variational approach is carried out on a realistic dataset as well as on a simulated one. We demonstrate how our proposed variational solution deals with complex deformations through careful numerical experiments. The low-rank constraint speeds up the convergence of the optimization problem while topology preservation ensures a more accurate displacement. Beyond cardiac motion estimation, our approach is promising for the analysis of other organs that exhibit motion.},
 issn={0031-9155},
 doi={10.1088/1361-6560/aa6914},
 url={https://doi.org/10.1088/1361-6560/aa6914}
@@ -57,7 +70,6 @@ doi = {https://doi.org/10.1016/j.media.2022.102397},
 url = {https://www.sciencedirect.com/science/article/pii/S1361841522000494},
 author = {Huisi Wu and Jiasheng Liu and Fangyan Xiao and Zhenkun Wen and Lan Cheng and Jing Qin},
 keywords = {Echocardiography, Video semantic segmentation, Deep learning, Temporal context extraction, Spatiotemporal semantic calibration, Spatiotemporal semantic fusion},
-abstract = {We present a novel model for left ventricle endocardium segmentation from echocardiography video, which is of great significance in clinical practice and yet a challenging task due to (1) the severe speckle noise in echocardiography videos, (2) the irregular motion of pathological heart, and (3) the limited training data caused by high annotation cost. The proposed model has three compelling characteristics. First, we propose a novel adaptive spatiotemporal semantic calibration method to align the feature maps of consecutive frames, where the spatiotemporal correspondences are figured out based on feature maps instead of pixels, thereby mitigating the adverse effects of speckle noise in the calibration. Second, we further learn the importance of each feature map of neighbouring frames to the current frame from the temporal perspective so as to distinctively rather than uniformly harness the temporal information to tackle the irregular and anisotropic motions. Third, we integrate these techniques into the mean teacher semi-supervised architecture to leverage a large amount of unlabeled data to improve the segmentation accuracy. We extensively evaluate the proposed method on two public echocardiography video datasets (EchoNet-Dynamic and CAMUS), where the average dice coefficient on the left ventricular endocardium segmentation achieves 92.87% and 93.79%, respectively. Comparisons with state-of-the-art methods also demonstrate the effectiveness of the proposed method by achieving a better segmentation performance with a faster speed.}
 }
 
 @Article{ono2022,
@@ -70,7 +82,6 @@ NUMBER = {5},
 ARTICLE-NUMBER = {1082},
 URL = {https://www.mdpi.com/2227-9059/10/5/1082},
 ISSN = {2227-9059},
-ABSTRACT = {Endocardial border detection is a key step in assessing left ventricular systolic function in echocardiography. However, this process is still not sufficiently accurate, and manual retracing is often required, causing time-consuming and intra-/inter-observer variability in clinical practice. To address these clinical issues, more accurate and normalized automatic endocardial border detection would be valuable. Here, we develop a deep learning-based method for automated endocardial border detection and left ventricular functional assessment in two-dimensional echocardiographic videos. First, segmentation of the left ventricular cavity was performed in the six representative projections for a cardiac cycle. We employed four segmentation methods: U-Net, UNet++, UNet3+, and Deep Residual U-Net. UNet++ and UNet3+ showed a sufficiently high performance in the mean value of intersection over union and Dice coefficient. The accuracy of the four segmentation methods was then evaluated by calculating the mean value for the estimation error of the echocardiographic indexes. UNet++ was superior to the other segmentation methods, with the acceptable mean estimation error of the left ventricular ejection fraction of 10.8%, global longitudinal strain of 8.5%, and global circumferential strain of 5.8%, respectively. Our method using UNet++ demonstrated the best performance. This method may potentially support examiners and improve the workflow in echocardiography.},
 DOI = {10.3390/biomedicines10051082}
 }
 
@@ -370,7 +381,6 @@ year="2020",
 publisher="Springer International Publishing",
 address="Cham",
 pages="294--306",
-abstract="This paper shows that deep modelling of subtle changes of cardiac motion can help in automated diagnosis of early onset of cardiac disease. In this paper, we model left ventricular (LV) cardiac motion in MRI sequences, based on a hybrid spatio-temporal network. Temporal data over long time periods is used as inputs to the model and delivers a dense displacement field (DDF) for regional analysis of LV function. A segmentation mask of the end-diastole (ED) frame is deformed by the predicted DDF from which regional analysis of LV function endocardial radius, thickness, circumferential strain (Ecc) and radial strain (Err) are estimated. Cardiac motion is estimated over MR cine loops. We compare the proposed technique to two other deep learning-based approaches and show that the proposed approach achieves promising predicted DDFs. Predicted DDFs are estimated on imaging data from healthy volunteers and patients with primary pulmonary hypertension from the UK Biobank. Experiments demonstrate that the proposed methods perform well in obtaining estimates of endocardial radii as cardiac motion-characteristic features for regional LV analysis.",
 isbn="978-3-030-52791-4"
 }
 
