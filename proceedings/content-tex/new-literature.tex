@@ -10,14 +10,14 @@ Despite the previous advances, there various challenges in the current practices
 \setlength\itemsep{0em}
 
 \item Intra-view variability of echochardiograms (physiological variations of subjects and adquisition parameters) and sonographer expertise,
- \cite{khamis2017, Feigenbaum1996}.
+ \cite{khamis2017, Feigenbaum1996, field2011}.
 
 \item Inter-view similarity of echochardiograms (similar views of valve motion, wall motion, left ventricle, etc) and transducer position during adquision,
-\cite{zhang2018}.
+\cite{zhang2018},
+redudant information in the clinical echo system (icons, date, frame rate, etc).
+\cite{khamis2017}
 
-\item Redudant information in the clinical echo system (icons, date, frame rate, etc).
-
-\item Limited number of expert clinitians can perform such US imaging analysis and therfore accurate diagnosis, and equipment and hospitalisation requirements in low- and middle-income countries (LMICs)
+\item Limited number of expert clinitians to perform US imaging analysis and provice accurate diagnosis, and equipment and hospitalisation requirements in low- and middle-income countries (LMICs)
 \cite{hao2021-wellcome}.
 
 \end{itemize}
@@ -26,13 +26,20 @@ Despite the previous advances, there various challenges in the current practices
 %Particularly, the challenge of locating the right standard views from sonograpehrs of different experiences 
 %\cite{Feigenbaum1996}.
 
-Recent advament of automatic quantificaon if ehcochariography metrics lead to improve such challenges. 
-However, automatic quantification of left ventricular ejection fraction (LVEF) is still challenging at the point of care due to variation of protocols, skills levels \cite{field2011} and the nature of proving feedback on real-time \cite{liu2021}.
+%Recent advament of automatic quantificaon if ehcochariography metrics lead to improve such challenges. 
+%However, automatic quantification of left ventricular ejection fraction (LVEF) is still challenging at the point of care due to variation of protocols, skills levels \cite{field2011} and the nature of proving feedback on real-time \cite{liu2021}.
 
 %Studies in the management of tetanus in low- and middle-income countries (LMICs) emphasised the importance and requirement of duration of hospitalisation and mechanical ventilation requirements 
 %\cite{hao2021-wellcome}.
 
-On quasi real-time, non-real-time, analysis of echoardiography, Ghorbani et al. in 2020 reported the first deep learning model to predict age, sex, weight and height from echocardiogram images and make use of such models to understand how models predicts systematic phenotypes which are difficul for human interpreters \cite{Ghorbani-DigitalMedicineNature-JAN2020}.
+
+\subsection{AI-empowered echocardiography}
+
+\cite{hanson2001} reviwed various applications of AI in the ICU where real-time analaysis of waveforms of electrocardiograms and electroencephalograms using neuoral network were used to idenfy cardiac ischemia and diagnosis myocardial ischemia. 
+\cite{hanson2001} also reviewed various scnerations where AI is used in the ICU, such as bayesian networks considering central venous pressure (CVP), left ventricular ejection fraction (EF), heart rate (HR), hemoglobin (HGB) and oxygen saturation (O2sat) resulting in a probablitistic cardiac output.
+\cite{hanson2001} also touched on datavisualiastion to demonstrate the hypothetical ICU for large number of patients (head injury, sepsis, acute respiratory distress syndrome, etc).
+
+Ghorbani et al. in 2020 reported the first deep learning model to predict age, sex, weight and height from echocardiogram images and make use of such models to understand how models predicts systematic phenotypes which are difficul for human interpreters \cite{Ghorbani-DigitalMedicineNature-JAN2020}.
 Authors trained CCN models with 2.6 million echocardiogram images from 2850 patients with the extraction of labels local strucutre and features (e.g. pacemaker lead, dilation of left atrium, hypertrophy for left ventricular) and labels from the physician-interpreted report (e.g, catheters, pacemaker, and deﬁbrillator leads). 
 Recently, \cite{hong2022} reviewed 673 papers that made use of machine learning-enabled to help for clinical desicion in the ICU, of these studies the majority used supervised learning (91\%) few doing unsupervising learning and reinforcement learning.
 Similarly, \cite{hong2022} identified 20 of the most fequent variables in machine learning-enabled in the ICU, being the top five (age, sex, heart rate, respiratory rate, and pH).
@@ -47,19 +54,8 @@ Authors used CNN of four layers, dense network and softmax output layer, trained
 reviewed AI's applications in left ventricular systolic funciton (LVEF) and global longitudinal strain (GLS), pointing out its dependendant to the sonographers's expertise (inter-observer variability) and post-processing and variablity in differen US devices.
 \cite{zhang2022-mdpi} pointed the challenges of AI-enhanceed echocargiografy for interpretability of results and its sensitivity to sample shortage, to which authors mention about the potentials of multimodal imaging (us, mri and clinical data) to improve detection rate of diseases. 
 
-
-
-
-
-
-\subsection{Real-time AI models for echocardiography}
-In terms of real-time analysys of echocardigraphy, \cite{hanson2001} reviwed various applications of AI in the ICU where real-time analaysis of waveforms of electrocardiograms and electroencephalograms using neuoral network were used to idenfy cardiac ischemia and diagnosis myocardial ischemia. 
-\cite{hanson2001} also reviewed various scnerations where AI is used in the ICU, such as bayesian networks considering central venous pressure (CVP), left ventricular ejection fraction (EF), heart rate (HR), hemoglobin (HGB) and oxygen saturation (O2sat) resulting in a probablitistic cardiac output.
-\cite{hanson2001} also touched on datavisualiastion to demonstrate the hypothetical ICU for large number of patients (head injury, sepsis, acute respiratory distress syndrome, etc).
-
 \cite{behnami2020} applied DenseNet-like network for feature learning and RNN unit with bidirectional Gated Recurrent Units to alivate loss of information from the ealier frames of echos to automatically detect high risk or low risk of heart failure with reduced ejection fraction with an overall accuracy of 83.15\%, precision of 82.6\% and recall of 81.1\%.
 \cite{behnami2020} mentioned that EF is highly user-dependant to which they propose to collect more data,
-
 
 \cite{liu2021JMIA} proposed pyramid local attention neural network (PLANet) to improve segmentation performance of automatic methods in 2D echocardiography.
 PLANet was evaluated with CAMUS and sub-EchoNet-Dynamic datasets, showing a better performance against geometric and clinical metrics.
@@ -76,7 +72,8 @@ Ono et al. applied differen models where Unet++ demonstrated good performance fo
 The datasets to train networks was made of 2798 images from 118 videos of which 22 videos with 465 frames were for 4CV \cite{ono2022}.
 Ono et al. also touched on the challenges of providing explainable AI for US imaging.
 
-Recently, Wu et al. 2022 applied baselines of UNET with temporal context-aware encoder (TCE) and bidirectional spatiotemporal semantics fusion (BSSF) modules to EchoDynamic (10030 video sequences with of 200frames of 112x112 pixes) and CAMUS datasets  (450 video of 20 frames of 778x594 pixels) with evaluation metrics of Dice score (DS), Hausdorff Distance (HD), and area under the curve (AUC) \cite{wu20222}.
+\subsection{Real-time AI-empowwered echocardiography}
+In terms of real-time analysys of echocardigraphy, , Wu et al. 2022 applied baselines of UNET with temporal context-aware encoder (TCE) and bidirectional spatiotemporal semantics fusion (BSSF) modules to EchoDynamic (10030 video sequences with of 200frames of 112x112 pixes) and CAMUS datasets  (450 video of 20 frames of 778x594 pixels) with evaluation metrics of Dice score (DS), Hausdorff Distance (HD), and area under the curve (AUC) \cite{wu20222}.
 Wu et al. 2022, ensuring low latency and real-time performance, presented speed analysis againts eight methods using calculations number FLOPS (G), number of parameters (M) and speed ($ms/f$) which lowest one was 32 $ms/f$  \cite{wu20222}.
 
 \begin{table}[]
@@ -87,12 +84,12 @@ Wu et al. 2022, ensuring low latency and real-time performance, presented speed 
 \cite{wu20222}           &  EchoDynamic (10Kc)                 & 3                     & 56.359         & TCE-BSSF;74.798      & 32 (ms/f)         & lr=10e-4;epochs=100; & -             \\
                          &  CAMUS (.5Kc)                       &                       &                &                       &                   & CR=5-fold            &          \\
 \cite{woudenberg2018}    & AP4(2Kc)                            & 10                    & -              & DenseNet-LSTM;        & 352.91ms          & -                    & -             \\
-                         &                                     &                       &                &                       &                   &                      & -
+                         &                                     &                       &                &                       &                   &                      & - \\
+\cite{ostvik2021-TMI}   & Synthetic/Simulated/Clinical         & 7                     & -              & Echo-PWC-Net          & -                   & -                      & -
 \end{tabular}
 \end{table}
 %by https://www.tablesgenerator.com/
 
-%TOADDEcho-PWC-Net [Østvik et al., 2021].
 
 %EchoDynamic (10030 clips with of 200frames of 112x112 pixes)
 %CAMUS (450 clips of 20 frames of 778x594 pixels)
@@ -105,11 +102,10 @@ Wu et al. 2022, ensuring low latency and real-time performance, presented speed 
 
 
 
-\section{AI-empowered methods}
+\section{Methods for AI-empowered echocardiopgraphy}
 
 \subsection{Image Quality Assessment}
 \cite{labs2021_in_miua} considers chamber clarity, depth gain, on-axis attributes, apical foreshoredness.
-
 
 \subsection{Classification of echochardiograms}
 \cite{woudenberg2018} applied DenseNet and LSTM to extract temporal information on sequences of 16K echo cine frames to classify 14 heart views with an average accuracy of 92.35\%.
