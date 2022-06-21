@@ -24,6 +24,11 @@ Authors used CNN of four layers, dense network and softmax output layer, trained
 reviewed AI's applications in left ventricular systolic funciton (LVEF) and global longitudinal strain (GLS), pointing out its dependendant to the sonographers's expertise (inter-observer variability) and post-processing and variablity in differen US devices.
 \cite{zhang2022-mdpi} pointed the challenges of AI-enhanceed echocargiografy for interpretability of results and its sensitivity to sample shortage, to which authors mention about the potentials of multimodal imaging (us, mri and clinical data) to improve detection rate of diseases. 
 
+
+
+
+
+
 \subsection{Real-time AI models for echocardiography}
 In terms of real-time analysys of echocardigraphy, \cite{hanson2001} reviwed various applications of AI in the ICU where real-time analaysis of waveforms of electrocardiograms and electroencephalograms using neuoral network were used to idenfy cardiac ischemia and diagnosis myocardial ischemia. 
 \cite{hanson2001} also reviewed various scnerations where AI is used in the ICU, such as bayesian networks considering central venous pressure (CVP), left ventricular ejection fraction (EF), heart rate (HR), hemoglobin (HGB) and oxygen saturation (O2sat) resulting in a probablitistic cardiac output.
@@ -245,10 +250,13 @@ Bar et al. assessed surgical workflow recongnition and report a deep learning sy
 Francesconi et al. 2021 presented technical vaidation by intra-operator reproducbility of two measuremnts (intima-media thickness and distension) by one expert and usability of integrated system in a laboratory setting with 12 healthy volunteers \cite{francesconi2021}.
 
 \section{Cardiac Motion Estimation}
+Cardiac motion estimation has important role in echocardiography due to the computation of myocardial deformation indices. 
 \cite{aviles2017} propose a method to estimate cardiac motion of ultrafast ultrasound data by combining low-rank data representation with topology preservation to
 overcome the challenges of non-rigid registration that involves complex heart motion and distortions.
-\cite{ahn2022} proposed a method to build 3D recovery models from 2D echocardiography data with the only assumption that the probe is fixe for one cardiac cycle.
-
+\cite{ahn2022} proposed a method to build 3D recovery models from 2D echocardiography data with the only assumption that the probe is fixed for one cardiac cycle.
+\cite{evain2022-medimag-ieee} proposed a deep learning model PWC-Net, achieving an average endpoint error of 
+"0.07± 0.06 mm per frame and 1.20±0.67 mm between ED and ES on their simulated dataset".
+See \cite{ostvik2021-TMI} for further details on Echo-PWC-Net and other networks. 
 
 \section{Datasets in echocardiography}
 
