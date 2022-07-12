@@ -20,6 +20,12 @@ https://us2.ai/
 https://www.youtube.com/c/US2ai/videos
 
 
+https://twitter.com/justinezekowitz
+https://scholar.google.com/citations?user=J9uARP4AAAAJ&hl=en 
+
+jae2 @ ualberta.ca
+
+
 
 
 
@@ -76,6 +82,12 @@ TESTING
 
 TOTAL:42618+27145=69763
 ```
+
+* RELATED ARTICLES: 
+Tromp, J., Seekings, P., Hung, C.L., Iversen, M., Frost, M., Ouwerkerk, W., Jiang, Z., Eisenhaber, F., Goh, R., Huang, W. and Ling, L.H., 2022. Automated Interpretation Of Systolic And Diastolic Function On The Echocardiogram. Journal of Cardiac Failure, 28(5), pp.S104-S105.
+https://scholar.google.com/scholar?oi=bibs&hl=en&cluster=10597108863347857256 
+
+
 
 
 ## Links 
