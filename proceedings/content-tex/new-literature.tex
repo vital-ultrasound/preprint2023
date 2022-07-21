@@ -122,11 +122,17 @@ Khamis et al. considered 309 clinical echocardiogram of apical viewss which were
 \subsubsection{Classification of other US images}
 \cite{baumgartner2017-IEEETransMedImag} proposed SonoNet which is a VGG-based arquitecture, SonoNet64 used the same first 13 layers of VGG16,
 and SmallNet, loosely inspired by AlexNet, for real-time detection and bounding box localisation of of standard views in freehand fetal US.
+\cite{toussaint2018-MICCAI}
+applied four feature extraction networks couple with batchnormalisation and soft proposal layer (VGG13-SP, VGG16-SP, ResNet18-SP, ResNet34-SP) being ResNet18-SP the best performing network with avarage accuracy over six classes of fetal US views (0.912). 
+Authors mentions that detection and localisation of anatomical views were tested in real-time performance at inference time (40ms per image, or ~20Hz).
 \cite{xie2020-physics-in-medicine-biology} proposed a dual-sampling convolutional neural network (DSCNN) for US image breast cancer classification, being DSCNN more efficent than AlexNet, VGG16, ResNet18, GoogleNet and EfficientNet. 
 \cite{snider2022-ScientificReports} reported summaries of CNN heuristics to detect shrapnel in US images. 
 Authors presented summaries of model performance for layer activators, 2D CNN layer arquitectures, model optimisers dense nodes, and the effect of image augmentation and dropout rate and epoch number. 
 \cite{boice2022-in-jimaging} proposed ShrapML, a CNN model to detect shrapnel in US imaging. 
 Authors compared ShrapML (8layers--6CNN,2FC, 0.43 million of parameters) against DarkNet19, GoogleNet, MobileNetv2 and SqueezeNet, being ShrapML 10x faster than MobileNet2 which offered the highest accuracy. 
+
+
+
 
 \subsection{Clustering techniques}
 Zhang et al. mentioned that 23 view classes from 7168 individually labeled videos that ware classified with a 13-layer CNN to then viewed with the use of t-Distributed Stochastic Neighbor Embedding \cite{zhang2018}.
