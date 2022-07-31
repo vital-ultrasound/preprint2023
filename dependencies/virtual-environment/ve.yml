@@ -1,0 +1,20 @@
+## USAGE
+## conda env create -f ve.yml
+## conda env update --file ve.yml --prune
+## conda activate echo-paper-ve
+name: echo-paper-ve
+channels:
+  - anaconda #for seaborn pandas
+  - conda-forge #for jupyter_contrib_nbextensions
+dependencies:
+  - python=3.8.*
+  - matplotlib
+  - numpy
+  - seaborn
+  - pandas
+  - notebook
+  - jupyter_contrib_nbextensions # A good overview over other extensions: https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
+  - pip
+  - pip:
+     - pydicom
+     - opencv-python

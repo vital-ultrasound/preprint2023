@@ -1,12 +1,12 @@
 # 2022-echocardiography-proceedings
 
 ## Latex build and PDF of the manuscript
-[![GitHub Actions Status](https://github.com/vital-ultrasound/isbi-2021-proceedings/workflows/CI-LaTeX/badge.svg)](https://github.com/vital-ultrasound/isbi-2021-proceedings/actions) [![manuscript](https://img.shields.io/badge/read-manuscript-blue.svg)](https://github.com/vital-ultrasound/isbi-2021-proceedings/blob/pdfs/isbi2021.pdf)
+[![GitHub Actions Status](https://github.com/vital-ultrasound/isbi-2021-proceedings/workflows/CI-LaTeX/badge.svg)](https://github.com/vital-ultrasound/isbi-2021-proceedings/actions) [![manuscript](https://img.shields.io/badge/read-manuscript-blue.svg)](https://github.com/vital-ultrasound/isbi-2021-proceedings/blob/pdfs/new-literature.pdf)
 
 ## Clone repo
 After generating your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), you can then clone the repository in the suggested path by typing (or copying) the following lines in a terminal:
 ```
-mkdir -p repositories/ && cd repositories/ ## suggested path
+mkdir -p $HOME/repositories/ && cd $HOME/repositories/ ## suggested path
 git clone git@github.com:vital-ultrasound/2022-echocardiography-proceedings.git
 ```
 
