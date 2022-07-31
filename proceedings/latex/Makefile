@@ -16,7 +16,7 @@ RM = rm -f
 EVINCE = evince
 
 ##Project name
-PROJNAME=pmlr-sample
+PROJNAME=main
 
 ## Rules
 $(PROJNAME).pdf: $(PROJNAME).tex
