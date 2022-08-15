@@ -1,12 +1,12 @@
 # Machine Learning for Health 2022 (ML4H2022)
 
 ## Important Dates 
-Sep 1st AoE: Submission Deadline
-Sep 30th : Author Response Period Starts
-Oct 5th : Author Response Period Ends
-Oct 21st: Final Decisions Released
-Nov 14th [tentative]: Camera Ready Deadline
-Nov 28th: Hybrid Event
+Sep 1st AoE: Submission Deadline  
+Sep 30th : Author Response Period Starts  
+Oct 5th : Author Response Period Ends  
+Oct 21st: Final Decisions Released  
+Nov 14th [tentative]: Camera Ready Deadline  
+Nov 28th: Hybrid Event  
 
 ## Submission Instructions
 
