@@ -6,6 +6,8 @@ on:
       - 1-citex
       - 03-drafting-proceeding-paper
       - 10-new-literature
+      - 13-draft-ml4h2022 
+
 jobs:
   build:
     if: "contains(github.event.head_commit.message, 'CITEX')"
@@ -19,27 +21,27 @@ jobs:
       uses: xu-cheng/latex-action@v2
       with:
         root_file: main.tex
-        working_directory: proceedings/venues/new-literature
+        working_directory: abstract/latex
 
     - name: Check pdf files
       run: |
-        file proceedings/venues/new-literature/main.pdf | grep -q ' PDF '
+        file abstract/latex/main.pdf | grep -q ' PDF '
  
     - name: Upload
       run: |
         # configure git
         git config --global user.name "mxochicale"
-        git config --global user.email "perez.xochicale@gmail.com"
+        git config --global user.email "miguel.xochicale@kcl.ac.uk"
         # setup ssh
         mkdir ~/.ssh
         chmod 700 ~/.ssh
         echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         git config --global core.sshCommand "ssh -i ~/.ssh/id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
-        git clone --depth=1 --branch pdfs git@github.com:vital-ultrasound/isbi-2021-proceedings.git "$GITHUB_WORKSPACE/deploy"
-        cp -f proceedings/venues/new-literature/main.pdf "$GITHUB_WORKSPACE/deploy/new-literature.pdf"
+        git clone --depth=1 --branch pdfs git@github.com:vital-ultrasound/2022-echocardiography-proceedings.git "$GITHUB_WORKSPACE/deploy"
+        cp -f abstract/latex/main.pdf "$GITHUB_WORKSPACE/deploy/ml4h2022.pdf"
         cd "$GITHUB_WORKSPACE/deploy"
-        git add new-literature.pdf
+        git add ml4h2022.pdf
         git commit -m github.event.head_commit.message
         git push
       env:
