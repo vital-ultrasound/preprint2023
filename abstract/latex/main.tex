@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-% Watermark 
+% Watermark
 %These 4 commands must be removed for the camera-ready version.
 \usepackage[hpos=300px,vpos=70px]{draftwatermark}
 \SetWatermarkText{\test}
@@ -18,7 +18,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-   
+
 % The following packages will be automatically loaded:
 % amsmath, amssymb, natbib, graphicx, url, algorithm2e
 
@@ -73,7 +73,7 @@
 A Line Break\titletag{\thanks{sample footnote}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% THE MANUSCRIPT, DATA AND CODE MUST BE ANONYMIZED DURING THE REVIEW PROCESS. 
+% THE MANUSCRIPT, DATA AND CODE MUST BE ANONYMIZED DURING THE REVIEW PROCESS.
 % DON'T INCLUDE ANY INFORMATION ABOUT AUTHORS DURING THE REVIEW PROCESS.
 % Information about authors (Full names, emails, affiliations) have to be provided only for the submission of the camera-ready version.  Only in that case, you can uncomment and use the next blocks.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,7 +82,7 @@ A Line Break\titletag{\thanks{sample footnote}}}
 
  % Spaces are used to separate forenames from the surname so that
  % the surnames can be picked up for the page header and copyright footer.
- 
+
  % If the surname contains spaces, enclose the surname
  % in braces, e.g. \Name{John {Smith Jones}} similarly
  % if the name has a "von" part, e.g \Name{Jane {de Winter}}.
@@ -215,7 +215,7 @@ Referencing algorithms: \algorithmref{alg:gauss} or
 \algorithmref{alg:gauss,alg:moore,alg:net}.
 
 Referencing theorem-like environments: \theoremref{thm:eigenpow},
-\lemmaref{lem:sample}, \remarkref{rem:sample}, 
+\lemmaref{lem:sample}, \remarkref{rem:sample},
 \corollaryref{cor:sample}, \definitionref{def:sample},
 \conjectureref{con:sample}, \axiomref{ax:sample} and
 \exampleref{ex:sample}.
@@ -244,7 +244,7 @@ This can be referenced using \verb|\label| and \verb|\equationref|.
 For example, \equationref{eq:trigrule}.
 
 Multi-lined numbered equations should be displayed using the
-\texttt{align} environment.\footnote{For reasons why you 
+\texttt{align} environment.\footnote{For reasons why you
 shouldn't use the obsolete \texttt{eqnarray} environment, see
 Lars Madsen, \emph{Avoid eqnarray!} TUGboat 33(1):21--25, 2012.} For example:
 \begin{align}
@@ -265,7 +265,7 @@ y &= x^2 + 3x - 2x + 1\nonumber\\
 &= x^2 + x + 1\label{eq:y}
 \end{align}
 An equation that is too long to fit on a single line can be
-displayed using the \texttt{split} environment. 
+displayed using the \texttt{split} environment.
 Text can be embedded in an equation using \verb|\text| or
 \verb|\intertext| (as used in \theoremref{thm:eigenpow}).
 See the \textsf{amsmath} documentation for further details.
@@ -287,7 +287,7 @@ below the operator (like \verb|\sum|) use the starred versions
 \begin{table*}[htbp]
 \floatconts
   {tab:operatornames}%
-  {\caption{Predefined Operator Names (taken from 
+  {\caption{Predefined Operator Names (taken from
    \textsf{amsmath} documentation)}}%
   {%
 \begin{tabular}{rlrlrlrl}
@@ -302,9 +302,9 @@ below the operator (like \verb|\sum|) use the starred versions
 \cs{csc} & $\csc$ &  \cs{ker} & $\ker$ &  \cs{Pr} & $\Pr$
 \end{tabular}\par
 \begin{tabular}{rlrl}
-\cs{varlimsup} & $\varlimsup$ 
+\cs{varlimsup} & $\varlimsup$
 & \cs{varinjlim} & $\varinjlim$\\
-\cs{varliminf} & $\varliminf$ 
+\cs{varliminf} & $\varliminf$
 & \cs{varprojlim} & $\varprojlim$
 \end{tabular}
 }
@@ -339,10 +339,10 @@ or
 \begin{verbatim}
 \caption{\em A Sample Caption.}
 \end{verbatim}
-You can, of course, change the font for individual words or 
+You can, of course, change the font for individual words or
 phrases, for example:
 \begin{verbatim}
-\caption{A Sample Caption With 
+\caption{A Sample Caption With
 Some \emph{Emphasized Words}.}
 \end{verbatim}
 
@@ -370,7 +370,7 @@ to set the caption correctly and center the table contents.
 \end{table}
 
 If you want horizontal rules you can use the \textsf{booktabs}
-package which provides the commands \verb|\toprule|, 
+package which provides the commands \verb|\toprule|,
 \verb|\midrule| and \verb|\bottomrule|. For example, see
 \tableref{tab:example-booktabs}.
 
@@ -637,7 +637,7 @@ float like figures and tables.
     \begin{enumerate}
       \item For $i=1$ to $n$
         \begin{enumerate}
-        \item $x_i^{(k)} = 
+        \item $x_i^{(k)} =
           \frac{b_i - \sum_{j=1}^{i-1}a_{ij}x_j^{(k)}
           - \sum_{j=i+1}^{n}a_{ij}x_j^{(k-1)}}{a_{ii}}$
         \item If $\|\vec{x}^{(k)}-\vec{x}^{(k-1)} < \epsilon\|$,
@@ -649,7 +649,7 @@ float like figures and tables.
 \end{algorithm}
 
 If you'd rather have the same numbering throughout the algorithm
-but still want the convenient indentation of nested 
+but still want the convenient indentation of nested
 \texttt{enumerate} environments, you can use the
 \texttt{enumerate*} environment provided by the \textsf{jmlr}
 class. For example, see \algorithmref{alg:moore}.
@@ -664,11 +664,11 @@ Given a connected graph $G$, where the length of each edge is 1:
   \item Set the label of vertex $s$ to 0
   \item Set $i=0$
   \begin{enumerate*}
-    \item \label{step:locate}Locate all unlabelled vertices 
+    \item \label{step:locate}Locate all unlabelled vertices
           adjacent to a vertex labelled $i$ and label them $i+1$
     \item If vertex $t$ has been labelled,
     \begin{enumerate*}
-      \item[] the shortest path can be found by backtracking, and 
+      \item[] the shortest path can be found by backtracking, and
       the length is given by the label of $t$.
     \end{enumerate*}
     otherwise
@@ -706,7 +706,7 @@ $y\leftarrow 0$\;
 
 \section{Description Lists}
 
-The \textsf{jmlr} class also provides a description-like 
+The \textsf{jmlr} class also provides a description-like
 environment called \texttt{altdescription}. This has an
 argument that should be the widest label in the list. Compare:
 \begin{description}
@@ -724,7 +724,7 @@ with
 
 The following theorem-like environments are predefined by
 the \textsf{jmlr} class: \texttt{theorem}, \texttt{example},
-\texttt{lemma}, \texttt{proposition}, \texttt{remark}, 
+\texttt{lemma}, \texttt{proposition}, \texttt{remark},
 \texttt{corollary}, \texttt{definition}, \texttt{conjecture}
 and \texttt{axiom}. You can use the \texttt{proof} environment
 to display the proof if need be, as in \theoremref{thm:eigenpow}.
