@@ -5,6 +5,11 @@
 ## temporal checkpoints of jupyter notebooks
 **/*.ipynb_checkpoints
 
+## Ignore TEMP_TRAINING_CURVES_FOR_
+**/TEMP_TRAINING_CURVES_FOR_*
+**/TEMP_DICT_TRAINING_CURVES_FOR_*
+**/plotting_results/*.png
+
 ## manuscript files
 **/*.swp # ignores vim temporal files
 **/main.pdf # ignores local main.pdf
