@@ -6,7 +6,8 @@ on:
       - 1-citex
       - 03-drafting-proceeding-paper
       - 10-new-literature
-      - 13-draft-ml4h2022 
+      - 13-draft-ml4h2022
+      - 13-drafting-ml4h2022
 
 jobs:
   build:
