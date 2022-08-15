@@ -1,11 +1,11 @@
 <h1 align="center">:page_facing_up: Real-time AI-empowered echocardiography for Intensive Care Units in low- and middle-income countries </h1>
 <div align="center">
 
-2nd Machine Learning for Health symposium 2022 (ML4H 2022) • November 28th, 2022 • Hybrid/New Orleans 2022 • #ml4h2022
+2nd Machine Learning for Health symposium 2022 (ML4H 2022) • November 28th, 2022 • Hybrid/New Orleans 2022
 
 [![article](https://img.shields.io/badge/article-arXiv-orange.svg)](https://arxiv.org/abs/.) 
 [![article](https://img.shields.io/badge/video-YouTube-red.svg)](https://www.youtube.com/watch?v=) 
-[![GitHub Actions Status](https://github.com/vital-ultrasound/2022-echocardiography-proceedings/workflows/CI-LaTeX/badge.svg)](https://github.com/vital-ultrasound/2022-echocardiography-proceedings/actions) [![new-literature](https://img.shields.io/badge/check-literature-blue.svg)](https://github.com/vital-ultrasound/2022-echocardiography-proceedings/blob/pdfs/ml4h2022.pdf)  
+[![GitHub Actions Status](https://github.com/vital-ultrasound/2022-echocardiography-proceedings/workflows/CI-LaTeX/badge.svg)](https://github.com/vital-ultrasound/2022-echocardiography-proceedings/actions) [![new-literature](https://img.shields.io/badge/check-abstract-blue.svg)](https://github.com/vital-ultrasound/2022-echocardiography-proceedings/blob/pdfs/ml4h2022.pdf)  
 (This work is 100% Reproducible)   
 </div>
 
