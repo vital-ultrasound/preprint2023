@@ -1,8 +1,14 @@
 # 
 ## Citations
+
+15 
+on 
+Tue 16 Aug 01:37:58 BST 2022
+
 8
-https://scholar.google.com/scholar?cites=9343907783009702721&as_sdt=2005&sciodt=0,5&hl=en
 Retrived Fri  7 Jan 10:43:24 GMT 2022
+
+https://scholar.google.com/scholar?cites=9343907783009702721&as_sdt=2005&sciodt=0,5&hl=en
 
 ## Authors 
 
@@ -10,6 +16,16 @@ https://scholar.google.com/citations?hl=en&user=BtgIFycAAAAJ&view_op=list_works&
 
 
 ## Notes
+
+recent work citing ouyang2019:
+
+06 Jun 2022 (modified: 16 Jun 2022)NeurIPS 2022 Track Datasets and Benchmarks SubmissionReaders: Everyone
+ETAB: A Benchmark Suite for Visual Representation Learning in Echocardiography  
+https://openreview.net/forum?id=b0VDQiNLPy9
+
+
+
+
 
 ## Links 
 
