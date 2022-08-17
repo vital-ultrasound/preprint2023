@@ -10,9 +10,10 @@
 **/TEMP_DICT_TRAINING_CURVES_FOR_*
 **/plotting_results/*.png
 
-## manuscript files
-**/*.swp # ignores vim temporal files
-**/main.pdf # ignores local main.pdf
+## manuscript files: ignores vim temporal files and local main.pdf
+**/*.swp 
+**/*.tex.swp
+**/main.pdf 
 
 ## temporal TeX files
 **/*.aux
