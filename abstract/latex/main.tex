@@ -75,9 +75,10 @@
 
 
 \title[Short Title]{
-%Real-time AI-empowered echocardiography for Intensive Care Units in low- and middle-income countries %Mon 20 Jun 11:48:09 BST 2022
-Challenges in Real-time AI-empowered echocardiography for Intensive Care Units in low- and middle-income countries. %Fri 19 Aug 15:36:45 BST 2022
 %  Full Title of Article\titlebreak This Title Has A Line Break\titletag{\thanks{sample footnote}}
+%Real-time AI-empowered echocardiography for Intensive Care Units in low- and middle-income countries %Mon 20 Jun 11:48:09 BST 2022
+%Challenges in Real-time AI-empowered echocardiography for Intensive Care Units in low- and middle-income countries. %Fri 19 Aug 15:36:45 BST 2022
+Challenges in Real-time AI-empowered echocardiography for Intensive Care Units in low- and middle-income countries: A Machine Learning Case Study %Fri 19 Aug 16:43:05 BST 2022
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -142,9 +143,9 @@ Challenges in Real-time AI-empowered echocardiography for Intensive Care Units i
 \maketitle
 
 \begin{abstract}
-  We review works on how real-time AI-empowered echocardiography might impact on implementing such systems in the ICU in LMICs.
-  We present results from a small video dataset of 31 subjects, data preparation, curation and labelling, code implementation and model selection, validation and deployment.
-  The code and other resources to reproduce this work are available at \url{https://github.com/vital-ultrasound/echocardiography}.
+We present a machine learning case study presenting the challenges of implementing real-time AI-empowered echocardiography systems in the ICU in LMICs.
+We present results from a small video dataset of 31 subjects, data preparation, curation and labelling, code implementation and model selection, validation and deployment.
+The code and other resources to reproduce this work are available at \url{https://github.com/vital-ultrasound/echocardiography}.
 \end{abstract}
 \begin{keywords}
 echocardiography; artificial intelligence
@@ -159,13 +160,12 @@ Despite that, there various challenges in the current clinical procedures in the
 \item Intra-view variability of echocardiograms (physiological variations of subjects and acquisition parameters) and sonographer expertise \citep{khamis2017, Feigenbaum1996, field2011},
 \item Inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) and transducer position during acquisition \citep{zhang2018},
 \item Redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of Ultrasound images from different clinical US systems \citep{brindise2020unsupervised}, and
-\item Limited number of expert clinicians to perform US imaging analysis and to provide accurate diagnosis, as well as equipment and hospitalisation requirements in low- and middle-income countries (LAMIC) \citep{hao2021-wellcome, 2021-huyNhat-vanHao-in-FAIR-MICCAI}.
+\item Limited number of expert clinicians to perform US imaging analysis and to provide accurate diagnosis, as well as equipment and hospitalisation requirements in low- and middle-income countries (LMICs) \citep{hao2021-wellcome, 2021-huyNhat-vanHao-in-FAIR-MICCAI}.
 \end{itemize}
-
-One promising approach to address previous challenges is the use of Artificial Intelligence in echocardiography, AI-empowered echocardiography, that has been successful to detect different apical views, inter-observer variability of sonographer's expertise, multimodal imaging (us, mri and clinical data), high risk or low risk of heart failure or automatic endocardial border detection and left ventricle assessment in 2D echocardiography videos \citep{tromp2022, zhang2022-mdpi, behnami2020, ono2022}.
-However, there is little to none studies on how real-time AI-empowered echocardiography might impact on implementing such systems in the ICU in LMICs.
-Particularly, how good machine learning practices (data curation, code implementation, model selection, training and tuning; model validation and inference) are followed to address real-time AI-empowered echocardiography in the ICU in LMICs.
-%the identification of four chamber view in .
+One promising approach to address such challenges is with the application of Artificial Intelligence to echocardiography, AI-empowered echocardiography, which has been successful to detect different apical views, inter-observer variability of sonographer's expertise, one-stop AI models with multimodal imaging (US, MRI and clinical data), high risk or low risk of heart failure detection or automatic endocardial border detection and left ventricle assessment in 2D echocardiography videos \citep{tromp2022, zhang2022-mdpi, behnami2020, ono2022}.
+However, there is little to none studies on how real-time AI-empowered echocardiography might impact the ICU in LMICs.
+Particularly, how good machine learning practices (data curation, code implementation, model selection, training and tuning; model validation and inference) are followed to address the challenges on real-time AI-empowered echocardiography in the ICU in LMICs.
+Hence, this work presents (a) a scoping review of AI-empowered echocardiography in the ICU and (b) real-time AI-empowered echocardiography, (c) a machine learning case of study of US image classification using deep learning of four chamber views from curated data from LMICs and (d) conclusions future work and appendix with further material.
 
 % \subsection{AI-empowered echocardiography}
 % Tromp et al. classified a dataset of 1145 2D echocardiography videos as apical 4 chamber (A4C) view, apical 2 chamber (A2C) view, parasternal long axis (PLAX) view, or 2D other views and focused versions of the main views \citep{tromp2022}.
