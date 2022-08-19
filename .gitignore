@@ -9,6 +9,7 @@
 **/TEMP_TRAINING_CURVES_FOR_*
 **/TEMP_DICT_TRAINING_CURVES_FOR_*
 **/plotting_results/*.png
+**/plot_*.png
 
 ## manuscript files: ignores vim temporal files and local main.pdf
 **/*.swp 
@@ -45,6 +46,3 @@
 *.cb
 *.cb2
 .*.lb
-
-## ignore _anonymised.cvs
-**/*_anonymised_*.csv

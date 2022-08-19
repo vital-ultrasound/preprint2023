@@ -252,13 +252,21 @@ MobileNetV2 & 2,225,858 &    \\
 \end{table}
 
 \subsection{Datasets}
-86 patients of average age (?) ? male and ? female were collected by four clinicians of ? years of experience collected echochardiography datasets \figureref{fig:demographics}.
-The collection was done with the clinical device GE Venue Go machine and GE convex probe C1-5-D.
+Echocardiography videos of 32 subjects in the ICU were considered for this which were collected by four clinicians of ? years of experience collected using clinical device GE Venue Go machine and GE convex probe C1-5-D.
+The 32 subjects has the following characteristics:
+Sex: \% (Male): 58.1\%;
+Age: mean, years (std): 38.70 (16.08);
+Weight: mean, Kg (std): 61.51 (15.06);
+Height: mean, m (std): 1.62 (0.07);
+BMI: mean (std): 23.80 (4.30);
+Sepsis \% (with): 61.3\%;
+Dengue \% (with): 54.8\%, and
+Tetanus \% (with): 87.1\%.
+See \figureref{fig:demographics} with further details on the demographics of the dataset, including the complete dataset of 87 subjects.
 
 \subsubsection{Ethics statement}
-This study was approved by ... and the ethics committee ...
+This study was approved by ? and the ethics committee ?
 All participants gave written informed consent to participate before enrollment.
-
 
 \section{Heuristics}
 \figureref{fig:heuristics} shows validation loss curves against three models (MobileNetV1, MobileNetV2, SqueezeNet).
@@ -309,7 +317,7 @@ This is the second appendix.
 \floatconts
   {fig:demographics}
   {\caption{Patient demographics.}} %Figure is adapted from the works of %\cite{}.
-  {\includegraphics[width=\columnwidth]{../figures/patient-demographics-and-diseases/versions/drawing-v00}}%%GITHUB
+  {\includegraphics[width=\columnwidth]{../figures/patient-demographics-and-diseases/versions/drawing-v01}}%%GITHUB
     % {\includegraphics[width=\columnwidth]{figures/patient-demographics-and-diseases.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure}
