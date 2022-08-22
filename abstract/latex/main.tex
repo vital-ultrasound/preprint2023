@@ -148,7 +148,7 @@ We present reproducible heuristics from a small video dataset of 31 subjects, da
 The code and other resources to reproduce this work are available at \url{https://github.com/vital-ultrasound/echocardiography}.
 \end{abstract}
 \begin{keywords}
-echocardiography; real-time artificial intelligence;
+deep learning; echocardiography; real-time artificial intelligence;
 \end{keywords}
 
 \section{Introduction}
@@ -215,55 +215,35 @@ Also, \cite{2021-kerdegari-Applied-Sciences-MDPI, 2021-kerdegari-ISBI-IEEE, 2021
 
 \section{Real-time AI-empowwered echocardiography}
 %In terms of real-time analysis of echocardigraphy, , 
-\citet{wu2022} applied baselines of UNET with temporal context-aware encoder (TCE) and bidirectional spatiotemporal semantics fusion (BSSF) modules to EchoDynamic (10030 video sequences with of 200frames of 112x112 pixes) and CAMUS datasets  (450 video of 20 frames of 778x594 pixels) with evaluation metrics of Dice score (DS), Hausdorff Distance (HD), and area under the curve (AUC).
-\citet{wu2022} presented speed analysis, ensuring low latency and real-time performance, against eight methods using calculations number FLOPS (G), number of parameters (M) and speed ($ms/f$) which lowest one was 32 $ms/f$.
 \citet{woudenberg2018} trained an DenseNet-LSTM with 2K clips of 4 chamber view in which the real-time system made use of 10 input frames and reported a latency of 352.91ms.
-\citet{toussaint2018-MICCAI} reported ResNet18-SP trained with 85k frames of Fetal US imaging with real-time performance of $\sim$20Hz.
-\citet{ostvik2021-TMI} proposed Echo-PWC-Net trained with Synthetic/Simulated/Clinical  for real-time using 7 frames for the input.
-\begin{figure}[htbp]
-\floatconts
-  {fig:main-figure}
-  {\caption{Real-time AI clinical system (a) clinical system, (b) deep learning pipeline.}}
-  {\includegraphics[width=\columnwidth]{../figures/main-figure/versions/drawing-v00}}%%GITHUB
-    % {\includegraphics[width=\columnwidth]{figures/main-figure.png}}%%OVERLEAF
-    %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
-\end{figure}
+\citet{toussaint2018-MICCAI} proposed ResNet18-SP trained with 85k frames of Fetal US imaging, reporting real-time performance at inference time of 40 m$s$ per image or $\sim$20Hz.
+\citet{ostvik2021-TMI} proposed Echo-PWC-Net trained with Synthetic/Simulated/Clinical, reporting real-time performance with 7 frames for the input.
+Recently, \citet{wu2022} applied baselines of UNET with temporal context-aware encoder (TCE) and bidirectional spatiotemporal semantics fusion (BSSF) modules to EchoDynamic datasets (10030 video sequences with of 200 frames of 112x112 pixes) and CAMUS datasets  (450 video with 20 frames of 778x594 pixels), reporting metrics of Dice score (DS), Hausdorff Distance (HD), and area under the curve (AUC).
+Similarly, \citet{wu2022} presented speed analysis to ensure low latency and real-time performance for eight methods using calculations number FLOPS (G), number of parameters (M) and speed ($ms/f$).
+%which lowest one was 32 $ms/f$.
 
 \subsection{Classification of echochardiograms}
-\citet{woudenberg2018} applied DenseNet and LSTM to extract temporal information on sequences of 16K echo cine frames to classify 14 heart views with an average accuracy of 92.35\%.
-\citet{woudenberg2018} implemented a Tensorflow runner that performs contrast enhancement to then sent each frame to three identical CNNs running in separated threads to prevent lag during inference times.
-Then a shared buffer collects extracted features from CNNs to then awake the thread for the LSTM network from the previous ten frames to produce classification and quality prediction.
-\citet{woudenberg2018} also presents timing diagrams to quantify frame arrival and real-time performance to operate at 30 frames per second, while providing feedback with a mean latency of 352.91 ± 38.27 ms when measured from the middle of the ten-frame sequence.
-\citet{zhang2018} performed view classification with 277 echocardiograms to create a 23-class models (including a4c no occlusions, a4c occluded LA, a4c occluded LV, etc) using 13-layer CNN with 5-fold cross-validation for accuracy assessment and resulting in 84\% for overall accuracy where challenges for partial obscured LVs for a2c, a3c and a4c.
-Similarly, Zhang et al. applied U-net to segment 5 views (a2c, a3c, a4c, PSAX, PLAX) and CNN model for 3 cardiac diseases with the use of A4c capturing most of the information for the diseases.
 \citet{khamis2017} considered 309 clinical echocardiogram of apical views which were visually classified and labelled by two experts into three classes: 103 a2c views, 103 a4c views and 103 alx views to then applied spatio-temporal feature extraction (Cuboic Detector) and supervised learning dictionary (LC-KSVD) resulting in an overall recognition rate of 95\%.
+\citet{woudenberg2018} applied DenseNet and LSTM to extract temporal information on sequences of 16K echo cine frames to classify 14 heart views with an average accuracy of 92.35\%.
+%\citet{woudenberg2018} implemented a Tensorflow runner that performs contrast enhancement to then sent each frame to three identical CNNs running in separated threads to prevent lag during inference times.
+%Then a shared buffer collects extracted features from CNNs to then awake the thread for the LSTM network from the previous ten frames to produce classification and quality prediction.
+\citet{woudenberg2018} also presents timing diagrams to quantify frame arrival and real-time performance to operate at 30 frames per second, while providing feedback with a mean latency of 352.91 ± 38.27 m$s$ when measured from the middle of the ten-frame sequence.
+\citet{zhang2018} performed view classification with 277 echocardiograms to create a 23-class models (including a4c no occlusions, a4c occluded LA, a4c occluded LV, etc) using 13-layer CNN with 5-fold cross-validation for accuracy assessment and resulting in 84\% for overall accuracy where challenges for partial obscured LVs for a2c, a3c and a4c.
+Similarly, \citet{zhang2018} applied U-net to segment 5 views (a2c, a3c, a4c, PSAX, PLAX) and CNN model for 3 cardiac diseases with the use of A4c capturing most of the information for the diseases.
 
 \subsection{Light neural networks to classify US images}
-\citet{baumgartner2017-IEEETransMedImag} proposed SonoNet which is a VGG-based architecture, SonoNet64 used the same first 13 layers of VGG16,
-and SmallNet, loosely inspired by AlexNet, for real-time detection and bounding box localisation of standard views in freehand fetal US.
-\citet{toussaint2018-MICCAI}
-applied four feature extraction networks couple with batchnormalization and soft proposal layer (VGG13-SP, VGG16-SP, ResNet18-SP, ResNet34-SP) being ResNet18-SP the best performing network with average accuracy over six classes of fetal US views (0.912).
-Authors mentions that detection and localisation of anatomical views were tested in real-time performance at inference time (40ms per image, or ~20Hz).
-\citet{Al-Dhabyani2019-IJACSA} applied AlexNet and transfer learning based architectures (VGG16, Inception, ResNet, NASNet) without augmentation and with three augmentation techniques to perform tumor classification of breast ultrasound imaging. Authors stated that transfer learning NASNet presented the best performance with 99\% with BUSI+B datasets with DAGAN augmentation.
+\citet{baumgartner2017-IEEETransMedImag} proposed SonoNet which is a VGG-based architecture, having the same first 13 layers of VGG16, and SmallNet, loosely inspired by AlexNet, for real-time detection and bounding box localisation of standard views in freehand fetal US.
+\citet{toussaint2018-MICCAI} applied four feature extraction networks couple with batchnormalization and soft proposal layer (VGG13-SP, VGG16-SP, ResNet18-SP, ResNet34-SP), resulting in 0.912 of average accuracy over six classes of fetal US views with ResNet18-SP.
+\citet{Al-Dhabyani2019-IJACSA} applied AlexNet and transfer learning of four architectures (VGG16, Inception, ResNet, and NASNet) without augmentation and with three augmentation techniques to perform tumor classification of breast ultrasound imaging.
+Authors stated that transfer learning with NASNet presented the best accuracy with 99\% using BUSI+B datasets with DAGAN augmentation.
 \citet{xie2020-physics-in-medicine-biology} proposed a dual-sampling convolutional neural network (DSCNN) for US image breast cancer classification, being DSCNN more efficient than AlexNet, VGG16, ResNet18, GoogleNet and EfficientNet.
-\citet{snider2022-ScientificReports} reported summaries of CNN heuristics to detect shrapnel in US images.
-Authors presented summaries of model performance for layer activators, 2D CNN layer architectures, model optimisers dense nodes, and the effect of image augmentation and dropout rate and epoch number.
-\citet{boice2022-in-jimaging} proposed ShrapML, a CNN model to detect shrapnel in US imaging.
+Recently, \citet{snider2022-ScientificReports} reported summaries of CNN heuristics to detect shrapnel in US images, including layer activators, 2D CNN layer architectures, model optimisers dense nodes, and the effect of image augmentation and dropout rate and epoch number.
+Similarly, \citet{boice2022-in-jimaging} proposed ShrapML, a CNN model to detect shrapnel in US imaging.
 Authors compared ShrapML (8layers--6CNN,2FC, 0.43 million of parameters) against DarkNet19, GoogleNet, MobileNetv2 and SqueezeNet, being ShrapML 10x faster than MobileNet2 which offered the highest accuracy.
 
-\begin{table}[htbp]
-\floatconts
-  {tab:example}%
-  {\caption{Neural Networks}}%
-{\begin{tabular}{lllll}
-\textbf{Networks} & Parameters & Source \\
-MobileNetV1 & 3,208,450 &   \\ 
-MobileNetV2 & 2,225,858 &    \\
-\citet{iandola2017squeezenet} & 733,580 &    
-\end{tabular}}
-\end{table}
+\section{Machine learning case study}
 
-\subsection{Datasets}
+\subsection{Dataset}
 Echocardiography videos of 31 subjects in the ICU were considered for this which were collected by four radiologists collected using clinical device GE Venue Go machine and GE convex probe C1-5-D.
 The 31 subjects has the following characteristics:
 Sex: \% (Male): 58.1\%;
@@ -276,11 +256,33 @@ Dengue \% (with): 54.8\%, and
 Tetanus \% (with): 87.1\%.
 See \figureref{fig:demographics} with further details on the demographics of the dataset, including the complete dataset of 87 subjects.
 
+\begin{figure}[htbp]
+\floatconts
+  {fig:main-figure}
+  {\caption{Real-time AI clinical system (a) clinical system, (b) deep learning pipeline.}}
+  {\includegraphics[width=\columnwidth]{../figures/main-figure/versions/drawing-v00}}%%GITHUB
+    % {\includegraphics[width=\columnwidth]{figures/main-figure.png}}%%OVERLEAF
+    %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
+\end{figure}
+
 \subsubsection{Ethics statement}
-This study was approved by the Oxford Tropical Research Ethics Committee (OxTREC) and the HTD Institutional Review Boards
+This study was approved by the Oxford Tropical Research Ethics Committee (OxTREC) and the HTD Institutional Review Boards.
 All participants gave written informed consent to participate before enrollment.
 
-\section{Heuristics}
+\subsection{Model selection}
+\begin{table}[htbp]
+\floatconts
+  {tab:example}%
+  {\caption{Neural Networks}}%
+{\begin{tabular}{lllll}
+\textbf{Networks} & Parameters & Source \\
+MobileNetV1 & 3,208,450 &   \\ 
+MobileNetV2 & 2,225,858 &    \\
+\citet{iandola2017squeezenet} & 733,580 &    
+\end{tabular}}
+\end{table}
+
+\subsection{Heuristics}
 \figureref{fig:heuristics} shows validation loss curves against three models (MobileNetV1, MobileNetV2, SqueezeNet).
 See \figureref{fig:SqueezeNetTrainingResults} for further results on SqueezeNet Training performance.  
 
