@@ -144,7 +144,7 @@ Challenges in Real-time AI-empowered echocardiography for Intensive Care Units i
 
 \begin{abstract}
 We present a machine learning case study on the current and future challenges of implementing a real-time AI-empowered echocardiography system for ICU in LMICs.
-We present reproducible heuristics from a small video dataset of 31 subjects, data preparation, curation and labelling, code implementation of model selection, validation and deployment.
+We present reproducible heuristics from a small video dataset of 31 subjects in the ICU, data preparation, curation and labelling, model selection, validation and deployment.
 The code and other resources to reproduce this work are available at \url{https://github.com/vital-ultrasound/echocardiography}.
 \end{abstract}
 \begin{keywords}
@@ -265,11 +265,10 @@ Timestamps of 4 chamber views of video files from 31 subjects were annotated by 
 Then the same clinician  and one researcher validated annotations in a round of two iterations where few filenames timestamps were fixed.
 
 \subsection{Model selection and heuristics}
-Considering \sectionref{subsec:thinnerNets}, we selected four thinner Neural Networks for our ML study: MobileNetV1 \citep{2017-howared_CoRR_MobileNetV1} 3,208,450; MobileNetV2 \citep{Sandler_2018_CVPR_MobileNetV2} 2,225,858;  SqueezeNet \citep{iandola2017squeezenet}  733,580 and ShrapML \citep{boice2022-in-jimaging} 430,000 (networks and parameters respectively).
-We then performed heuristics for each model to understand their performance for different hyperparameters (datasize, augmentations and clip length) \figureref{fig:heuristics}.
+Considering \sectionref{subsec:thinnerNets}, we selected four thinner Neural Networks for our ML study: MobileNetV1 \citep{2017-howared_CoRR_MobileNetV1} 3,208,450; MobileNetV2 \citep{Sandler_2018_CVPR_MobileNetV2} 2,225,858; SqueezeNet \citep{iandola2017squeezenet} 733,580 and ShrapML \citep{boice2022-in-jimaging} 430,000 (networks and parameters, respectively).
+We then performed heuristics for each model to understand their performance for different hyperparameters (datasize, augmentations and clip length) as shown in \figureref{fig:heuristics}.
 See \appendixref{apd:heuristics} for further details on each model.
 %See \figureref{fig:SqueezeNetTrainingResults} for further results on SqueezeNet Training performance.
-
 %\begin{table}[htbp]
 %\floatconts
 %  {tab:example}%
@@ -282,12 +281,15 @@ See \appendixref{apd:heuristics} for further details on each model.
 %ShrapML \citep{boice2022-in-jimaging} & 430,000
 %\end{tabular}}
 %\end{table}
-
-
 \begin{figure}[htbp]
 \floatconts
   {fig:main-figure}
-  {\caption{Proposed low-cost clinical system for real-time AI-empowered echocardiography: (a) deep-learning pipeline with thinner NNs and (b) clinical system: Epiq Q7, cardiac probe X5-1, USB video-frame grabber and 16GB GeForce RTX 3080 GPU Laptop}}
+  {\caption{
+      Proposed low-cost clinical system for real-time AI-empowered echocardiography:
+      (a) deep-learning pipeline with thinner NNs, and
+      (b) clinical system: Epiq Q7, cardiac probe X5-1, USB video-frame grabber and 16GB GeForce RTX 3080 GPU Laptop
+    }
+  }
   {\includegraphics[width=\columnwidth]{../figures/main-figure/versions/drawing-v01}}%%GITHUB
     % {\includegraphics[width=\columnwidth]{figures/main-figure.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
@@ -296,16 +298,23 @@ See \appendixref{apd:heuristics} for further details on each model.
 \begin{figure}[htbp]
 \floatconts
   {fig:heuristics}
-  {\caption{heuristics.}}
-  {\includegraphics[width=\columnwidth]{../figures/heuristics/versions/drawing-v00}}%%GITHUB
+  {
+      \caption{
+          Heuristics for SqueezeNet \citep{iandola2017squeezenet} with dataset of 5 subjects:
+          (a) varing batch size and constant number of frames per segment equal to 1, and
+          (b) varing number of frames per clip and constant batch size of clips equal to 10.
+      }
+  }
+  {\includegraphics[width=\columnwidth]{../figures/heuristics_results/versions/drawing-v00}}%%GITHUB
     % {\includegraphics[width=\columnwidth]{figures/heuristics.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure}
 
 \section{Conclusions and Future Work}
-2D velocity vector fields of flow blow can help to detect abnormal flow patterns as done in fetal and neonatal echocardiography \citep{Meyers2020}.
-%Use LV A4C echos that can
-Create synthetic Ultrasound images for GE Vivid E9, Hitachi Prosound U7, Philips iE 33 Vision, Siemens SC2000, and Toshiba Artida ultrasound systems \citep{brindise2020unsupervised}.
+We presented a machine learning case study, including data selection, validation and management, model selection, validation and low-cost clinical system.
+Future work, we will investigate thinner segmentation models, model deployment and clinical validation in the ICU.
+%Similarly, we are interested in train models with synthetic Ultrasound images for GE Vivid E9, Hitachi Prosound U7, Philips iE 33 Vision, Siemens SC2000, and Toshiba Artida ultrasound systems \citep{brindise2020unsupervised}.
+%2D velocity vector fields of flow blow can help to detect abnormal flow patterns as done in fetal and neonatal echocardiography \citep{Meyers2020}.
 
 %\acks{Acknowledgements go here.}
 
@@ -327,16 +336,21 @@ Create synthetic Ultrasound images for GE Vivid E9, Hitachi Prosound U7, Philips
 \end{figure}
 
 \section{Heuristics of model selection} \label{apd:heuristics}
-This is the first appendix.
-
-\begin{figure}[htbp]
+\figureref{fig:ThinnerNeuralNetsResults} illustratres heristics for accuraty, train, classification and elapse times of 5 and 31 subjects.
+\begin{figure*}[ht]
 \floatconts
-  {fig:SqueezeNetTrainingResults}
-  {\caption{Heuristics for 5 and 33 subjects with 10 frames per clip and 25 batch size of clips using SqueezeNet \citep{iandola2017squeezenet}.}}
-  {\includegraphics[width=\columnwidth]{../figures/squeezenet-05-33-subjects/versions/drawing-v00}}%%GITHUB
+  {fig:ThinnerNeuralNetsResults}
+%  {\caption{Heuristics for 5 and 33 subjects with 10 frames per clip and 25 batch size of clips using SqueezeNet \citep{iandola2017squeezenet}.}}
+  {\caption{
+    Heuristics for 5 and 31 subjects with 1 frames per clip and 20 batch size of clips for
+    MobileNetV1 \citep{2017-howared_CoRR_MobileNetV1}, MobileNetV2 \citep{Sandler_2018_CVPR_MobileNetV2}, and SqueezeNet \citep{iandola2017squeezenet} 733,580
+    %and ShrapML \citep{boice2022-in-jimaging} 430,000
+          }.
+  }
+  {\includegraphics[width=\textwidth]{../figures/comparing-NETS-for-USviewclassification/versions/drawing-v00}}%%GITHUB
     % {\includegraphics[width=\columnwidth]{figures/squeezenet-05-33-subjects.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
-\end{figure}
-
+\end{figure*}
 
 \end{document}
+
