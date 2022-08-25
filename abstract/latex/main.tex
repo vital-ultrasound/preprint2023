@@ -214,7 +214,8 @@ However, there is few research on AI-empowered echocardiography for ICU in LMICs
 Also, \cite{2021-kerdegari-Applied-Sciences-MDPI, 2021-kerdegari-ISBI-IEEE, 2021-huyNhat-kerdegari-in-FAIR-MICCAI} presented a deep-learning lung US pathology classifier for ICU patient in LMIC, stating the challenges of data imbalance, integration of technology and IT infrastructure of the ICU in LMIC.
 
 \section{Real-time AI-empowwered echocardiography}
-%In terms of real-time analysis of echocardigraphy, , 
+%In terms of real-time analysis of echocardigraphy, ,
+\subsection{State of the art}  \label{subsec:State_of_the_art}
 \citet{woudenberg2018} trained an DenseNet-LSTM with 2K clips of 4 chamber view in which the real-time system made use of 10 input frames and reported a latency of 352.91ms.
 \citet{toussaint2018-MICCAI} proposed ResNet18-SP trained with 85k frames of Fetal US imaging, reporting real-time performance at inference time of 40 m$s$ per image or $\sim$20Hz.
 \citet{ostvik2021-TMI} proposed Echo-PWC-Net trained with Synthetic/Simulated/Clinical, reporting real-time performance with 7 frames for the input.
@@ -222,7 +223,7 @@ Recently, \citet{wu2022} applied baselines of UNET with temporal context-aware e
 Similarly, \citet{wu2022} presented speed analysis to ensure low latency and real-time performance for eight methods using calculations number FLOPS (G), number of parameters (M) and speed ($ms/f$).
 %which lowest one was 32 $ms/f$.
 
-\subsection{Classification of echochardiograms}
+\subsection{Classification of echochardiograms} \label{subsec:Nets_echochardiograms}
 \citet{khamis2017} considered 309 clinical echocardiogram of apical views which were visually classified and labelled by two experts into three classes: 103 a2c views, 103 a4c views and 103 alx views to then applied spatio-temporal feature extraction (Cuboic Detector) and supervised learning dictionary (LC-KSVD) resulting in an overall recognition rate of 95\%.
 \citet{woudenberg2018} applied DenseNet and LSTM to extract temporal information on sequences of 16K echo cine frames to classify 14 heart views with an average accuracy of 92.35\%.
 %\citet{woudenberg2018} implemented a Tensorflow runner that performs contrast enhancement to then sent each frame to three identical CNNs running in separated threads to prevent lag during inference times.
@@ -261,11 +262,12 @@ This study was approved by the Oxford Tropical Research Ethics Committee (OxTREC
 All participants gave written informed consent to participate before enrollment.
 
 \subsubsection{Data annotation, validation and management}
-Timestamps of 4 chamber views of video files from 31 subjects were annotated by one research clinician of 10 years of experience using VGG Image Annotator (VIA).
+Being 4 chamber view (4CV) the main view to compute Heart Failure Measurement, timestamps of 4CV video files from 31 subjects were annotated by one research clinician of 10 years of experience using VGG Image Annotator (VIA).
 Then the same clinician  and one researcher validated annotations in a round of two iterations where few filenames timestamps were fixed.
+\figureref{fig:main-figure}(a) illustrates video frames and clip management.
 
 \subsection{Model selection and heuristics}
-Considering \sectionref{subsec:thinnerNets}, we selected four thinner Neural Networks for our ML study: MobileNetV1 \citep{2017-howared_CoRR_MobileNetV1} 3,208,450; MobileNetV2 \citep{Sandler_2018_CVPR_MobileNetV2} 2,225,858; SqueezeNet \citep{iandola2017squeezenet} 733,580 and ShrapML \citep{boice2022-in-jimaging} 430,000 (networks and parameters, respectively).
+Considering the complexity of state-of-the-art networks and thinner neural networks, we selected four thinner Neural Networks for our ML study: MobileNetV1 \citep{2017-howared_CoRR_MobileNetV1} 3,208,450; MobileNetV2 \citep{Sandler_2018_CVPR_MobileNetV2} 2,225,858; SqueezeNet \citep{iandola2017squeezenet} 733,580 and ShrapML \citep{boice2022-in-jimaging} 430,000 (networks and parameters, respectively).
 We then performed heuristics for each model to understand their performance for different hyperparameters (datasize, augmentations and clip length) as shown in \figureref{fig:heuristics}.
 See \appendixref{apd:heuristics} for further details on each model.
 %See \figureref{fig:SqueezeNetTrainingResults} for further results on SqueezeNet Training performance.
@@ -286,11 +288,12 @@ See \appendixref{apd:heuristics} for further details on each model.
   {fig:main-figure}
   {\caption{
       Proposed low-cost clinical system for real-time AI-empowered echocardiography:
-      (a) deep-learning pipeline with thinner NNs, and
-      (b) clinical system: Epiq Q7, cardiac probe X5-1, USB video-frame grabber and 16GB GeForce RTX 3080 GPU Laptop
+      (a) timestamp labelling of four chamber view clips and frames,
+      (b) deep-learning pipeline with thinner NNs, and
+      (c) clinical system: Epiq Q7, cardiac probe X5-1, USB video-frame grabber and 16GB GeForce RTX 3080 GPU Laptop
     }
   }
-  {\includegraphics[width=\columnwidth]{../figures/main-figure/versions/drawing-v01}}%%GITHUB
+  {\includegraphics[width=\columnwidth]{../figures/main-figure/versions/drawing-v02}}%%GITHUB
     % {\includegraphics[width=\columnwidth]{figures/main-figure.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure}
