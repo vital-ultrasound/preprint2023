@@ -157,10 +157,12 @@ Echocardiography is an important clinical procedure in Intensive Care Units (ICU
 Despite that, there are various challenges in the current application of point-of-care echocardiography in the ICU:
 \begin{itemize}
 \setlength\itemsep{0em}
-\item Intra-view variability of echocardiograms (physiological variations of subjects and acquisition parameters) and inter-observer variability of expertise for sonographer and radiologist \citep{khamis2017, Feigenbaum1996, field2011},
-\item Inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) when performing serial echoes and transducer position during acquisition \citep{zhang2018},
-\item Redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of Ultrasound images from different clinical US systems \citep{brindise2020unsupervised}, and
+\item Intra-view variability of echocardiograms (physiological variations of subjects and acquisition parameters) and inter-observer variability of expertise for sonographer and radiologist \citep{khamis2017, Feigenbaum1996, field2011}.
+\item Inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) when performing serial echoes and transducer position during acquisition \citep{zhang2018}
+\item Redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of Ultrasound images from different clinical US systems \citep{brindise2020unsupervised}.
+\item Internal and external validation of AI-based models, data patient privacy to train commercial algorithms, and regulations of software as medical devices \citep{2022_Stewart_Emergency_Medicine_Australasia}.
 \item Limited number of expert clinicians to perform US imaging analysis and to provide accurate diagnosis, as well as equipment and hospitalisation requirements in low- and middle-income countries (LMICs) \citep{hao2021-wellcome, 2021-huyNhat-vanHao-in-FAIR-MICCAI}.
+
 \end{itemize}
 One promising approach to address such challenges is with the application of Artificial Intelligence to echocardiography.
 AI-empowered echocardiography has been successful for detection of different apical views, inter-observer variability of sonographer's expertise, implementation of one-stop AI models with multimodal imaging (US, MRI and clinical data), detection of high risk or low risk of heart failure or automatic detection of endocardial border detection and left ventricle assessment in 2D echocardiography videos \citep{tromp2022, zhang2022-mdpi, behnami2020, ono2022}.
@@ -213,7 +215,7 @@ Similarly, \citet{hong2022} identified 20 of the most frequent variables in ICU 
 %and included typical patient outcomes, specific diseases, and stay of time evaluation and 
 %For specific diseases, the most studied are sepsis, infection and kidney injury; and trends with liver diseases and severe cancerl and others like cardica diseases, brain diseases;
 
-However, there is few research on AI-empowered echocardiography used by clinitians in the ICU specifically in LMICs where, for instance, \cite{2021-huyNhat-vanHao-in-FAIR-MICCAI} reported challenges in resourced limited ICUs including: infrastructure, education and personnel, data pipelines, regulation and trust in AI.
+However, there is few research on AI-empowered echocardiography used by clinicians in the ICU specifically in LMICs where, for instance, \cite{2021-huyNhat-vanHao-in-FAIR-MICCAI} reported challenges in resourced limited ICUs including: infrastructure, education and personnel, data pipelines, regulation and trust in AI.
 Also, \cite{2021-kerdegari-Applied-Sciences-MDPI, 2021-kerdegari-ISBI-IEEE, 2021-huyNhat-kerdegari-in-FAIR-MICCAI} presented a deep-learning lung US pathology classifier for ICU patients in LMIC, stating the challenges of data imbalance, integration of technology and IT infrastructure.
 
 \section{Real-time AI-empowwered echocardiography}
@@ -307,8 +309,8 @@ See \appendixref{apd:heuristics} for further details on each model.
   {
       \caption{
           Heuristics for SqueezeNet \citep{iandola2017squeezenet} with dataset of 5 subjects:
-          (a) varing batch size and constant number of frames per segment equal to 1, and
-          (b) varing number of frames per clip and constant batch size of clips equal to 10.
+          (a) varying batch size and constant number of frames per segment equal to 1, and
+          (b) varying number of frames per clip and constant batch size of clips equal to 10.
       }
   }
   {\includegraphics[width=\columnwidth]{../figures/heuristics_results/versions/drawing-v00}}%%GITHUB
@@ -319,6 +321,9 @@ See \appendixref{apd:heuristics} for further details on each model.
 \section{Conclusions and Future Work}
 We presented a machine learning case study, including data selection, validation and management, model selection, validation and in a low-cost clinical system.
 Future work, we will investigate thinner segmentation models, model deployment and clinical validation in the ICU.
+
+
+
 %Similarly, we are interested in train models with synthetic Ultrasound images for GE Vivid E9, Hitachi Prosound U7, Philips iE 33 Vision, Siemens SC2000, and Toshiba Artida ultrasound systems \citep{brindise2020unsupervised}.
 %2D velocity vector fields of flow blow can help to detect abnormal flow patterns as done in fetal and neonatal echocardiography \citep{Meyers2020}.
 
