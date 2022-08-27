@@ -23,7 +23,24 @@ https://twitter.com/robertomlang
 
 ## Notes
 
+
+
+"All studies consisted of a set of 2D videos in Digital Imaging and Communications in Medicine format. CNN frameworks were developed in Python version 3.5 with Keras version 2.2.4 and TensorFlow version 1.13.
+For the view classification model, a bespoke CNN was built using 10 convolutional layers that identifies apical two-chamber (A2C), apical 4CH (A4C), short-axis (SAX), and apical three-chamber (A3C) views acquired with and without contrast, respectively. Before view classification model training, images were processed using standard techniques to ensure homogenous and normalized image inputs. For the view classification model, the categorical cross entropy between the predicted view probability and manual label was used as loss function. For optimization, the RMSprop optimizer was used with an initial learning rate of 1e-4 and a decay rate of 1e-6 to allow time inverse decay of learning rate. We ran our training for 50 epochs or about 165,000 iterations, and the one with the highest validation accuracy was selected as the best model. Real-time data augmentation was applied during training to improve model generalizability."
+
+
+"CNN frameworks were developed using Python version 3.5 with Keras version 2.2.4 and TensorFlow version 1.13. For the view classification model, a bespoke CNN was built using 10 convolutional layers that identifies A2C, A4C, SAX, and A3C views acquired with and without contrast, respectively. Training data comprised 1,250 2D echocardiograms from 1,014 subjects."
+https://www.onlinejase.com/article/S0894-7317(22)00351-0/fulltext
+
+
+
+
+
 ## Links 
+
+
+
+
 
 https://doi.org/10.1016/j.echo.2022.07.004
 
