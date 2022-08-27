@@ -153,21 +153,22 @@ deep learning; echocardiography; real-time artificial intelligence;
 
 \section{Introduction}
 \label{sec:intro}
-Echocardiography is an important clinical procedure in Intensive Care Units (ICU) because of the advances of Ultrasound (US) such as portability, low cost, low radiation and its real-time capabilities to access cardiac anatomy \citep{Feigenbaum1996, Vieillard-Baron2008, singh2007, cambell2018}.
-Despite that, there various challenges in the current clinical procedures in the ICU:
+Echocardiography is an important clinical procedure in Intensive Care Units (ICU) because of the advances of Ultrasound (US) such as portability, low cost, low radiation and its real-time capabilities to visualise and access cardiac anatomy \citep{Feigenbaum1996, Vieillard-Baron2008, singh2007, cambell2018}.
+Despite that, there are various challenges in the current application of point-of-care echocardiography in the ICU:
 \begin{itemize}
 \setlength\itemsep{0em}
 \item Intra-view variability of echocardiograms (physiological variations of subjects and acquisition parameters) and inter-observer variability of expertise for sonographer and radiologist \citep{khamis2017, Feigenbaum1996, field2011},
-\item Inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) and transducer position during acquisition \citep{zhang2018},
+\item Inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) when performing serial echoes and transducer position during acquisition \citep{zhang2018},
 \item Redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of Ultrasound images from different clinical US systems \citep{brindise2020unsupervised}, and
 \item Limited number of expert clinicians to perform US imaging analysis and to provide accurate diagnosis, as well as equipment and hospitalisation requirements in low- and middle-income countries (LMICs) \citep{hao2021-wellcome, 2021-huyNhat-vanHao-in-FAIR-MICCAI}.
 \end{itemize}
 One promising approach to address such challenges is with the application of Artificial Intelligence to echocardiography.
 AI-empowered echocardiography has been successful for detection of different apical views, inter-observer variability of sonographer's expertise, implementation of one-stop AI models with multimodal imaging (US, MRI and clinical data), detection of high risk or low risk of heart failure or automatic detection of endocardial border detection and left ventricle assessment in 2D echocardiography videos \citep{tromp2022, zhang2022-mdpi, behnami2020, ono2022}.
-However, there is little to none studies on how real-time AI-empowered echocardiography might impact the ICU in LMICs.
-Particularly, how good machine learning practices (data curation, code implementation, model selection, training and tuning; model validation and inference) are addressing challenges on real-time AI-empowered echocardiography in the ICU in LMICs.
+However, there is little to no studies on how real-time AI-empowered echocardiography might impact patient management in the ICU in LMICs.
+Particularly, how good machine learning practices (data curation, code implementation, model selection, training and tuning; model validation and inference) are addressing challenges on real-time AI-empowered echocardiography used as point-of-care in the ICU.
+%in the ICU in LMICs.
 
-This work presents (a) a scoping review of AI-empowered echocardiography for ICU in LMICs and (b) real-time AI-empowered echocardiography, (c) a machine learning case of study of US image classification using deep learning of four chamber views from curated data from LMICs and (d) conclusions future work.
+This work presents (a) a scoping review of AI-empowered echocardiography for ICU in LMICs and (b) real-time AI-empowered echocardiography, (c) a machine learning case study of US image classification using deep learning of four chamber views from curated data from LMICs and (d) conclusions future work.
 %appendix with further material.
 
 % \subsection{AI-empowered echocardiography}
@@ -198,20 +199,22 @@ This work presents (a) a scoping review of AI-empowered echocardiography for ICU
 
 
 \section{AI-empowered echocardiography for ICU in LMICs}
-\citet{hanson2001} reviewed various applications of AI in the ICU where real-time analysis of waveforms of electrocardiograms and electroencephalograms using neural network were used to identify cardiac ischemia and diagnosis myocardial ischemia.
-\citet{hanson2001} also reviewed various ICU scenarios where variables such as central venous pressure (CVP), left ventricular ejection fraction (EF), heart rate (HR), hemoglobin (HGB) and oxygen saturation (O2sat) were used with Bayesian networks to provide probabilistic cardiac output.
+\citet{hanson2001} reviewed various applications of AI in the ICU where real-time analysis of waveforms of electrocardiograms and electroencephalograms using neural network were used to identify cardiac ischemia and diagnosis of myocardial ischemia.
+\citet{hanson2001} also reviewed various clinical scenarios where variables such as central venous pressure (CVP), left ventricular ejection fraction (EF), heart rate (HR), hemoglobin (HGB) and oxygen saturation (O2sat) were used with Bayesian networks to provide probabilistic cardiac output.
 %\citet{hanson2001} also touched on data visualisation to demonstrate the hypothetical ICU for large number of patients (head injury, sepsis, acute respiratory distress syndrome, etc).
 \citet{Ghorbani-DigitalMedicineNature-JAN2020} reported how deep learning models predicts systematic phenotypes which are difficult for human interpreters from echocardiogram images, the extraction of labels local structures and features (e.g. pacemaker lead, dilation of left atrium, hypertrophy for left ventricular) and labels from the physician-interpreted report (e.g, catheters, pacemaker, and defibrillator leads).
 %to predict age, sex, weight and height
 %and make use of such models
 %Authors trained CCN models with 2.6 million echocardiogram images from 2850 patients with
-\citet{CHEEMA2021JACCCaseReports} presented five cases covid-19 intensive care unit (ICU) to illustrate "how decision making affect in patient care" and how the use of AI-enabled provided real-time guidance to acquire desired cardiac US with the steering of user's transducer position and hand movement.
-Recently, \citet{hong2022} reviewed 673 papers that made use of machine learning to help for clinical decision in the ICU, of these studies the majority used supervised learning (91\%) and few of them applied unsupervised learning and reinforcement learning.
-Similarly, \citet{hong2022} identified 20 of the most frequent variables in the ICU, being the top five (age, sex, heart rate, respiratory rate, and pH) in machine learning pipelines.
-\citet{hong2022} mentioned that typical outcomes in the ICU are mortality, survival, and long-term quality of life and included typical patient outcomes, specific diseases, and stay of time evaluation and specific diseases where the most studied are sepsis, infection and kidney injury.
+\citet{CHEEMA2021JACCCaseReports} reported five patients with covid-19 in the ICU to illustrate "how decision making affect in patient care" and how the use of AI-enabled tools provided real-time guidance to acquire desired cardiac US with the steering of user's transducer position and hand movement.
+Recently, \citet{hong2022} reviewed 673 papers that made use of machine learning to help making clinical decision in the ICU, of these studies the majority used supervised learning (91\%) and few of them applied unsupervised learning and reinforcement learning.
+Similarly, \citet{hong2022} identified 20 of the most frequent variables in ICU patients with the top five (age, sex, heart rate, respiratory rate, and pH) in machine learning pipelines.
+\citet{hong2022} mentioned that typical outcomes in the ICU are mortality, survival, and long-term quality of life where the most studied diseases are sepsis, infection and kidney injury.
+%and included typical patient outcomes, specific diseases, and stay of time evaluation and 
 %For specific diseases, the most studied are sepsis, infection and kidney injury; and trends with liver diseases and severe cancerl and others like cardica diseases, brain diseases;
-However, there is few research on AI-empowered echocardiography for ICU in LMICs where, for instance, \cite{2021-huyNhat-vanHao-in-FAIR-MICCAI} reported challenges in resourced limited ICUs including: infrastructure, education and personnel, data pipelines, regulation and trust in AI.
-Also, \cite{2021-kerdegari-Applied-Sciences-MDPI, 2021-kerdegari-ISBI-IEEE, 2021-huyNhat-kerdegari-in-FAIR-MICCAI} presented a deep-learning lung US pathology classifier for ICU patient in LMIC, stating the challenges of data imbalance, integration of technology and IT infrastructure of the ICU in LMIC.
+
+However, there is few research on AI-empowered echocardiography used by clinitians in the ICU specifically in LMICs where, for instance, \cite{2021-huyNhat-vanHao-in-FAIR-MICCAI} reported challenges in resourced limited ICUs including: infrastructure, education and personnel, data pipelines, regulation and trust in AI.
+Also, \cite{2021-kerdegari-Applied-Sciences-MDPI, 2021-kerdegari-ISBI-IEEE, 2021-huyNhat-kerdegari-in-FAIR-MICCAI} presented a deep-learning lung US pathology classifier for ICU patients in LMIC, stating the challenges of data imbalance, integration of technology and IT infrastructure.
 
 \section{Real-time AI-empowwered echocardiography}
 %In terms of real-time analysis of echocardigraphy, ,
@@ -245,17 +248,17 @@ Authors compared ShrapML (8layers--6CNN,2FC, 0.43 million of parameters) against
 \section{Machine learning case study}
 
 \subsection{Dataset}
-Echocardiography videos of 31 subjects in the ICU were considered for this work which were collected by four radiologists using the clinical devices: GE Venue Go machine and GE convex probe C1-5-D.
-The 31 subjects has the following demographics:
+Echocardiography videos of 31 patients in the ICU were considered for this work which were collected by four radiologists using the clinical devices: GE Venue Go machine and GE convex probe C1-5-D.
+The 31 patients had the following demographics:
 Sex: \% (Male): 58.1\%;
 Age: mean, years (std): 38.70 (16.08);
 Weight: mean, Kg (std): 61.51 (15.06);
-Height: mean, m (std): 1.62 (0.07);
-BMI: mean (std): 23.80 (4.30);
-Sepsis \% (with): 61.3\%;
-Dengue \% (with): 54.8\%, and
-Tetanus \% (with): 87.1\%.
-See \appendixref{apd:datasets} for further details on the demographics of the dataset, including the complete dataset of 87 subjects.
+Height: mean, m (std): 1.62 (0.07), and 
+BMI: mean (std): 23.80 (4.30).
+%Sepsis \% (with): 61.3\%;
+%Dengue \% (with): 54.8\%, and
+%Tetanus \% (with): 87.1\%.
+See \appendixref{apd:datasets} for further details on the demographics of the dataset, including the complete dataset of 87 patients.
 
 \subsubsection{Ethics statement}
 This study was approved by the Oxford Tropical Research Ethics Committee (OxTREC) and the HTD Institutional Review Boards (Hospital of Tropical Diseases).
@@ -314,7 +317,7 @@ See \appendixref{apd:heuristics} for further details on each model.
 \end{figure}
 
 \section{Conclusions and Future Work}
-We presented a machine learning case study, including data selection, validation and management, model selection, validation and low-cost clinical system.
+We presented a machine learning case study, including data selection, validation and management, model selection, validation and in a low-cost clinical system.
 Future work, we will investigate thinner segmentation models, model deployment and clinical validation in the ICU.
 %Similarly, we are interested in train models with synthetic Ultrasound images for GE Vivid E9, Hitachi Prosound U7, Philips iE 33 Vision, Siemens SC2000, and Toshiba Artida ultrasound systems \citep{brindise2020unsupervised}.
 %2D velocity vector fields of flow blow can help to detect abnormal flow patterns as done in fetal and neonatal echocardiography \citep{Meyers2020}.
