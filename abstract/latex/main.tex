@@ -154,23 +154,30 @@ deep learning; echocardiography; real-time artificial intelligence;
 \section{Introduction}
 \label{sec:intro}
 Echocardiography is an important clinical procedure in Intensive Care Units (ICU) because of the advances of Ultrasound (US) such as portability, low cost, low radiation and its real-time capabilities to visualise and access cardiac anatomy \citep{Feigenbaum1996, Vieillard-Baron2008, singh2007, cambell2018}.
-Despite that, there are various challenges in the current application of point-of-care echocardiography in the ICU:
+The identification of cardiac abnormalities using US views (Apical 4-Chamber View (A4C), Apical 3-Chamber View (A3C), Apical 2-Chamber View (A2C), Parastemal Long-Axis View (PLAX), etc) is usually achieved by specialist clinitians in echocardigraphy following Focused Intensive Care Echo (FICE) protocol \citep{2016_coates_JIntensiveCareSociety, 2017_hall_JIntensiveCareSociety, 2020_medhora_ClinicalCaseReports}.
+However, there are challenges in the application of point-of-care echocardiography in the ICU:
 \begin{itemize}
 \setlength\itemsep{0em}
 \item Intra-view variability of echocardiograms (physiological variations of subjects and acquisition parameters) and inter-observer variability of expertise for sonographer and radiologist \citep{khamis2017, Feigenbaum1996, field2011}.
-\item Inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) when performing serial echoes and transducer position during acquisition \citep{zhang2018}
-\item Redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of Ultrasound images from different clinical US systems \citep{brindise2020unsupervised}.
-\item Internal and external validation of AI-based models, data patient privacy to train commercial algorithms, and regulations of software as medical devices \citep{2022_Stewart_Emergency_Medicine_Australasia}.
+% \item Inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) when performing serial echoes and transducer position during acquisition \citep{zhang2018}
+% \item Redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of US images from different clinical US systems \citep{brindise2020unsupervised}.
+% \item Internal and external validation of AI-based models, data patient privacy to train commercial algorithms, and regulations of software as medical devices \citep{2022_Stewart_Emergency_Medicine_Australasia}.
 \item Limited number of expert clinicians to perform US imaging analysis and to provide accurate diagnosis, as well as equipment and hospitalisation requirements in low- and middle-income countries (LMICs) \citep{hao2021-wellcome, 2021-huyNhat-vanHao-in-FAIR-MICCAI}.
 \end{itemize}
 
 One promising approach to address such challenges is with the application of Artificial Intelligence to echocardiography \citep{2022ASCH_JAmericanSocietyEchocardiography}.
 AI-empowered echocardiography has been successful for detection of different apical views, inter-observer variability of sonographer's expertise, implementation of one-stop AI models with multimodal imaging (US, MRI and clinical data), detection of high risk or low risk of heart failure or automatic detection of endocardial border detection and left ventricle assessment in 2D echocardiography videos \citep{tromp2022, zhang2022-mdpi, behnami2020, ono2022}.
-However, there is little to no studies on how real-time AI-empowered echocardiography might impact patient management in the ICU in LMICs.
+However, there are still few challenges such as 
+(a) inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) when performing serial echoes and transducer position during acquisition \citep{zhang2018},
+(b) redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of US images from different clinical US systems \citep{brindise2020unsupervised}, 
+(c) internal and external validation of AI-based models, data patient privacy to train commercial algorithms, and regulations of software as medical devices \citep{2022_Stewart_Emergency_Medicine_Australasia}, and 
+(d) little to no studies on how real-time AI-empowered echocardiography might impact patient management in the ICU in LMICs.
 Particularly, how good machine learning practices (data curation, open-source code implementation, model selection, training and tuning; model validation and inference) are addressing challenges on real-time AI-empowered echocardiography used as point-of-care in the ICU.
 %in the ICU in LMICs.
 
-This work presents (a) a scoping review of AI-empowered echocardiography for ICU in LMICs and (b) real-time AI-empowered echocardiography, (c) a machine learning case study of US image classification using deep learning of four chamber views from curated data from LMICs and (d) conclusions future work.
+Hence, this work presents (a) a scoping review of AI-empowered echocardiography for ICU in LMICs and (b) real-time AI-empowered echocardiography.
+We contribute with a machine learning case study of US image classification using deep learning of four chamber views from curated data from LMICs.
+We then conclude and add future work.
 %appendix with further material.
 
 % \subsection{AI-empowered echocardiography}
