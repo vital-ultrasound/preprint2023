@@ -155,18 +155,18 @@ machine learning; deep learning; echocardiography; real-time artificial intellig
 
 \section{Introduction}
 \label{sec:intro}
-Echocardiography is an important clinical procedure in Intensive Care Units (ICUs) because of the Ultrasound (US) image modality features such as portability, low cost, non-ionising radiation and its real-time capabilities to visualise cardiac anatomy \citep{Feigenbaum1996, Vieillard-Baron2008, singh2007, cambell2018}.
-Typically, the identification of cardiac abnormalities from 2D US views (Apical 4-Chamber View (A4C), Apical 3-Chamber View (A3C), Apical 2-Chamber View (A2C), Parastemal Long-Axis View (PLAX), etc) is achieved by specialist clinicians in echocardigraphy following the Focused Intensive Care Echo (FICE) protocol \citep{2017_hall_JIntensiveCareSociety}. %\citep{2016_coates_JIntensiveCareSociety, 2017_hall_JIntensiveCareSociety, 2020_medhora_ClinicalCaseReports}.
-However, there are two main challenges in the application of point-of-care echocardiography in the ICU:
+Echocardiography is an important clinical procedure in Intensive Care Units (ICUs) because of the features of Ultrasound (US) image modality such as portability, low cost, non-ionising radiation and its real-time capabilities to visualise cardiac anatomy~\citep{Feigenbaum1996, Vieillard-Baron2008, singh2007, cambell2018}.
+Typically, the identification of cardiac abnormalities from 2D US views (Apical 4-Chamber View (A4C), Apical 3-Chamber View (A3C), Apical 2-Chamber View (A2C), Parastemal Long-Axis View (PLAX), etc) is achieved by specialist clinicians in echocardigraphy following the Focused Intensive Care Echo (FICE) protocol~\citep{2017_hall_JIntensiveCareSociety}. %\citep{2016_coates_JIntensiveCareSociety, 2017_hall_JIntensiveCareSociety, 2020_medhora_ClinicalCaseReports}.
+However, the application of point-of-care echocardiography in the ICU faces two challenges:
 %\begin{enumerate}
 %\setlength\itemsep{0em}
 %\item 
-(1) intra-view variability of echocardiograms (physiological variations of patients and acquisition parameters) and inter-observer variability of expertise for sonographer and radiologist \citep{khamis2017, Feigenbaum1996, field2011}, and
+(1) intra-view variability of echocardiograms (physiological variations of patients and acquisition parameters) and inter-observer variability of expertise for sonographer and radiologist~\citep{khamis2017, Feigenbaum1996, field2011}, and
 % \item Inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) when performing serial echoes and transducer position during acquisition \citep{zhang2018}
 % \item Redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of US images from different clinical US systems \citep{brindise2020unsupervised}.
 % \item Internal and external validation of AI-based models, data patient privacy to train commercial algorithms, and regulations of software as medical devices \citep{2022_Stewart_Emergency_Medicine_Australasia}.
 % \item 
-(2) limited number of specialist clinicians to perform US imaging analysis and to provide accurate diagnosis, as well as equipment and hospitalisation requirements in low- and middle-income countries (LMICs) \citep{hao2021-wellcome, 2021-huyNhat-vanHao-in-FAIR-MICCAI, 2016_becker_in_TropicalMedicineInternationalHealth}.
+(2) limited number of specialist clinicians to perform US imaging analysis and to provide accurate diagnosis, and the limited equipment and hospitalisation requirements in low- and middle-income countries (LMICs)~\citep{hao2021-wellcome, 2021-huyNhat-vanHao-in-FAIR-MICCAI, 2016_becker_in_TropicalMedicineInternationalHealth}.
 % \end{enumerate}
 One promising approach to address such challenges is with the application of Artificial Intelligence (AI) and Machine Learing (ML) to echocardiography \citep{2022ASCH_JAmericanSocietyEchocardiography}.
 AI-empowered echocardiography has been successful for detection of different apical views, inter-observer variability of sonographer's expertise, implementation of one-stop AI models with multimodal imaging (US, MRI and clinical data), detection of high risk or low risk of heart failure, detection of endocardial borders and automatic left ventricle assessment in 2D echocardiography videos~\citep{tromp2022, zhang2022-mdpi, behnami2020, ono2022}.
@@ -177,7 +177,7 @@ In spite of the success in applying AI and ML methods to support echocardiograph
 %However, there are still few challenges such as
 \begin{enumerate}
 \setlength\itemsep{0em}
-\item inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) when performing serial echoes and transducer position during acquisition \citep{zhang2018},
+\item inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) and transducer position during acquisition when performing serial echoes~\citep{zhang2018},
 \item redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of US images from different clinical US systems \citep{brindise2020unsupervised}, and
 \item internal and external validation of AI-based models, data patient privacy to train commercial algorithms, and regulations of software as medical devices \citep{2022_Stewart_Emergency_Medicine_Australasia}.
 %\item little to no studies on how real-time AI-empowered echocardiography is impacting patient management in the ICU in LMICs.
@@ -217,45 +217,45 @@ We then conclude and add future work.
 % The datasets to train networks was made of 2798 images from 118 videos of which 22 videos with 465 frames were for 4CV \citep{ono2022}.
 % Ono et al. also touched on the challenges of providing explainable AI for US imaging.
 
-
-\section{AI-empowered echocardiography for ICU in LMICs}
-\citet{hanson2001} reviewed various applications of AI in the ICU where real-time analysis of waveforms of electrocardiograms and electroencephalograms using neural network were used to identify cardiac ischemia and diagnosis of myocardial ischemia.
-\citet{hanson2001} also reviewed various clinical scenarios where variables such as central venous pressure (CVP), left ventricular ejection fraction (EF), heart rate (HR), hemoglobin (HGB) and oxygen saturation (O2sat) were used with Bayesian networks to provide probabilistic cardiac output.
+\section{Scoping review}
+\subsection{AI-empowered echocardiography for ICU in LMICs}
+\citet{hanson2001} reviewed various AI-based applications in the ICU where real-time analysis of waveforms of electrocardiograms and electroencephalograms using neural network were used to identify cardiac ischemia and diagnosis of myocardial ischemia.
+%\citet{hanson2001} also reviewed various clinical scenarios where variables such as central venous pressure (CVP), left ventricular ejection fraction (EF), heart rate (HR), hemoglobin (HGB) and oxygen saturation (O2sat) were used with Bayesian networks to provide probabilistic cardiac output.
 %\citet{hanson2001} also touched on data visualisation to demonstrate the hypothetical ICU for large number of patients (head injury, sepsis, acute respiratory distress syndrome, etc).
-\citet{Ghorbani-DigitalMedicineNature-JAN2020} reported how deep learning models predicts systematic phenotypes which are difficult for human interpreters from echocardiogram images, the extraction of labels local structures and features (e.g. pacemaker lead, dilation of left atrium, hypertrophy for left ventricular) and labels from the physician-interpreted report (e.g, catheters, pacemaker, and defibrillator leads).
+\citet{Ghorbani-DigitalMedicineNature-JAN2020} reported how deep learning models predicts systematic phenotypes from echocardiogram images which are difficult for human interpreters.
+%, the extraction of labels local structures and features (e.g. pacemaker lead, dilation of left atrium, hypertrophy for left ventricular) and labels from the physician-interpreted report (e.g, catheters, pacemaker, and defibrillator leads).
 %to predict age, sex, weight and height
 %and make use of such models
 %Authors trained CCN models with 2.6 million echocardiogram images from 2850 patients with
-\citet{CHEEMA2021JACCCaseReports} reported five patients with covid-19 in the ICU to illustrate "how decision making affect in patient care" and how the use of AI-enabled tools provided real-time guidance to acquire desired cardiac US with the steering of user's transducer position and hand movement.
-Recently, \citet{hong2022} reviewed 673 papers that made use of machine learning to help making clinical decision in the ICU, of these studies the majority used supervised learning (91\%) and few of them applied unsupervised learning and reinforcement learning.
-Similarly, \citet{hong2022} identified 20 of the most frequent variables in ICU patients with the top five (age, sex, heart rate, respiratory rate, and pH) in machine learning pipelines.
-\citet{hong2022} mentioned that typical outcomes in the ICU are mortality, survival, and long-term quality of life where the most studied diseases are sepsis, infection and kidney injury.
+\citet{CHEEMA2021JACCCaseReports} reported five patients with covid-19 in the ICU to illustrate "how decision making affect in patient care" and how the use of AI-enabled tools provided real-time guidance to acquire desired cardiac 2D US views with the steering of user's transducer position and hand movement.
+Recently, \citet{hong2022} reviewed 673 papers that apply ML methods to help making clinical decision in the ICU, of these studies the majority used supervised learning (91\%) and few of them applied unsupervised learning and reinforcement learning methods.
+Similarly, \citet{hong2022} identified 20 of the most frequent variables in ML pipelines for ICU patients, being the top five (age, sex, heart rate, respiratory rate, and pH).
+\citet{hong2022} mentioned that typical outcomes in the ICU are mortality, survival, and long-term quality of life and the most studied diseases are sepsis, infection and kidney injury.
 %and included typical patient outcomes, specific diseases, and stay of time evaluation and 
 %For specific diseases, the most studied are sepsis, infection and kidney injury; and trends with liver diseases and severe cancerl and others like cardica diseases, brain diseases;
+Despite such advances, there is few research on AI-empowered echocardiography used by clinicians in the ICU, specifically in LMICs.
+For instance, \cite{2021-huyNhat-vanHao-in-FAIR-MICCAI} reported challenges in resourced limited ICUs including: infrastructure, education, personnel, data pipelines, regulation and trust in AI.
+Also, \cite{2021-kerdegari-Applied-Sciences-MDPI, 2021-kerdegari-ISBI-IEEE, 2021-huyNhat-kerdegari-in-FAIR-MICCAI} presented a deep-learning pipeline to classify lung US pathologies for ICU patients in LMIC, stating the challenges of data imbalance, integration of technology and the limited IT infrastructure.
 
-However, there is few research on AI-empowered echocardiography used by clinicians in the ICU specifically in LMICs where, for instance, \cite{2021-huyNhat-vanHao-in-FAIR-MICCAI} reported challenges in resourced limited ICUs including: infrastructure, education and personnel, data pipelines, regulation and trust in AI.
-Also, \cite{2021-kerdegari-Applied-Sciences-MDPI, 2021-kerdegari-ISBI-IEEE, 2021-huyNhat-kerdegari-in-FAIR-MICCAI} presented a deep-learning lung US pathology classifier for ICU patients in LMIC, stating the challenges of data imbalance, integration of technology and IT infrastructure.
+\subsection{Real-time AI-empowered echocardiography}
+%In terms of real-time analysis of echocardigraphy
+\subsubsection{State of the art}  \label{subsec:State_of_the_art}
+\citet{woudenberg2018} trained an DenseNet-LSTM with 2000 clips of apical 4 chamber view in which the real-time system made use of 10 input frames and reported a latency of 352.91ms.
+\citet{toussaint2018-MICCAI} proposed ResNet18-SP trained with 85,000 frames of Fetal US imaging, reporting real-time performance at inference time of 40 m$s$ per image ($\sim$20Hz).
+\citet{ostvik2021-TMI} proposed Echo-PWC-Net trained with synthetic, simulated and clinical datasets, reporting real-time performance with 7 frames for the input.
+Recently, \citet{wu2022} applied baselines of UNET with temporal context-aware encoder (TCE) and bidirectional spatiotemporal semantics fusion (BSSF) modules to EchoDynamic datasets (10,030 video sequences with of 200 frames of 112x112 pixes) and CAMUS datasets (450 video with 20 frames of 778x594 pixels), reporting metrics of Dice score (DS), Hausdorff Distance (HD), and area under the curve (AUC).
+To ensure low latency and real-time performance, \citet{wu2022} presented a comparison of eight methods networks including FLOPS (G), number of parameters (M) and speed ($ms/f$) being their method with the lowest speed at 32 $ms/f$ and 56.359 $G$ FLOPS but network size was 74.79M parameters (join motion model with 237.592G FLOPS, 17.315M parameters and seep of 154 $ms/f$).
 
-\section{Real-time AI-empowwered echocardiography}
-%In terms of real-time analysis of echocardigraphy, ,
-\subsection{State of the art}  \label{subsec:State_of_the_art}
-\citet{woudenberg2018} trained an DenseNet-LSTM with 2K clips of 4 chamber view in which the real-time system made use of 10 input frames and reported a latency of 352.91ms.
-\citet{toussaint2018-MICCAI} proposed ResNet18-SP trained with 85k frames of Fetal US imaging, reporting real-time performance at inference time of 40 m$s$ per image or $\sim$20Hz.
-\citet{ostvik2021-TMI} proposed Echo-PWC-Net trained with Synthetic/Simulated/Clinical, reporting real-time performance with 7 frames for the input.
-Recently, \citet{wu2022} applied baselines of UNET with temporal context-aware encoder (TCE) and bidirectional spatiotemporal semantics fusion (BSSF) modules to EchoDynamic datasets (10030 video sequences with of 200 frames of 112x112 pixes) and CAMUS datasets  (450 video with 20 frames of 778x594 pixels), reporting metrics of Dice score (DS), Hausdorff Distance (HD), and area under the curve (AUC).
-Similarly, \citet{wu2022} presented speed analysis to ensure low latency and real-time performance for eight methods using calculations number FLOPS (G), number of parameters (M) and speed ($ms/f$).
-%which lowest one was 32 $ms/f$.
-
-\subsection{Classification of echochardiograms} \label{subsec:Nets_echochardiograms}
-\citet{khamis2017} considered 309 clinical echocardiogram of apical views which were visually classified and labelled by two experts into three classes: 103 a2c views, 103 a4c views and 103 alx views to then applied spatio-temporal feature extraction (Cuboic Detector) and supervised learning dictionary (LC-KSVD) resulting in an overall recognition rate of 95\%.
-\citet{woudenberg2018} applied DenseNet and LSTM to extract temporal information on sequences of 16K echo cine frames to classify 14 heart views with an average accuracy of 92.35\%.
+\subsubsection{Classification of echochardiograms} \label{subsec:Nets_echochardiograms}
+\citet{khamis2017} considered 309 clinical echocardiograms of apical views which were visually classified and labelled by two experts into three classes: 103 A2C views, 103 A4C views and 103 ALX views to then applied spatio-temporal feature extraction (Cuboic Detector) and supervised learning dictionary (LC-KSVD) resulting in an overall recognition rate of 95\%.
+\citet{woudenberg2018} applied DenseNet and LSTM to extract temporal information on sequences of 16000 echo cine frames to classify 14 heart views with an average accuracy of 92.35\%.
 %\citet{woudenberg2018} implemented a Tensorflow runner that performs contrast enhancement to then sent each frame to three identical CNNs running in separated threads to prevent lag during inference times.
 %Then a shared buffer collects extracted features from CNNs to then awake the thread for the LSTM network from the previous ten frames to produce classification and quality prediction.
 \citet{woudenberg2018} also presents timing diagrams to quantify frame arrival and real-time performance to operate at 30 frames per second, while providing feedback with a mean latency of 352.91 ± 38.27 m$s$ when measured from the middle of the ten-frame sequence.
-\citet{zhang2018} performed view classification with 277 echocardiograms to create a 23-class models (including a4c no occlusions, a4c occluded LA, a4c occluded LV, etc) using 13-layer CNN with 5-fold cross-validation for accuracy assessment and resulting in 84\% for overall accuracy where challenges for partial obscured LVs for a2c, a3c and a4c.
-Similarly, \citet{zhang2018} applied U-net to segment 5 views (a2c, a3c, a4c, PSAX, PLAX) and CNN model for 3 cardiac diseases with the use of A4c capturing most of the information for the diseases.
+\citet{zhang2018} performed view classification with 277 echocardiograms to create a 23-class models (including A4C no occlusions, A4C occluded LA, A4C occluded LV, etc) using 13-layer CNN with 5-fold cross-validation for accuracy assessment and resulting in 84\% for overall accuracy where challenges for partial obscured LVs for A2C, A3C and A4C.
+Similarly, \citet{zhang2018} applied U-net to segment 5 views (A2C, A3C, A4C, PSAX, PLAX) and CNN model for 3 cardiac diseases with the use of A4C capturing most of the information for the diseases.
 
-\subsection{Thinner neural networks to classify US images} \label{subsec:thinnerNets}
+\subsubsection{Thinner neural networks to classify US images} \label{subsec:thinnerNets}
 \citet{baumgartner2017-IEEETransMedImag} proposed SonoNet which is a VGG-based architecture, having the same first 13 layers of VGG16, and SmallNet, loosely inspired by AlexNet, for real-time detection and bounding box localisation of standard views in freehand fetal US.
 \citet{toussaint2018-MICCAI} applied four feature extraction networks couple with batchnormalization and soft proposal layer (VGG13-SP, VGG16-SP, ResNet18-SP, ResNet34-SP), resulting in 0.912 of average accuracy over six classes of fetal US views with ResNet18-SP.
 \citet{Al-Dhabyani2019-IJACSA} applied AlexNet and transfer learning of four architectures (VGG16, Inception, ResNet, and NASNet) without augmentation and with three augmentation techniques to perform tumor classification of breast ultrasound imaging.
@@ -263,10 +263,9 @@ Authors stated that transfer learning with NASNet presented the best accuracy wi
 \citet{xie2020-physics-in-medicine-biology} proposed a dual-sampling convolutional neural network (DSCNN) for US image breast cancer classification, being DSCNN more efficient than AlexNet, VGG16, ResNet18, GoogleNet and EfficientNet.
 Recently, \citet{snider2022-ScientificReports} reported summaries of CNN heuristics to detect shrapnel in US images, including layer activators, 2D CNN layer architectures, model optimisers dense nodes, and the effect of image augmentation and dropout rate and epoch number.
 Similarly, \citet{boice2022-in-jimaging} proposed ShrapML, a CNN model to detect shrapnel in US imaging.
-Authors compared ShrapML (8layers--6CNN,2FC, 0.43 million of parameters) against DarkNet19, GoogleNet, MobileNetv2 and SqueezeNet, being ShrapML 10x faster than MobileNet2 which offered the highest accuracy.
+Authors compared ShrapML (8layers--6CNN,2FC, 0.43 million of parameters) against DarkNet19, GoogleNet, MobileNetv2 and SqueezeNet, being ShrapML 10x faster than MobileNet2 and offering the highest accuracy.
 
 \section{Machine learning case study}
-
 \subsection{Dataset}
 Echocardiography videos of 31 patients in the ICU were considered for this work which were collected by four radiologists using the clinical devices: GE Venue Go machine and GE convex probe C1-5-D.
 The 31 patients had the following demographics:
