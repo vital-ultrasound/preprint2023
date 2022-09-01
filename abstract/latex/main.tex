@@ -182,7 +182,7 @@ In spite of the success in applying AI and ML methods to support echocardiograph
 \item internal and external validation of AI-based models, data patient privacy to train commercial algorithms, and regulations of software as medical devices \citep{2022_Stewart_Emergency_Medicine_Australasia}.
 %\item little to no studies on how real-time AI-empowered echocardiography is impacting patient management in the ICU in LMICs.
 \end{enumerate}
-Challenges (1) and (2) are important because of data required to appropriately be collected, validated and managed to apply AL and ML methods, and challenge (3) AI-based medical devices require to aligned to standards to then go for clinical translation.
+Challenges (1) and (2) are important because of 2D US video data requires to appropriately be collected, validated and managed to apply AL and ML methods, and challenge (3) because AI-based medical devices require to be aligned to standards to then be ready for clinical translation.
 Hence, adopting good machine learning practices (data curation, open-source code implementation, model selection, training and tuning; model validation and inference) might help to addressing challenges in real-time AI-empowered echocardiography used as point-of-care in the ICU for patients in LMICs.
 %in the ICU in LMICs.
 
@@ -277,25 +277,25 @@ BMI: mean (std): 23.80 (4.30).
 %Sepsis \% (with): 61.3\%;
 %Dengue \% (with): 54.8\%, and
 %Tetanus \% (with): 87.1\%.
-See \appendixref{apd:datasets} for further details on the demographics of the dataset (distributions for sex, age, BMI, sepsis and dengue disease), including the complete dataset of the total of 87 patients.
+See \appendixref{apd:datasets} for further details on the demographics of the dataset (distributions for sex, age, BMI, sepsis and dengue diseases), including the complete dataset of the total of 87 patients.
 
 \subsubsection{Ethics statement}
 This study was approved by the Oxford Tropical Research Ethics Committee (OxTREC) and the HTD Institutional Review Boards (Hospital of Tropical Diseases).
 All participants gave written informed consent to participate in the data collection before enrollment.
 
 \subsubsection{Data annotation, validation and management}
-Apical 4 Chamber view (4CV) is considered as the main view to compute heart failure measurements from 2D US echocardiography ~\citep{2017_hall_JIntensiveCareSociety}.
-For this work, timestamps for 4CV in the video files were annotated by one research clinician of 10 years of experience using VGG Image Annotator (VIA).
-Then the same clinician  and one researcher validated annotations in a round of two iterations where few filenames timestamps were fixed.
-\figureref{fig:main-figure}(a) illustrates video frames and clip management.
+Apical 4 Chamber view (A4C) is considered as an important view to compute heart failure measurements from 2D US echocardiography ~\citep{2017_hall_JIntensiveCareSociety}.
+For this work, timestamps in the video files for A4C were annotated by one research clinician of 10 years of experience using VGG Image Annotator (VIA).
+Then the same clinician  and one researcher validated timestamps annotations where few filenames and timestamps were fixed.
+\figureref{fig:main-figure}(a) illustrates video and json files with their A4C and background clips to then be segmented.
 
 \subsection{Model selection and heuristics}
-Considering different size of datasets and the number of parameters of the networks, we selected four Neural Networks for our ML study:
-VGG-based architectures~\citep{2015_Simonyan_ICLR}, MobileNetV1~\citep{2017-howared_CoRR_MobileNetV1} with 3,208,450 parameters; MobileNetV2~\citep{Sandler_2018_CVPR_MobileNetV2} with 2,225,858 parameters, and SqueezeNet~\citep{iandola2017squeezenet} with 733,580 parameters.
+Considering different datasets charactictis (number of frames, clips, pixel image, clinical equipment, etc) and the number of parameters of different networks, we selected four Neural Networks for our ML study:
+VGG-based models~\citep{2015_Simonyan_ICLR}, MobileNetV1~\citep{2017-howared_CoRR_MobileNetV1} with 3,208,450 parameters, MobileNetV2~\citep{Sandler_2018_CVPR_MobileNetV2} with 2,225,858 parameters, and SqueezeNet~\citep{iandola2017squeezenet} with 733,580 parameters.
 %complexity of state-of-the-art networks and thinner neural networks,
 %and ShrapML \citep{boice2022-in-jimaging} 430,000
 %(networks and parameters, respectively).
-We then performed heuristics for each model to understand their performance for different hyperparameters (datasize, augmentations and clip length).
+We then performed heuristics for each model to understand the impact of their performance for different hyperparameters (dataset size, augmentations, frames numbers and clip length).
 %as shown in \figureref{fig:heuristics}.
 See \appendixref{apd:heuristics} for further details on each model.
 %See \figureref{fig:SqueezeNetTrainingResults} for further results on SqueezeNet Training performance.
@@ -311,7 +311,7 @@ See \appendixref{apd:heuristics} for further details on each model.
 %ShrapML \citep{boice2022-in-jimaging} & 430,000
 %\end{tabular}}
 %\end{table}
-\begin{figure}[htbp]
+\begin{figure}[ht]%htbp
 \floatconts
   {fig:main-figure}
   {\caption{
@@ -326,7 +326,7 @@ See \appendixref{apd:heuristics} for further details on each model.
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[ht]%htbp
 \floatconts
   {fig:heuristics}
   {
@@ -377,7 +377,8 @@ Validation of ML and DL methods for image quality, view classification and segme
 %  {\caption{Heuristics for 5 and 33 subjects with 10 frames per clip and 25 batch size of clips using SqueezeNet \citep{iandola2017squeezenet}.}}
   {\caption{
     Heuristics for 5 and 31 subjects with 1 frames per clip and 20 batch size of clips for
-    MobileNetV1 \citep{2017-howared_CoRR_MobileNetV1}, MobileNetV2 \citep{Sandler_2018_CVPR_MobileNetV2}, and SqueezeNet \citep{iandola2017squeezenet} 733,580
+    % VGG-based models~\citep{2015_Simonyan_ICLR}
+    MobileNetV1~\citep{2017-howared_CoRR_MobileNetV1} with 3,208,450 parameters, MobileNetV2~\citep{Sandler_2018_CVPR_MobileNetV2} with 2,225,858 parameters, and SqueezeNet~\citep{iandola2017squeezenet} with 733,580 parameters
     %and ShrapML \citep{boice2022-in-jimaging} 430,000
           }.
   }
@@ -385,6 +386,9 @@ Validation of ML and DL methods for image quality, view classification and segme
     % {\includegraphics[width=\columnwidth]{figures/squeezenet-05-33-subjects.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure*}
+
+
+
 
 \end{document}
 
