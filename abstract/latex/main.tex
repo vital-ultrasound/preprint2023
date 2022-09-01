@@ -267,7 +267,7 @@ Authors compared ShrapML (8layers--6CNN,2FC, 0.43 million of parameters) against
 
 \section{Machine learning case study}
 \subsection{Dataset}
-Echocardiography videos of 31 patients in the ICU were considered for this work which were collected by four radiologists using the clinical devices: GE Venue Go machine and GE convex probe C1-5-D.
+Echocardiography videos of 31 patients in the ICU were considered for this work which were collected by four radiologists using the clinical US devices: GE Venue Go machine and GE convex probe C1-5-D.
 The 31 patients had the following demographics:
 Sex: \% (Male): 58.1\%;
 Age: mean, years (std): 38.70 (16.08);
@@ -277,20 +277,26 @@ BMI: mean (std): 23.80 (4.30).
 %Sepsis \% (with): 61.3\%;
 %Dengue \% (with): 54.8\%, and
 %Tetanus \% (with): 87.1\%.
-See \appendixref{apd:datasets} for further details on the demographics of the dataset, including the complete dataset of 87 patients.
+See \appendixref{apd:datasets} for further details on the demographics of the dataset (distributions for sex, age, BMI, sepsis and dengue disease), including the complete dataset of the total of 87 patients.
 
 \subsubsection{Ethics statement}
 This study was approved by the Oxford Tropical Research Ethics Committee (OxTREC) and the HTD Institutional Review Boards (Hospital of Tropical Diseases).
-All participants gave written informed consent to participate before enrollment.
+All participants gave written informed consent to participate in the data collection before enrollment.
 
 \subsubsection{Data annotation, validation and management}
-Being 4 chamber view (4CV) the main view to compute Heart Failure Measurement, timestamps of 4CV video files from 31 subjects were annotated by one research clinician of 10 years of experience using VGG Image Annotator (VIA).
+Apical 4 Chamber view (4CV) is considered as the main view to compute heart failure measurements from 2D US echocardiography ~\citep{2017_hall_JIntensiveCareSociety}.
+For this work, timestamps for 4CV in the video files were annotated by one research clinician of 10 years of experience using VGG Image Annotator (VIA).
 Then the same clinician  and one researcher validated annotations in a round of two iterations where few filenames timestamps were fixed.
 \figureref{fig:main-figure}(a) illustrates video frames and clip management.
 
 \subsection{Model selection and heuristics}
-Considering the complexity of state-of-the-art networks and thinner neural networks, we selected four thinner Neural Networks for our ML study: MobileNetV1 \citep{2017-howared_CoRR_MobileNetV1} 3,208,450; MobileNetV2 \citep{Sandler_2018_CVPR_MobileNetV2} 2,225,858; SqueezeNet \citep{iandola2017squeezenet} 733,580 and ShrapML \citep{boice2022-in-jimaging} 430,000 (networks and parameters, respectively).
-We then performed heuristics for each model to understand their performance for different hyperparameters (datasize, augmentations and clip length) as shown in \figureref{fig:heuristics}.
+Considering different size of datasets and the number of parameters of the networks, we selected four Neural Networks for our ML study:
+VGG-based architectures~\citep{2015_Simonyan_ICLR}, MobileNetV1~\citep{2017-howared_CoRR_MobileNetV1} with 3,208,450 parameters; MobileNetV2~\citep{Sandler_2018_CVPR_MobileNetV2} with 2,225,858 parameters, and SqueezeNet~\citep{iandola2017squeezenet} with 733,580 parameters.
+%complexity of state-of-the-art networks and thinner neural networks,
+%and ShrapML \citep{boice2022-in-jimaging} 430,000
+%(networks and parameters, respectively).
+We then performed heuristics for each model to understand their performance for different hyperparameters (datasize, augmentations and clip length).
+%as shown in \figureref{fig:heuristics}.
 See \appendixref{apd:heuristics} for further details on each model.
 %See \figureref{fig:SqueezeNetTrainingResults} for further results on SqueezeNet Training performance.
 %\begin{table}[htbp]
@@ -338,17 +344,18 @@ See \appendixref{apd:heuristics} for further details on each model.
 \section{Conclusions and Future Work}
 We presented a machine learning case study, including data selection, validation and management, model selection, validation and in a low-cost clinical system.
 Future work, we will investigate thinner segmentation models, model deployment and clinical validation in the ICU.
-
-
+Validation of ML and DL methods for image quality, view classification and segmentation, measurements, detection of abnormalities and diagnosis~\cite{2020_Kusunose_in_CurrentCardiologyReports, 2020_Kusunose_in_Biomolecules, 2021_Kusunose_in_JEchocardiography}.
 %Similarly, we are interested in train models with synthetic Ultrasound images for GE Vivid E9, Hitachi Prosound U7, Philips iE 33 Vision, Siemens SC2000, and Toshiba Artida ultrasound systems \citep{brindise2020unsupervised}.
 %2D velocity vector fields of flow blow can help to detect abnormal flow patterns as done in fetal and neonatal echocardiography \citep{Meyers2020}.
 
 %\acks{Acknowledgements go here.}
 
+\newpage
 \bibliography{../references/references}%%%GITHUB
 % \bibliography{references}%%%OVERLEAF
 %\input{main.bbl}%%%ARXIV
 
+\newpage
 \appendix
 
 \section{Datasets}\label{apd:datasets}
@@ -356,8 +363,8 @@ Future work, we will investigate thinner segmentation models, model deployment a
 \begin{figure}[htbp]
 \floatconts
   {fig:demographics}
-  {\caption{Patient demographics.}} %Figure is adapted from the works of %\cite{}.
-  {\includegraphics[width=\columnwidth]{../figures/patient-demographics-and-diseases/versions/drawing-v01}}%%GITHUB
+  {\caption{Patient demographics for sex, age, BMI, sepsis and dengue disease. Total number of patient is 87 of which data from 31 were curated, annotated and validated.}} %Figure is adapted from the works of %\cite{}.
+  {\includegraphics[width=\columnwidth]{../figures/patient-demographics-and-diseases/versions/drawing-v02}}%%GITHUB
     % {\includegraphics[width=\columnwidth]{figures/patient-demographics-and-diseases.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure}
