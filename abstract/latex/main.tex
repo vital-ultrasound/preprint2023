@@ -79,7 +79,7 @@
 %Real-time AI-empowered echocardiography for Intensive Care Units in low- and middle-income countries %Mon 20 Jun 11:48:09 BST 2022
 %Challenges in Real-time AI-empowered echocardiography for Intensive Care Units in low- and middle-income countries. %Fri 19 Aug 15:36:45 BST 2022
 %Challenges in Real-time AI-empowered echocardiography for Intensive Care Units in low- and middle-income countries: A Machine Learning Case Study %Fri 19 Aug 16:43:05 BST 2022
-Supporting Real-time AI-empowered echocardiography for Intensive Care Units in low- and middle-income countries: A Machine Learning Case Study %Wed 31 Aug 06:18:13 BST 2022
+A Machine Learning Case Study for Real-time AI-empowered echocardiography of Intensive Care Unit Patients in low- and middle-income countries  %Wed 31 Aug 06:18:13 BST 2022
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -144,8 +144,9 @@ Supporting Real-time AI-empowered echocardiography for Intensive Care Units in l
 \maketitle
 
 \begin{abstract}
-We present a machine learning case study on the current and future challenges for a real-time AI-empowered echocardiography system applied to ICU in LMICs.
-Such case study includes reproducible heuristics from a video US dataset of 31 subjects in the ICU, data preparation, curation and labelling, model selection, validation and deployment.
+We present a machine learning case study for a real-time AI-empowered echocardiography system.
+Such case study includes data preparation, curation and labelling from 2D Ultrasound videos of 31 ICU patients in LMICs and model selection, validation and deployment for classification of apical four-chamber view.
+%reproducible heuristics
 The code and other resources to reproduce this work are available at \url{https://github.com/vital-ultrasound/echocardiography}.
 \end{abstract}
 \begin{keywords}
@@ -160,32 +161,32 @@ However, there are two main challenges in the application of point-of-care echoc
 %\begin{enumerate}
 %\setlength\itemsep{0em}
 %\item 
-(a) Intra-view variability of echocardiograms (physiological variations of subjects and acquisition parameters) and inter-observer variability of expertise for sonographer and radiologist \citep{khamis2017, Feigenbaum1996, field2011},and 
+(1) intra-view variability of echocardiograms (physiological variations of patients and acquisition parameters) and inter-observer variability of expertise for sonographer and radiologist \citep{khamis2017, Feigenbaum1996, field2011}, and
 % \item Inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) when performing serial echoes and transducer position during acquisition \citep{zhang2018}
 % \item Redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of US images from different clinical US systems \citep{brindise2020unsupervised}.
 % \item Internal and external validation of AI-based models, data patient privacy to train commercial algorithms, and regulations of software as medical devices \citep{2022_Stewart_Emergency_Medicine_Australasia}.
 % \item 
-(b) Limited number of specialist clinicians to perform US imaging analysis and to provide accurate diagnosis, as well as equipment and hospitalisation requirements in low- and middle-income countries (LMICs) \citep{hao2021-wellcome, 2021-huyNhat-vanHao-in-FAIR-MICCAI}.
+(2) limited number of specialist clinicians to perform US imaging analysis and to provide accurate diagnosis, as well as equipment and hospitalisation requirements in low- and middle-income countries (LMICs) \citep{hao2021-wellcome, 2021-huyNhat-vanHao-in-FAIR-MICCAI, 2016_becker_in_TropicalMedicineInternationalHealth}.
 % \end{enumerate}
 One promising approach to address such challenges is with the application of Artificial Intelligence (AI) and Machine Learing (ML) to echocardiography \citep{2022ASCH_JAmericanSocietyEchocardiography}.
-AI-empowered echocardiography has been successful for detection of different apical views, inter-observer variability of sonographer's expertise, implementation of one-stop AI models with multimodal imaging (US, MRI and clinical data), detection of high risk or low risk of heart failure or automatic detection of endocardial border detection and left ventricle assessment in 2D echocardiography videos \citep{tromp2022, zhang2022-mdpi, behnami2020, ono2022}.
+AI-empowered echocardiography has been successful for detection of different apical views, inter-observer variability of sonographer's expertise, implementation of one-stop AI models with multimodal imaging (US, MRI and clinical data), detection of high risk or low risk of heart failure, detection of endocardial borders and automatic left ventricle assessment in 2D echocardiography videos~\citep{tromp2022, zhang2022-mdpi, behnami2020, ono2022}.
 
-In spite of the success in applying AI and ML to support echocardiography, 
-%and of many methods being available in the literature to solve the major technical challenges. 
-there are still important challenges for these methods to be integrated as a system and translated to clinical practice:
+In spite of the success in applying AI and ML methods to support echocardiography, there are still important challenges for these methods to be integrated as clinical system and translated to clinical practice:
+%and of many methods being available in the literature to solve the major technical challenges.
 %, particularly in the ICU in LMICs:
-%However, there are still few challenges such as 
-\begin{itemize}
+%However, there are still few challenges such as
+\begin{enumerate}
 \setlength\itemsep{0em}
 \item inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) when performing serial echoes and transducer position during acquisition \citep{zhang2018},
-\item redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of US images from different clinical US systems \citep{brindise2020unsupervised}, 
-\item internal and external validation of AI-based models, data patient privacy to train commercial algorithms, and regulations of software as medical devices \citep{2022_Stewart_Emergency_Medicine_Australasia}, and 
-\item little to no studies on how real-time AI-empowered echocardiography is impacting patient management in the ICU in LMICs.
-\end{itemize}
-Particularly, how good machine learning practices (data curation, open-source code implementation, model selection, training and tuning; model validation and inference) are addressing challenges on real-time AI-empowered echocardiography used as point-of-care in the ICU.
+\item redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of US images from different clinical US systems \citep{brindise2020unsupervised}, and
+\item internal and external validation of AI-based models, data patient privacy to train commercial algorithms, and regulations of software as medical devices \citep{2022_Stewart_Emergency_Medicine_Australasia}.
+%\item little to no studies on how real-time AI-empowered echocardiography is impacting patient management in the ICU in LMICs.
+\end{enumerate}
+Challenges (1) and (2) are important because of data required to appropriately be collected, validated and managed to apply AL and ML methods, and challenge (3) AI-based medical devices require to aligned to standards to then go for clinical translation.
+Hence, adopting good machine learning practices (data curation, open-source code implementation, model selection, training and tuning; model validation and inference) might help to addressing challenges in real-time AI-empowered echocardiography used as point-of-care in the ICU for patients in LMICs.
 %in the ICU in LMICs.
 
-Hence, this work presents a scoping review of (a) AI-empowered echocardiography for ICU in LMICs and (b) real-time AI-empowered echocardiography.
+This work, therefore, presents a scoping review of (a) AI-empowered echocardiography for ICU in LMICs and (b) real-time AI-empowered echocardiography.
 We contribute with a machine learning case study of US image classification using deep learning of four chamber views from curated data from LMICs.
 We then conclude and add future work.
 %appendix with further material.
@@ -338,7 +339,6 @@ See \appendixref{apd:heuristics} for further details on each model.
 \section{Conclusions and Future Work}
 We presented a machine learning case study, including data selection, validation and management, model selection, validation and in a low-cost clinical system.
 Future work, we will investigate thinner segmentation models, model deployment and clinical validation in the ICU.
-
 
 
 %Similarly, we are interested in train models with synthetic Ultrasound images for GE Vivid E9, Hitachi Prosound U7, Philips iE 33 Vision, Siemens SC2000, and Toshiba Artida ultrasound systems \citep{brindise2020unsupervised}.
