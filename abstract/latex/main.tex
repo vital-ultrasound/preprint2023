@@ -23,6 +23,11 @@
 %% Anyone with this link can edit this project
 %% https://www.overleaf.com/4969677577xfsfbjqkrnfx
 
+%% How to add a landscape page in LaTeX?: https://latex-tutorial.com/landscape-page/
+%\usepackage{lscape}
+%\begin{landscape}
+%    \Huge \textbf{A landscape page}
+%\end{landscape}
 
 % The following packages will be automatically loaded:
 % amsmath, amssymb, natbib, graphicx, url, algorithm2e
@@ -145,9 +150,11 @@ A Machine Learning Case Study for AI-empowered echocardiography of Intensive Car
 \maketitle
 
 \begin{abstract}
-We present a study case to illustrate the challenges of AI and ML methods to be integrated and translated into clinical practice in a real-time AI-empowered echocardiography system with data of ICU patients in LMICs.
-Such ML case study includes data preparation, curation and labelling from 2D Ultrasound videos of 31 ICU patients in LMICs and model selection, validation and deployment of three thinner neural networks to classify apical four-chamber view.
-We conclude that there is need of datasets to improve diversity of demographics, diseases and devices to deploy and validate ML models, and the need of further investigations of thinner models to run in low-cost hardware.
+We present a Machine Learning (ML) study case to illustrate the challenges of clinical translation for a real-time AI-empowered echocardiography system with data of ICU patients in LMICs.
+%to be integrated and translated into clinical practice %data curation and model validation.
+Such ML case study includes data preparation, curation and labelling from 2D Ultrasound videos of 31 ICU patients in LMICs and model selection, validation and deployment of three thinner neural networks to classify apical four-chamber view (4CV).
+Results of the reproducible ML heuristics showed the promising implementation, validation and application of thinner networks to classify 4CV and limited datasets.
+We conclude this work mentioning the need for (a) datasets to improve diversity of demographics, diseases, (b) AI-empowered devices to deploy and validate ML models and (c) the need of further investigations of thinner models to be run and implemented in low-cost hardware to be clinically translated in the ICU in LMICs.
 %on data curation and requirements on good ML practices to apply
 %Such case study
 %reproducible heuristics
@@ -187,13 +194,13 @@ In spite of the success in applying AI and ML methods to support echocardiograph
 %\item little to no studies on how real-time AI-empowered echocardiography is impacting patient management in the ICU in LMICs.
 \end{enumerate}
 Challenges (1) and (2) are important because of 2D US video data requires to appropriately be collected, validated and managed to apply AL and ML methods, and challenge (3) because AI-based medical devices require to be aligned to standards to then be ready for clinical translation.
-Hence, the adoption of good machine learning practices (data curation, open-source code implementation, model selection, training and tuning; model validation and inference) might help to address challenges in real-time AI-empowered echocardiography used as point-of-care in the ICU for patients in LMICs.
+The adoption of good machine learning practices (data curation, open-source code implementation, model selection, training and tuning; model validation and inference) might help to address challenges in real-time AI-empowered echocardiography used as point-of-care for ICU patients in LMICs.
 %in the ICU in LMICs.
 
-This work presents a scoping review of (a) AI-empowered echocardiography for ICU in LMICs, (b) Classification of echochardiograms and (b) Classification US images with thinner neural networks.
-We present a machine learning case study of US image classification using three thinner neural networks trained with four chamber views data from curated data from LMICs.
+Hence, this work presents a scoping review for (a) AI-empowered echocardiography for ICU in LMICs, (b) classification of echochardiograms, and (b) classification US images with thinner neural networks.
+We present a machine learning case study of US image classification of four chamber views using three thinner neural networks trained with curated data from ICU patients in LMICs.
 As way to show the impact of thinner neural networks, we specifically present results from SqueezeNet for different datasize, number of frames and clips batches, training parameters.
-We then conclude and add future work.
+We then conclude and add future work for clinical translation.
 %appendix with further material.
 
 % \subsection{AI-empowered echocardiography}
@@ -267,13 +274,13 @@ Authors compared ShrapML (8layers--6CNN,2FC, 0.43 million of parameters) against
 \floatconts
   {fig:main-figure}
   {\caption{
-      Machine learning pipeline for AI-empowered echocardiography for ICU in LMICs:
+      Machine learning pipeline of real-time AI-empowered echocardiography for ICU in LMICs:
       (a) timestamp labelling of apical four chamber view frames and clips,
       (b) deep-learning pipeline with thinner Neural Networks (NNs), and
       (c) low-cost clinical system with Epiq Q7, cardiac probe X5-1, USB video-frame grabber and 16GB GeForce RTX 3080 GPU Laptop.
     }
   }
-  {\includegraphics[width=\columnwidth]{../figures/main-figure/versions/drawing-v02}}%%GITHUB
+  {\includegraphics[width=\columnwidth]{../figures/main-figure/versions/drawing-v03}}%%GITHUB
     % {\includegraphics[width=\columnwidth]{figures/main-figure.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure}
@@ -298,8 +305,8 @@ All participants gave written informed consent to participate in the data collec
 \subsubsection{Data annotation, validation and management}
 Apical 4 Chamber view (A4C) is considered as an important view to compute heart failure measurements from 2D US echocardiography ~\citep{2017_hall_JIntensiveCareSociety}.
 For this work, timestamps in the video files for A4C were annotated by one research clinician of 10 years of experience using VGG Image Annotator (VIA).
-Then the same clinician  and one researcher validated timestamps annotations where few filenames and timestamps were fixed.
-\figureref{fig:main-figure}(a) illustrates video and json files with their A4C and background clips to then be segmented.
+Then the same clinician  and one researcher validated timestamps annotations where few filenames and timestamps were fixed (\figureref{fig:main-figure}(a)).
+%illustrates video and json files with their A4C and background clips to then be segmented.
 
 \subsection{Model selection and heuristics}
 Considering different datasets characteristic (number of frames, clips, pixel image, clinical equipment, etc) and the number of parameters of different networks,
@@ -326,7 +333,7 @@ We then performed heuristics for each model to understand the impact of their pe
 %\end{table}
 \subsection{Classification of 2D echocardiograms with thinner neural networks} \label{subsec:echocardiogramsthinnerNets}
 MobileNetV1, MobileNetV2 and SqueezeNet were trained with data of 5 and 31 subjects (\appendixref{apd:heuristics}) in which SqueezeNet showed constant training metrics.
-Hence, we present heuristics different datasize, batch size of clips, and numbe of frames per segment in a clip for SqueezeNet (\figureref{fig:heuristics_results_SqueezeNet_source0}).
+Hence, we present heuristics different datasize, batch size of clips, and number of frames per segment in a clip for SqueezeNet (\figureref{fig:heuristics_results_SqueezeNet_source0}).
 %SqueezeNet~\citep{iandola2017squeezenet} that made use of 733,580 parameters
 %See for further details of the heuristics of each model.
 \begin{figure}[ht]%htbp
@@ -334,18 +341,19 @@ Hence, we present heuristics different datasize, batch size of clips, and numbe 
   {fig:heuristics_results_SqueezeNet_source0}
   {
       \caption{
-          Heuristics for SqueezeNet~\citep{iandola2017squeezenet} with dataset of 5 and 31 subjects:
+          Heuristics for SqueezeNet~\citep{iandola2017squeezenet} with dataset of 5: %and 31 subjects:
           (a, b) varying batch size with constant number of frames per segment equal to 1, and
           (c, d) varying number of frames per clip and constant batch size of clips equal to 10.
       }
   }
-  {\includegraphics[width=\columnwidth]{../figures/heuristics_results_SqueezeNet_source0/versions/drawing-v01}}%%GITHUB
+  {\includegraphics[width=\columnwidth]{../figures/heuristics_results_SqueezeNet_source0_with_05-31-subjects/versions/drawing-v03}}%%GITHUB
     % {\includegraphics[width=\columnwidth]{figures/heuristics_results_SqueezeNet_source0.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure}
 
 \section{Conclusions and Future Work}
 We presented a machine learning case study that includes data selection, validation and management, model selection, validation.
+Our results present the promising use of thinner neural networks to address scarcity of datasets and model deployment in low-cost hardware.
 %in a low-cost clinical system.
 For future work, we will investigate real-time inference and deployment of thinner classification and segmentation models, leading to clinical translation of automatic assessment of ventricular size and function, and evaluation of regional wall motion abnormalities.
 %~\citep{2020_Ye_in_JournalOfInternetTechnology}
@@ -378,18 +386,21 @@ For future work, we will investigate real-time inference and deployment of thinn
 \appendix
 
 \section{Datasets}\label{apd:datasets}
-\figureref{fig:demographics} illustrates demographics for sex, age, BMI, sepsis and denque for the complete dataset and the 31 subjects considered for this work.
+\figureref{fig:demographics} illustrates demographics for sex, age, BMI, sepsis and dengue for the complete dataset and the 31 subjects considered for this work.
 \begin{figure}[htbp]
 \floatconts
   {fig:demographics}
-  {\caption{Patient demographics for sex, age, BMI, sepsis and dengue disease. Total number of patient is 87 of which data from 31 were curated, annotated and validated.}} %Figure is adapted from the works of %\cite{}.
-  {\includegraphics[width=\columnwidth]{../figures/patient-demographics-and-diseases/versions/drawing-v02}}%%GITHUB
+  {\caption{
+      Patient demographics for sex, age, BMI, sepsis and dengue disease.
+      The total number of patient is 87 of which data from 31 were curated, annotated and validated.}} %Figure is adapted from the works of %\cite{}.
+  {\includegraphics[width=\columnwidth]{../figures/patient-demographics-and-diseases/versions/drawing-v03}}%%GITHUB
     % {\includegraphics[width=\columnwidth]{figures/patient-demographics-and-diseases.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure}
 
 \section{Heuristics of model selection} \label{apd:heuristics}
 \figureref{fig:ThinnerNeuralNetsResults} illustratres heristics for accuraty, train, classification and elapse times of 5 and 31 subjects.
+%\begin{landscape}
 \begin{figure*}[ht]
 \floatconts
   {fig:ThinnerNeuralNetsResults}
@@ -398,14 +409,15 @@ For future work, we will investigate real-time inference and deployment of thinn
     Heuristics for 5 and 31 subjects with 1 frames per clip and 20 batch size of clips for
     % VGG-based models~\citep{2015_Simonyan_ICLR}
     MobileNetV1~\citep{2017-howared_CoRR_MobileNetV1} with 3,208,450 parameters, MobileNetV2~\citep{Sandler_2018_CVPR_MobileNetV2} with 2,225,858 parameters, and SqueezeNet~\citep{iandola2017squeezenet} with 733,580 parameters.
+    \textbf{Note:} It is recommended to zoom in the figures to see further details (figure DPI is 300).
     %and ShrapML \citep{boice2022-in-jimaging} 430,000
           }
   }
-  {\includegraphics[width=\textwidth]{../figures/comparing-NETS-for-USviewclassification/versions/drawing-v01}}%%GITHUB
+  {\includegraphics[width=\textwidth]{../figures/comparing-NETS-for-USviewclassification/versions/drawing-v02}}%%GITHUB
     % {\includegraphics[width=\columnwidth]{figures/comparing-NETS-for-USviewclassification.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure*}
-
+%\end{landscape}
 
 \end{document}
 
