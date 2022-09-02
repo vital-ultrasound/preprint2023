@@ -6,7 +6,8 @@ on:
       - 1-citex
       - 03-drafting-proceeding-paper
       - 10-new-literature
-      - 13-draft-ml4h2022 
+      - 13-draft-ml4h2022
+      - 13-drafting-ml4h2022
 
 jobs:
   build:
@@ -38,7 +39,7 @@ jobs:
         echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         git config --global core.sshCommand "ssh -i ~/.ssh/id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
-        git clone --depth=1 --branch pdfs git@github.com:vital-ultrasound/2022-echocardiography-proceedings.git "$GITHUB_WORKSPACE/deploy"
+        git clone --depth=1 --branch pdfs git@github.com:vital-ultrasound/ML4H2022.git "$GITHUB_WORKSPACE/deploy"
         cp -f abstract/latex/main.pdf "$GITHUB_WORKSPACE/deploy/ml4h2022.pdf"
         cd "$GITHUB_WORKSPACE/deploy"
         git add ml4h2022.pdf
