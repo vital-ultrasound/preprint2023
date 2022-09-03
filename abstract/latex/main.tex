@@ -196,9 +196,10 @@ Challenges (1) and (2) are important because of 2D US video data requires to app
 Hence, the adoption of good machine learning practices (data curation, open-source code implementation, model selection, training and tuning; model validation and inference) might help to address challenges in real-time AI-empowered echocardiography used as point-of-care for ICU patients in LMICs.
 %in the ICU in LMICs.
 
-This work presents a scoping review for (a) AI-empowered echocardiography for ICU in LMICs, (b) classification of echochardiograms, and (b) classification US images with thinner neural networks.
+This work presents a scoping review for (a) AI-empowered echocardiography for ICU in LMICs and (b) classification US images with thinner neural networks.
 We present a ML case study to classify A4C US image using three thinner neural networks which were trained with curated data from ICU patients in LMICs.
 We present results from SqueezeNet for different datasize, number of frames and clips batches to show the potential of using thinner models.
+Further details for datsets, results of thinner networks are also added in the appendixes.
 %something TODO/TOADD training parameters
 We conclude and add future work for clinical translation.
 %appendix with further material.
@@ -262,7 +263,7 @@ Similarly, \citet{boice2022-in-jimaging} proposed ShrapML, a CNN model to detect
 Authors compared ShrapML against DarkNet19, GoogleNet, MobileNetV2 and SqueezeNet, being ShrapML (8layers--6CNN and 2FC, making a network of 0.43 million parameters) 10x faster than MobileNetV2 and offering the highest accuracy.
 
 \section{Machine learning case study}
-\begin{figure}[t]%htbp
+\begin{figure}[ht]%htbp
 \floatconts
   {fig:main-figure}
   {\caption{
@@ -287,8 +288,8 @@ BMI: mean (std): 23.80 (4.30).
 %Sepsis \% (with): 61.3\%;
 %Dengue \% (with): 54.8\%, and
 %Tetanus \% (with): 87.1\%.
-See \appendixref{apd:datasets} for further details on the demographics of the dataset (distributions for sex, age, BMI, sepsis and dengue diseases), including the complete dataset of the total of 87 patients.
-
+See \appendixref{apd:datasets} for further details on the demographics of the dataset, including the complete dataset of 87 patients.
+%(distributions for sex, age, BMI, sepsis and dengue diseases)
 
 \subsubsection{Ethics statement}
 This study was approved by the anonymised entity one and anonymised entity two.
@@ -323,7 +324,7 @@ We then performed heuristics for each model to understand the impact of their pe
 %ShrapML \citep{boice2022-in-jimaging} & 430,000
 %\end{tabular}}
 %\end{table}
-\subsection{Classification of 2D echocardiograms with thinner neural networks} \label{subsec:echocardiogramsthinnerNets}
+% \subsection{Classification of 2D echocardiograms with thinner neural networks} \label{subsec:echocardiogramsthinnerNets}
 MobileNetV1, MobileNetV2 and SqueezeNet were trained with data of 5 and 31 subjects (\appendixref{apd:heuristics}) in which SqueezeNet showed constant training metrics.
 Hence, we present heuristics different datasize, batch size of clips, and number of frames per segment in a clip for SqueezeNet (\figureref{fig:heuristics_results_SqueezeNet_source0}).
 %SqueezeNet~\citep{iandola2017squeezenet} that made use of 733,580 parameters
