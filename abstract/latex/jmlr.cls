@@ -85,7 +85,7 @@
  \ClassWarning{jmlr}{html option is now deprecated}%
  \jmlrhtmltrue}
 \DeclareOptionX{nohtml}{\jmlrhtmlfalse}
-\def\pt@size{10pt} %Normal font size (default is 11pt)
+\def\pt@size{11pt} %DEFAULT \def\pt@size{11pt} but just changed to 10pt becuase of the last year abstracts
 \DeclareOptionX{10pt}{\renewcommand{\pt@size}{10pt}}
 \DeclareOptionX{11pt}{\renewcommand{\pt@size}{11pt}}
 \DeclareOptionX{12pt}{\renewcommand{\pt@size}{12pt}}
