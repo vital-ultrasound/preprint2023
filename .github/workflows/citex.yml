@@ -8,6 +8,7 @@ on:
       - 10-new-literature
       - 13-draft-ml4h2022
       - 13-drafting-ml4h2022
+      - 17-action-required-by-ML4Horganisers
 
 jobs:
   build:
