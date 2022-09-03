@@ -166,22 +166,21 @@ Machine Learning, Artificial Intelligence, Echocardiography.
 
 \section{Introduction}
 \label{sec:intro}
-Echocardiography is an important clinical procedure in Intensive Care Units (ICUs) because of the features of Ultrasound (US) image modality such as portability, low cost, non-ionising radiation and its real-time capabilities to visualise cardiac anatomy~\citep{Feigenbaum1996, Vieillard-Baron2008, singh2007, cambell2018}.
-Typically, the identification of cardiac abnormalities from 2D US views (Apical 4-Chamber View (A4C), Apical 3-Chamber View (A3C), Apical 2-Chamber View (A2C), Parastemal Long-Axis View (PLAX), etc) is achieved by specialist clinicians in echocardigraphy following the Focused Intensive Care Echo (FICE) protocol~\citep{2017_hall_JIntensiveCareSociety}. %\citep{2016_coates_JIntensiveCareSociety, 2017_hall_JIntensiveCareSociety, 2020_medhora_ClinicalCaseReports}.
-However, the application of point-of-care echocardiography in the ICU faces two challenges:
+Echocardiography is an important clinical procedure in Intensive Care Units (ICUs) because of the features of Ultrasound (US) image modality such as portability, low cost, non-ionising radiation and its real-time capabilities to visualise cardiac anatomy~\citep{Vieillard-Baron2008, cambell2018}. %singh2007
+Typically, the identification of cardiac abnormalities from 2D US views (Apical 4-Chamber View (A4C), Parastemal Long-Axis View (PLAX), other eight views) is achieved by specialist clinicians in echocardigraphy following the Focused Intensive Care Echo (FICE) protocol~\citep{2017_hall_JIntensiveCareSociety}. %\citep{2016_coates_JIntensiveCareSociety, 2017_hall_JIntensiveCareSociety, 2020_medhora_ClinicalCaseReports}.
+However, the application of point-of-care echocardiography of the ICU  in low- and middle-income countries (LMICs) faces two challenges:
 %\begin{enumerate}
 %\setlength\itemsep{0em}
 %\item 
-(1) intra-view variability of echocardiograms (physiological variations of patients and acquisition parameters) and inter-observer variability of expertise for sonographer and radiologist~\citep{khamis2017, Feigenbaum1996, field2011}, and
+(1) intra-view variability of echocardiograms (physiological variations of patients and acquisition parameters) and inter-observer variability of expertise for sonographer and radiologist~\citep{Feigenbaum1996, khamis2017, field2011}, and
 % \item Inter-view similarity of echocardiograms (similar views of valve motion, wall motion, left ventricle, etc) when performing serial echoes and transducer position during acquisition \citep{zhang2018}
 % \item Redundant information in the clinical echo system (icons, date, frame rate, etc) \citep{khamis2017} and variation of US images from different clinical US systems \citep{brindise2020unsupervised}.
 % \item Internal and external validation of AI-based models, data patient privacy to train commercial algorithms, and regulations of software as medical devices \citep{2022_Stewart_Emergency_Medicine_Australasia}.
 % \item 
-(2) limited number of specialist clinicians to perform US imaging analysis and to provide accurate diagnosis, and the limited equipment and hospitalisation requirements in low- and middle-income countries (LMICs)~\citep{hao2021-wellcome, 2021-huyNhat-vanHao-in-FAIR-MICCAI, 2016_becker_in_TropicalMedicineInternationalHealth}.
+(2) limited number of specialist clinicians to perform US imaging analysis and to provide accurate diagnosis, and the limited equipment and hospitalisation requirements~\citep{2016_becker_in_TropicalMedicineInternationalHealth, hao2021-wellcome, 2021-huyNhat-vanHao-in-FAIR-MICCAI}.
 % \end{enumerate}
 One promising approach to address such challenges is with the application of Artificial Intelligence (AI) and Machine Learing (ML) to echocardiography~\citep{2022asch_AmericanSocietyofEchocardiography}.
 AI-empowered echocardiography has been successful for detection of different apical views, inter-observer variability of sonographer's expertise, implementation of one-stop AI models with multimodal imaging (US, MRI and clinical data), detection of high risk or low risk of heart failure, detection of endocardial borders and automatic left ventricle assessment in 2D echocardiography videos~\citep{tromp2022, zhang2022-mdpi, behnami2020, ono2022}.
-
 In spite of the success in applying AI and ML methods to support echocardiography, there are still important challenges for these methods to be integrated as clinical system and translated to clinical practice:
 %and of many methods being available in the literature to solve the major technical challenges.
 %, particularly in the ICU in LMICs:
@@ -194,13 +193,14 @@ In spite of the success in applying AI and ML methods to support echocardiograph
 %\item little to no studies on how real-time AI-empowered echocardiography is impacting patient management in the ICU in LMICs.
 \end{enumerate}
 Challenges (1) and (2) are important because of 2D US video data requires to appropriately be collected, validated and managed to apply AL and ML methods, and challenge (3) because AI-based medical devices require to be aligned to standards to then be ready for clinical translation.
-The adoption of good machine learning practices (data curation, open-source code implementation, model selection, training and tuning; model validation and inference) might help to address challenges in real-time AI-empowered echocardiography used as point-of-care for ICU patients in LMICs.
+Hence, the adoption of good machine learning practices (data curation, open-source code implementation, model selection, training and tuning; model validation and inference) might help to address challenges in real-time AI-empowered echocardiography used as point-of-care for ICU patients in LMICs.
 %in the ICU in LMICs.
 
-Hence, this work presents a scoping review for (a) AI-empowered echocardiography for ICU in LMICs, (b) classification of echochardiograms, and (b) classification US images with thinner neural networks.
-We present a machine learning case study of US image classification of four chamber views using three thinner neural networks trained with curated data from ICU patients in LMICs.
-As way to show the impact of thinner neural networks, we specifically present results from SqueezeNet for different datasize, number of frames and clips batches, training parameters.
-We then conclude and add future work for clinical translation.
+This work presents a scoping review for (a) AI-empowered echocardiography for ICU in LMICs, (b) classification of echochardiograms, and (b) classification US images with thinner neural networks.
+We present a ML case study to classify A4C US image using three thinner neural networks which were trained with curated data from ICU patients in LMICs.
+We present results from SqueezeNet for different datasize, number of frames and clips batches to show the potential of using thinner models.
+%something TODO/TOADD training parameters
+We conclude and add future work for clinical translation.
 %appendix with further material.
 
 % \subsection{AI-empowered echocardiography}
