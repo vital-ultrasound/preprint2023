@@ -247,27 +247,19 @@ Similarly, \citet{hong2022} identified 20 of the most frequent variables in ML p
 %For specific diseases, the most studied are sepsis, infection and kidney injury; and trends with liver diseases and severe cancerl and others like cardica diseases, brain diseases;
 Despite such advances, there is few research on AI-empowered echocardiography used by clinicians in the ICU, specifically in LMICs.
 For instance, \cite{2021-huyNhat-vanHao-in-FAIR-MICCAI} reported challenges in resourced limited ICUs including: infrastructure, education, personnel, data pipelines, regulation and trust in AI.
-Also, \cite{2021-kerdegari-Applied-Sciences-MDPI, 2021-kerdegari-ISBI-IEEE, 2021-huyNhat-kerdegari-in-FAIR-MICCAI} presented a deep-learning pipeline to classify lung US pathologies for ICU patients in LMIC, stating the challenges of data imbalance, integration of technology and the limited IT infrastructure.
+Also, \cite{2021-kerdegari-Applied-Sciences-MDPI, 2021-kerdegari-ISBI-IEEE, 2021-huyNhat-kerdegari-in-FAIR-MICCAI} presented a deep-learning pipelines to classify lung US pathologies for ICU patients in LMICs, stating the challenges of data imbalance, integration of technology and the limited IT infrastructure.
 
-%\subsection{Real-time AI-empowered echocardiography}
-\subsection{Classification of echochardiograms} \label{subsec:Nets_echochardiograms}
-\citet{khamis2017} considered 309 clinical echocardiograms of apical views which were visually classified and labelled by two experts into three classes: 103 A2C views, 103 A4C views and 103 ALX views to then applied spatio-temporal feature extraction (Cuboic Detector) and supervised learning dictionary (LC-KSVD) resulting in an overall recognition rate of 95\%.
-\citet{woudenberg2018} applied DenseNet and LSTM to extract temporal information on sequences of 16000 echo cine frames to classify 14 heart views with an average accuracy of 92.35\%.
-%\citet{woudenberg2018} implemented a Tensorflow runner that performs contrast enhancement to then sent each frame to three identical CNNs running in separated threads to prevent lag during inference times.
-%Then a shared buffer collects extracted features from CNNs to then awake the thread for the LSTM network from the previous ten frames to produce classification and quality prediction.
-\citet{woudenberg2018} also presents timing diagrams to quantify frame arrival and real-time performance to operate at 30 frames per second, while providing feedback with a mean latency of 352.91 ± 38.27 m$s$ when measured from the middle of the ten-frame sequence.
-\citet{zhang2018} performed view classification with 277 echocardiograms to create a 23-class models (including A4C no occlusions, A4C occluded LA, A4C occluded LV, etc) using 13-layer CNN with 5-fold cross-validation for accuracy assessment and resulting in 84\% for overall accuracy where challenges for partial obscured LVs for A2C, A3C and A4C.
-Similarly, \citet{zhang2018} applied U-net to segment 5 views (A2C, A3C, A4C, PSAX, PLAX) and CNN model for 3 cardiac diseases with the use of A4C capturing most of the information for the diseases.
 
 \subsection{Classification of US images with thinner neural networks} \label{subsec:thinnerNets}
-\citet{baumgartner2017-IEEETransMedImag} proposed SonoNet which is a VGG-based architecture, having the same first 13 layers of VGG16, and SmallNet, loosely inspired by AlexNet, for real-time detection and bounding box localisation of standard views in freehand fetal US.
+Classifying echochardiograms has been sucessfully done in the previous years (\sectionref{subsec:nns_echochardiograms}), however real-time deployment suggest to require thinner networks.
+For instance, \citet{baumgartner2017-IEEETransMedImag} proposed SonoNet which is a VGG-based architecture, having the same first 13 layers of VGG16, and SmallNet, loosely inspired by AlexNet, for real-time detection and bounding box localisation of standard views in freehand fetal US.
 \citet{toussaint2018-MICCAI} applied four feature extraction networks couple with batchnormalization and soft proposal layer (VGG13-SP, VGG16-SP, ResNet18-SP, ResNet34-SP), resulting in 0.912 of average accuracy over six classes of fetal US views with ResNet18-SP.
-\citet{Al-Dhabyani2019-IJACSA} applied AlexNet and transfer learning of four architectures (VGG16, Inception, ResNet, and NASNet) without augmentation and with three augmentation techniques to perform tumor classification of breast ultrasound imaging.
+\citet{Al-Dhabyani2019-IJACSA} applied AlexNet and transfer learning of four architectures (VGG16, Inception, ResNet, and NASNet) without augmentation and with three augmentation techniques to perform tumor classification of breast US imaging.
 Authors stated that transfer learning with NASNet presented the best accuracy with 99\% using BUSI+B datasets with DAGAN augmentation.
-\citet{xie2020-physics-in-medicine-biology} proposed a dual-sampling convolutional neural network (DSCNN) for US image breast cancer classification, being DSCNN more efficient than AlexNet, VGG16, ResNet18, GoogleNet and EfficientNet.
+\citet{xie2020-physics-in-medicine-biology} proposed a dual-sampling convolutional neural network (DSCNN) for US image breast cancer classification, being DSCNN more efficient for such task than AlexNet, VGG16, ResNet18, GoogleNet and EfficientNet.
 Recently, \citet{snider2022-ScientificReports} reported summaries of CNN heuristics to detect shrapnel in US images, including layer activators, 2D CNN layer architectures, model optimisers dense nodes, and the effect of image augmentation and dropout rate and epoch number.
 Similarly, \citet{boice2022-in-jimaging} proposed ShrapML, a CNN model to detect shrapnel in US imaging.
-Authors compared ShrapML (8layers--6CNN,2FC, 0.43 million of parameters) against DarkNet19, GoogleNet, MobileNetV2 and SqueezeNet, being ShrapML 10x faster than MobileNet2 and offering the highest accuracy.
+Authors compared ShrapML against DarkNet19, GoogleNet, MobileNetV2 and SqueezeNet, being ShrapML (8layers--6CNN and 2FC, making a network of 0.43 million parameters) 10x faster than MobileNetV2 and offering the highest accuracy.
 
 \section{Machine learning case study}
 \begin{figure}[t]%htbp
@@ -387,6 +379,19 @@ The code and other resources to reproduce this work will be available upon accep
 
 \newpage
 \appendix
+
+
+%\subsection{Real-time AI-empowered echocardiography}
+% \subsection{Classification of echochardiograms} \label{subsec:nns_echochardiograms}
+\section{Classification of echochardiograms} \label{subsec:nns_echochardiograms}
+\citet{khamis2017} considered 309 clinical echocardiograms of apical views which were visually classified and labelled by two experts into three classes: 103 A2C views, 103 A4C views and 103 ALX views to then applied spatio-temporal feature extraction (Cuboic Detector) and supervised learning dictionary (LC-KSVD) resulting in an overall recognition rate of 95\%.
+\citet{woudenberg2018} applied DenseNet and LSTM to extract temporal information on sequences of 16000 echo cine frames to classify 14 heart views with an average accuracy of 92.35\%.
+%\citet{woudenberg2018} implemented a Tensorflow runner that performs contrast enhancement to then sent each frame to three identical CNNs running in separated threads to prevent lag during inference times.
+%Then a shared buffer collects extracted features from CNNs to then awake the thread for the LSTM network from the previous ten frames to produce classification and quality prediction.
+\citet{woudenberg2018} also presents timing diagrams to quantify frame arrival and real-time performance to operate at 30 frames per second, while providing feedback with a mean latency of 352.91 ± 38.27 m$s$ when measured from the middle of the ten-frame sequence.
+\citet{zhang2018} performed view classification with 277 echocardiograms to create a 23-class models (including A4C no occlusions, A4C occluded LA, A4C occluded LV, etc) using 13-layer CNN with 5-fold cross-validation for accuracy assessment and resulting in 84\% for overall accuracy where challenges for partial obscured LVs for A2C, A3C and A4C.
+Similarly, \citet{zhang2018} applied U-net to segment 5 views (A2C, A3C, A4C, PSAX, PLAX) and CNN model for 3 cardiac diseases with the use of A4C capturing most of the information for the diseases.
+
 
 \section{Datasets}\label{apd:datasets}
 \figureref{fig:demographics} illustrates demographics for sex, age, BMI, sepsis and dengue for the complete dataset and the 31 subjects considered for this work.
