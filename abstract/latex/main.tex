@@ -153,7 +153,7 @@ A Machine Learning Case Study for AI-empowered echocardiography of Intensive Car
 We present a Machine Learning (ML) study case to illustrate the challenges of clinical translation for a real-time AI-empowered echocardiography system with data of ICU patients in LMICs.
 %to be integrated and translated into clinical practice %data curation and model validation.
 Such ML case study includes data preparation, curation and labelling from 2D Ultrasound videos of 31 ICU patients in LMICs and model selection, validation and deployment of three thinner neural networks to classify apical four-chamber view.
-Results of the reproducible ML heuristics showed the promising implementation, validation and application of thinner networks to classify 4CV with limited datasets.
+Results of the ML heuristics showed the promising implementation, validation and application of thinner networks to classify 4CV with limited datasets.
 We conclude this work mentioning the need for (a) datasets to improve diversity of demographics, diseases, and (b) the need of further investigations of thinner models to be run and implemented in low-cost hardware to be clinically translated in the ICU in LMICs.
 %on data curation and requirements on good ML practices to apply
 %Such case study
@@ -167,8 +167,8 @@ Machine Learning, Artificial Intelligence, Echocardiography.
 \section{Introduction}
 \label{sec:intro}
 Echocardiography is an important clinical procedure in Intensive Care Units (ICUs) because of the features of Ultrasound (US) image modality such as portability, low cost, non-ionising radiation and its real-time capabilities to visualise cardiac anatomy~\citep{Vieillard-Baron2008, cambell2018}. %singh2007
-Typically, the identification of cardiac abnormalities from 2D US views (Apical 4-Chamber View (A4C), Parastemal Long-Axis View (PLAX), other eight views) is achieved by specialist clinicians in echocardigraphy following the Focused Intensive Care Echo (FICE) protocol~\citep{2017_hall_JIntensiveCareSociety}. %\citep{2016_coates_JIntensiveCareSociety, 2017_hall_JIntensiveCareSociety, 2020_medhora_ClinicalCaseReports}.
-However, the application of point-of-care echocardiography of the ICU  in low- and middle-income countries (LMICs) faces two challenges:
+Typically, the identification of cardiac abnormalities from 2D US views (Apical 4-Chamber (A4C), Parastemal Long-Axis and other six views) is achieved by specialist clinicians in echocardigraphy following the Focused Intensive Care Echo protocol~\citep{2017_hall_JIntensiveCareSociety}. %\citep{2016_coates_JIntensiveCareSociety, 2017_hall_JIntensiveCareSociety, 2020_medhora_ClinicalCaseReports}.
+However, the application of point-of-care echocardiography of ICU patients in low- and middle-income countries (LMICs) faces two challenges:
 %\begin{enumerate}
 %\setlength\itemsep{0em}
 %\item 
@@ -179,8 +179,8 @@ However, the application of point-of-care echocardiography of the ICU  in low- a
 % \item 
 (2) limited number of specialist clinicians to perform US imaging analysis and to provide accurate diagnosis, and the limited equipment and hospitalisation requirements~\citep{2016_becker_in_TropicalMedicineInternationalHealth, hao2021-wellcome, 2021-huyNhat-vanHao-in-FAIR-MICCAI}.
 % \end{enumerate}
-One promising approach to address such challenges is with the application of Artificial Intelligence (AI) and Machine Learing (ML) to echocardiography~\citep{2022asch_AmericanSocietyofEchocardiography}.
-AI-empowered echocardiography has been successful for detection of different apical views, inter-observer variability of sonographer's expertise, implementation of one-stop AI models with multimodal imaging (US, MRI and clinical data), detection of high risk or low risk of heart failure, detection of endocardial borders and automatic left ventricle assessment in 2D echocardiography videos~\citep{tromp2022, zhang2022-mdpi, behnami2020, ono2022}.
+One promising approach to address such challenges is the application of Machine Learing (ML) and Artificial Intelligence (AI) methods to echocardiography~\citep{2022asch_AmericanSocietyofEchocardiography}.
+AI-empowered echocardiography has been successful for detection of different apical views, inter-observer variability of sonographer's expertise, implementation of one-stop AI models with multimodal imaging (US, MRI and clinical data), detection of high/low risk of heart failure, detection of endocardial borders and automatic left ventricle assessment in 2D echocardiography videos~\citep{tromp2022, zhang2022-mdpi, behnami2020, ono2022}.
 In spite of the success in applying AI and ML methods to support echocardiography, there are still important challenges for these methods to be integrated as clinical system and translated to clinical practice:
 %and of many methods being available in the literature to solve the major technical challenges.
 %, particularly in the ICU in LMICs:
@@ -192,16 +192,18 @@ In spite of the success in applying AI and ML methods to support echocardiograph
 \item internal and external validation of AI-based models, data patient privacy to train commercial algorithms, and regulations of software as medical devices~\citep{2022_Stewart_Emergency_Medicine_Australasia}.
 %\item little to no studies on how real-time AI-empowered echocardiography is impacting patient management in the ICU in LMICs.
 \end{enumerate}
-Challenges (1) and (2) are important because of 2D US video data requires to appropriately be collected, validated and managed to apply AL and ML methods, and challenge (3) because AI-based medical devices require to be aligned to standards to then be ready for clinical translation.
-Hence, the adoption of good machine learning practices (data curation, open-source code implementation, model selection, training and tuning; model validation and inference) might help to address challenges in real-time AI-empowered echocardiography used as point-of-care for ICU patients in LMICs.
+The first and second challenges are important because of 2D US video data requires to appropriately be collected, validated and managed to apply AL and ML methods, and the third challenge because AI-based medical devices require to be aligned to standards to then be ready for clinical translation.
+Hence, the adoption of good machine learning practices (data curation, open-source code implementation, model selection, training and tuning; model validation and inference) might help to address such challenges.
+%  in real-time AI-empowered echocardiography used as point-of-care for ICU patients in LMICs.
 %in the ICU in LMICs.
 
 This work presents a scoping review for (a) AI-empowered echocardiography for ICU in LMICs and (b) classification US images with thinner neural networks.
-We present a ML case study to classify A4C US image using three thinner neural networks which were trained with curated data from ICU patients in LMICs.
-We present results from SqueezeNet for different datasize, number of frames and clips batches to show the potential of using thinner models.
+We present a ML case study to classify A4C US image considering three thinner neural networks trained with curated data from ICU patients in LMICs.
+We present training results from SqueezeNet for different datasize, number of frames and clips batches. 
+% to show the potential of applying thinner models.
 Further details for datsets, results of thinner networks are also added in the appendixes.
 %something TODO/TOADD training parameters
-We conclude and add future work for clinical translation.
+We conclude with needs for clinical translation and add future work with validation of AI-based models. 
 %appendix with further material.
 
 % \subsection{AI-empowered echocardiography}
@@ -232,7 +234,7 @@ We conclude and add future work for clinical translation.
 
 \section{Scoping review}
 \subsection{AI-empowered echocardiography for ICU in LMICs}
-\citet{hanson2001} reviewed various AI-based applications in the ICU where real-time analysis of waveforms of electrocardiograms and electroencephalograms using neural network were used to identify cardiac ischemia and diagnosis of myocardial ischemia.
+\citet{hanson2001} reviewed various AI-based applications in the ICU where real-time analysis of waveforms of electrocardiograms and electroencephalograms with neural network were used to identify cardiac ischemia and diagnosis of myocardial ischemia.
 %\citet{hanson2001} also reviewed various clinical scenarios where variables such as central venous pressure (CVP), left ventricular ejection fraction (EF), heart rate (HR), hemoglobin (HGB) and oxygen saturation (O2sat) were used with Bayesian networks to provide probabilistic cardiac output.
 %\citet{hanson2001} also touched on data visualisation to demonstrate the hypothetical ICU for large number of patients (head injury, sepsis, acute respiratory distress syndrome, etc).
 \citet{Ghorbani-DigitalMedicineNature-JAN2020} reported how deep learning models predicts systematic phenotypes from echocardiogram images which are difficult for human interpreters.
@@ -240,24 +242,26 @@ We conclude and add future work for clinical translation.
 %to predict age, sex, weight and height
 %and make use of such models
 %Authors trained CCN models with 2.6 million echocardiogram images from 2850 patients with
-\citet{CHEEMA2021JACCCaseReports} reported five patients with covid-19 in the ICU to illustrate "how decision making affect in patient care" and how the use of AI-enabled tools provided real-time guidance to acquire desired cardiac 2D US views with the steering of user's transducer position and hand movement.
+\citet{CHEEMA2021JACCCaseReports} reported five patients with covid-19 in the ICU to illustrate "how decision making affect in patient care" and how the use of AI-enabled tools provided real-time guidance to acquire desired cardiac 2D US views.
+% with the steering of user's transducer position and hand movement.
 Recently, \citet{hong2022} reviewed 673 papers that apply ML methods to help making clinical decision in the ICU, of these studies the majority used supervised learning (91\%) and few of them applied unsupervised learning and reinforcement learning methods.
-Similarly, \citet{hong2022} identified 20 of the most frequent variables in ML pipelines for ICU patients, being the top five (age, sex, heart rate, respiratory rate, and pH).
-\citet{hong2022} mentioned that typical outcomes in the ICU are mortality, survival, and long-term quality of life and the most studied diseases are sepsis, infection and kidney injury.
+Similarly, \citet{hong2022} identified 20 of the most frequent variables in ML pipelines for ICU patients, being the top five (age, sex, heart rate, respiratory rate, and pH), 
+% \citet{hong2022} mentioned that typical outcomes in the ICU are mortality, survival, and long-term quality of life 
+and mentionted that the most studied diseases are sepsis, infection and kidney injury.
 %and included typical patient outcomes, specific diseases, and stay of time evaluation and 
 %For specific diseases, the most studied are sepsis, infection and kidney injury; and trends with liver diseases and severe cancerl and others like cardica diseases, brain diseases;
-Despite such advances, there is few research on AI-empowered echocardiography used by clinicians in the ICU, specifically in LMICs.
+Despite such advances, there is little research on AI-empowered echocardiography used by clinicians in the ICU, specifically in LMICs.
 For instance, \cite{2021-huyNhat-vanHao-in-FAIR-MICCAI} reported challenges in resourced limited ICUs including: infrastructure, education, personnel, data pipelines, regulation and trust in AI.
-Also, \cite{2021-kerdegari-Applied-Sciences-MDPI, 2021-kerdegari-ISBI-IEEE, 2021-huyNhat-kerdegari-in-FAIR-MICCAI} presented a deep-learning pipelines to classify lung US pathologies for ICU patients in LMICs, stating the challenges of data imbalance, integration of technology and the limited IT infrastructure.
-
+\cite{2021-kerdegari-Applied-Sciences-MDPI, 2021-kerdegari-ISBI-IEEE, 2021-huyNhat-kerdegari-in-FAIR-MICCAI} presented a deep-learning pipelines to classify lung US pathologies for ICU patients in LMICs, stating the challenges of data imbalance, integration of technology and the limited IT infrastructure.
 
 \subsection{Classification of US images with thinner neural networks} \label{subsec:thinnerNets}
-Classifying echochardiograms has been sucessfully done in the previous years (\sectionref{subsec:nns_echochardiograms}), however real-time deployment suggest to require thinner networks.
+Classifying echochardiograms has been sucessfully done in the previous years (\sectionref{subsec:nns_echochardiograms}), however real-time deployment of AI-models suggest to require thinner networks.
 For instance, \citet{baumgartner2017-IEEETransMedImag} proposed SonoNet which is a VGG-based architecture, having the same first 13 layers of VGG16, and SmallNet, loosely inspired by AlexNet, for real-time detection and bounding box localisation of standard views in freehand fetal US.
-\citet{toussaint2018-MICCAI} applied four feature extraction networks couple with batchnormalization and soft proposal layer (VGG13-SP, VGG16-SP, ResNet18-SP, ResNet34-SP), resulting in 0.912 of average accuracy over six classes of fetal US views with ResNet18-SP.
-\citet{Al-Dhabyani2019-IJACSA} applied AlexNet and transfer learning of four architectures (VGG16, Inception, ResNet, and NASNet) without augmentation and with three augmentation techniques to perform tumor classification of breast US imaging.
-Authors stated that transfer learning with NASNet presented the best accuracy with 99\% using BUSI+B datasets with DAGAN augmentation.
-\citet{xie2020-physics-in-medicine-biology} proposed a dual-sampling convolutional neural network (DSCNN) for US image breast cancer classification, being DSCNN more efficient for such task than AlexNet, VGG16, ResNet18, GoogleNet and EfficientNet.
+\citet{toussaint2018-MICCAI} applied four feature extraction networks couple with batchnormalization and soft proposal layer (VGG13-SP, VGG16-SP, ResNet18-SP, ResNet34-SP), resulting in real-time performance at inference time of 40 m$s$ per image ($\sim$20Hz)
+% resulting in 0.912 of average accuracy over six classes of fetal US views with ResNet18-SP.
+\citet{Al-Dhabyani2019-IJACSA} applied AlexNet and transfer learning of four architectures (VGG16, Inception, ResNet, and NASNet) with and without augmentation techniques to perform tumor classification of breast US imaging.
+Authors stated that transfer learning with NASNet presented the best accuracy (99\%) using BUSI+B datasets with DAGAN augmentation.
+\citet{xie2020-physics-in-medicine-biology} proposed a dual-sampling convolutional neural network for US image breast cancer classification, being their network more efficient for such task than AlexNet, VGG16, ResNet18, GoogleNet and EfficientNet.
 Recently, \citet{snider2022-ScientificReports} reported summaries of CNN heuristics to detect shrapnel in US images, including layer activators, 2D CNN layer architectures, model optimisers dense nodes, and the effect of image augmentation and dropout rate and epoch number.
 Similarly, \citet{boice2022-in-jimaging} proposed ShrapML, a CNN model to detect shrapnel in US imaging.
 Authors compared ShrapML against DarkNet19, GoogleNet, MobileNetV2 and SqueezeNet, being ShrapML (8layers--6CNN and 2FC, making a network of 0.43 million parameters) 10x faster than MobileNetV2 and offering the highest accuracy.
@@ -273,18 +277,19 @@ Authors compared ShrapML against DarkNet19, GoogleNet, MobileNetV2 and SqueezeNe
       (c) low-cost clinical system with Epiq Q7, cardiac probe X5-1, USB video-frame grabber and 16GB GeForce RTX 3080 GPU Laptop.
     }
   }
-  {\includegraphics[width=0.85\linewidth]{../figures/main-figure/versions/drawing-v03}}%%GITHUB
+  {\includegraphics[width=0.70\linewidth]{../figures/main-figure/versions/drawing-v03}}%%GITHUB
     % {\includegraphics[width=\columnwidth]{figures/main-figure.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure}
 \subsection{Dataset}
-Echocardiography videos of 31 anonymised patients in the ICU were considered for this work which were collected by four radiologists using the clinical US devices: GE Venue Go machine and GE convex probe C1-5-D.
+Echocardiography videos of 31 anonymised patients in the ICU were considered for this work which were collected by four radiologists using the clinical US devices: GE Venue Go machine with GE convex probe C1-5-D.
 The 31 patients had the following demographics:
 Sex: \% (Male): 58.1\%;
-Age: mean, years (std): 38.70 (16.08);
-Weight: mean, Kg (std): 61.51 (15.06);
-Height: mean, m (std): 1.62 (0.07), and 
-BMI: mean (std): 23.80 (4.30).
+Age: 38.70 (16.08) years;
+Weight: 61.51 (15.06) Kg;
+Height: 1.62 (0.07) m, and 
+BMI: 23.80 (4.30). 
+Values represent mean(std).
 %Sepsis \% (with): 61.3\%;
 %Dengue \% (with): 54.8\%, and
 %Tetanus \% (with): 87.1\%.
@@ -297,13 +302,13 @@ All participants gave written informed consent to participate in the data collec
 
 \subsubsection{Data annotation, validation and management}
 Apical 4 Chamber view (A4C) is considered as an important view to compute heart failure measurements from 2D US echocardiography ~\citep{2017_hall_JIntensiveCareSociety}.
-For this work, timestamps in the video files for A4C were annotated by one research clinician of 10 years of experience using VGG Image Annotator (VIA).
+Hence, for this work, timestamps in the video files for A4C were annotated by one research clinician of 10 years of experience using VGG Image Annotator (VIA).
 Then the same clinician  and one researcher validated timestamps annotations where few filenames and timestamps were fixed (\figureref{fig:main-figure}(a)).
 %illustrates video and json files with their A4C and background clips to then be segmented.
 
 \subsection{Model selection and heuristics}
 Considering different datasets characteristic (number of frames, clips, pixel image, clinical equipment, etc) and the number of parameters of different networks,
-we selected three Neural Networks for our ML study:
+we selected three neural networks for this work:
 %VGG-based models~\citep{2015_Simonyan_ICLR},
 MobileNetV1~\citep{2017-howared_CoRR_MobileNetV1} with 3,208,450 parameters, MobileNetV2~\citep{Sandler_2018_CVPR_MobileNetV2} with 2,225,858 parameters, and SqueezeNet~\citep{iandola2017squeezenet} with 733,580 parameters.
 %complexity of state-of-the-art networks and thinner neural networks,
@@ -326,7 +331,8 @@ We then performed heuristics for each model to understand the impact of their pe
 %\end{table}
 % \subsection{Classification of 2D echocardiograms with thinner neural networks} \label{subsec:echocardiogramsthinnerNets}
 MobileNetV1, MobileNetV2 and SqueezeNet were trained with data of 5 and 31 subjects (\appendixref{apd:heuristics}) in which SqueezeNet showed constant training metrics.
-Hence, we present heuristics different datasize, batch size of clips, and number of frames per segment in a clip for SqueezeNet (\figureref{fig:heuristics_results_SqueezeNet_source0}).
+Hence, \figureref{fig:heuristics_results_SqueezeNet_source0} presents 
+the impact of different datasize, batch size of clips, and number of frames per segment in a clip for SqueezeNet.
 %SqueezeNet~\citep{iandola2017squeezenet} that made use of 733,580 parameters
 %See for further details of the heuristics of each model.
 \begin{figure}[ht]%htbp
@@ -339,22 +345,22 @@ Hence, we present heuristics different datasize, batch size of clips, and number
           (b) varying number of frames per clip with constant batch size of clips equal to 10.
       }
   }
-  {\includegraphics[width=0.95\linewidth]{../figures/heuristics_results_SqueezeNet_source0_with_05-31-subjects/versions/drawing-v03}}%%GITHUB
+  {\includegraphics[width=0.81\linewidth]{../figures/heuristics_results_SqueezeNet_source0_with_05-31-subjects/versions/drawing-v03}}%%GITHUB
     % {\includegraphics[width=\columnwidth]{figures/heuristics_results_SqueezeNet_source0.png}}%%OVERLEAF
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure}
 
 \section{Conclusions and Future Work}
-We presented a machine learning case study that includes data selection, validation and management, model selection, validation.
-Our results present the promising use of thinner neural networks to address scarcity of datasets and model deployment in low-cost hardware.
+We presented a ML case study that includes data selection, validation and management, model selection and validation.
+Our results show the promising use of thinner neural networks to address scarcity of datasets and model deployment in low-cost hardware.
 %in a low-cost clinical system.
-For future work, we will investigate real-time inference and deployment of thinner classification and segmentation models, leading to clinical translation of automatic assessment of ventricular size and function, and evaluation of regional wall motion abnormalities.
+Future work will include real-time inference and deployment of thinner classification and segmentation models, leading to clinical translation of cardiac outputs of ICU patiens in LMICs.
+% automatic assessment of ventricular size and function, and evaluation of regional wall motion abnormalities.
 %~\citep{2020_Ye_in_JournalOfInternetTechnology}
 %Validation of ML and DL methods for image quality, view classification and segmentation, measurements, detection of abnormalities and diagnosis~\cite{2020_Kusunose_in_CurrentCardiologyReports, 2020_Kusunose_in_Biomolecules, 2021_Kusunose_in_JEchocardiography}.
 %Similarly, we are interested in train models with synthetic Ultrasound images for GE Vivid E9, Hitachi Prosound U7, Philips iE 33 Vision, Siemens SC2000, and Toshiba Artida ultrasound systems \citep{brindise2020unsupervised}.
 %2D velocity vector fields of flow blow can help to detect abnormal flow patterns as done in fetal and neonatal echocardiography \citep{Meyers2020}.
-
-The code and other resources to reproduce this work will be available upon acceptance of the abstract.
+The code, data and other resources to reproduce this work will be available upon acceptance of this work.
 % \url{https://github.com/vital-ultrasound/echocardiography}.
 
 %\subsection{Real-time AI-empowered echocardiography}
@@ -381,7 +387,7 @@ The code and other resources to reproduce this work will be available upon accep
 \newpage
 \appendix
 
-
+\newpage
 %\subsection{Real-time AI-empowered echocardiography}
 % \subsection{Classification of echochardiograms} \label{subsec:nns_echochardiograms}
 \section{Classification of echochardiograms} \label{subsec:nns_echochardiograms}
@@ -393,7 +399,7 @@ The code and other resources to reproduce this work will be available upon accep
 \citet{zhang2018} performed view classification with 277 echocardiograms to create a 23-class models (including A4C no occlusions, A4C occluded LA, A4C occluded LV, etc) using 13-layer CNN with 5-fold cross-validation for accuracy assessment and resulting in 84\% for overall accuracy where challenges for partial obscured LVs for A2C, A3C and A4C.
 Similarly, \citet{zhang2018} applied U-net to segment 5 views (A2C, A3C, A4C, PSAX, PLAX) and CNN model for 3 cardiac diseases with the use of A4C capturing most of the information for the diseases.
 
-
+\newpage
 \section{Datasets}\label{apd:datasets}
 \figureref{fig:demographics} illustrates demographics for sex, age, BMI, sepsis and dengue for the complete dataset and the 31 subjects considered for this work.
 \begin{figure}[htbp]
@@ -407,6 +413,7 @@ Similarly, \citet{zhang2018} applied U-net to segment 5 views (A2C, A3C, A4C, PS
     %{\includegraphics[width=\columnwidth]{fig01.png}} %%ARXIV
 \end{figure}
 
+\newpage
 \section{Heuristics of model selection} \label{apd:heuristics}
 \figureref{fig:ThinnerNeuralNetsResults} illustratres heristics for accuraty, train, classification and elapse times of 5 and 31 subjects.
 %\begin{landscape}
@@ -418,6 +425,7 @@ Similarly, \citet{zhang2018} applied U-net to segment 5 views (A2C, A3C, A4C, PS
     Heuristics for 5 and 31 subjects with 1 frames per clip and 20 batch size of clips for
     % VGG-based models~\citep{2015_Simonyan_ICLR}
     MobileNetV1~\citep{2017-howared_CoRR_MobileNetV1} with 3,208,450 parameters, MobileNetV2~\citep{Sandler_2018_CVPR_MobileNetV2} with 2,225,858 parameters, and SqueezeNet~\citep{iandola2017squeezenet} with 733,580 parameters.
+    Models were trained three timres (run01, run02 and run03) to illustratre the impact of the training on randomised datasets wich were splitted 70\% for train, 15\% for test and 15\% for validation.  
     \textbf{Note:} It is recommended to zoom in the figures to see further details (figure DPI is 300).
     %and ShrapML \citep{boice2022-in-jimaging} 430,000
           }
