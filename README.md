@@ -19,7 +19,7 @@ The code and other resources to reproduce this work are available at https://git
 ## Clone repo
 After generating your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), you can then clone the repository in the suggested path by typing (or copying) the following lines in a terminal:
 ```
-mkdir -p $HOME/repositories/vital-ultrasound  && cd $HOME/repositories/vital-ultrasound  ## suggested path
+mkdir -p $HOME/repositories/vital-ultrasound  && cd $HOME/repositories/vital-ultrasound
 git clone git@github.com:vital-ultrasound/ml4h.git
 ```
 
