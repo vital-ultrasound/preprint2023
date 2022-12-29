@@ -9,6 +9,7 @@ on:
       - 13-draft-ml4h2022
       - 13-drafting-ml4h2022
       - 17-action-required-by-ML4Horganisers
+      - 16-reproducible-graphical-results
 
 jobs:
   build:

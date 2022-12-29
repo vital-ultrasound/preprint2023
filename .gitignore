@@ -6,9 +6,9 @@
 **/*.ipynb_checkpoints
 
 ## Ignore TEMP_TRAINING_CURVES_FOR_
-**/TEMP_TRAINING_CURVES_FOR_*
-**/TEMP_DICT_TRAINING_CURVES_FOR_*
-**/plotting_results/*.png
+#**/TEMP_TRAINING_CURVES_FOR_*
+#**/TEMP_DICT_TRAINING_CURVES_FOR_*
+#**/plotting_results/*.png
 **/plot_*.png
 
 ## manuscript files: ignores vim temporal files and local main.pdf
