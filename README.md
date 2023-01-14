@@ -24,15 +24,16 @@ Hence, you are free to reuse it and modify it as much as you want and as long as
 ### BibTeX to cite
 ```
 @misc{https://doi.org/10.48550/arxiv.2212.14510,
-  author = {Miguel, Xochicale and 
-	    Louise, Thwaites and 
-	    Sophie, Yacoub and 
-            Luigi, Pisani and 
+  author = {Xochicale, Miguel and 
+	    Thwaites, Louise and 
+            Yacoub, Sophie and 
+            Pisani, Luigi and 
             Phung, Tran Huy Nhat and 
-            Hamideh, Kerdegari and 
-            Andrew, King and 
-            Alberto, Gomez}, 
-  title = {A Machine Learning Case Study for AI-empowered echocardiography of Intensive Care Unit Patients in low- and middle-income countries},
+            Kerdegari, Hamideh and 
+            King, Andrew and 
+            Gomez, Alberto}, 
+  title = {A Machine Learning Case Study for AI-empowered echocardiography of 
+           Intensive Care Unit Patients in low- and middle-income countries},
   doi = {10.48550/ARXIV.2212.14510},
   url = {https://arxiv.org/abs/2212.14510},
   keywords = {Medical Physics (physics.med-ph), 
@@ -50,7 +51,8 @@ Hence, you are free to reuse it and modify it as much as you want and as long as
 
 
 ## Clone repo
-After generating your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent), you can then clone the repository in the suggested path by typing (or copying) the following lines in a terminal:
+After generating your SSH keys as suggested [here](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+You can then clone the repository in the suggested path by typing (or copying) the following lines in a terminal:
 ```
 mkdir -p $HOME/repositories/vital-ultrasound  && cd $HOME/repositories/vital-ultrasound
 git clone git@github.com:vital-ultrasound/preprint2023.git
@@ -58,7 +60,7 @@ git clone git@github.com:vital-ultrasound/preprint2023.git
 ```
 
 ## Workflow 
-See [README](workflow/README.md) for detailed instructions on a workflow for build the TeX-based paper in your local machine or with the CI build.
+See [README](abstract/workflow-paper/README.md) for detailed instructions on a workflow for build the TeX-based paper in your local machine or with the CI build.
 
 ## Contact and issues
 Please [open an issue](https://github.com/vital-ultrasound/ml4h/issues) for issues and questions and tag [@mxochicale](https://github.com/mxochicale) for further questions.
