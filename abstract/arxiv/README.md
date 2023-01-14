@@ -1,13 +1,12 @@
 # arXiv submission
-## Preparation
+## Steps for arxiv preparation
 1. Edit paths and image files in `A_copy-tex-figures.bash`
 
 2. Run script to copy tex files and images to arxiv/files path
 ```
 bash A_copy-tex-figures.bash
 ```
-
-2.1 Also copy relevant `*.cls` files
+	2.1 Also copy relevant `*.cls` files
 
 3. edit paths for figures in `file\main.tex` as follows
 ```
@@ -24,29 +23,29 @@ bash ../B_pdflatex-bibtex.bash
 ```
 Check that reference were appropietely called `evince main.pdf`
 
-4.1 edit reference section as follows
-```
-%%\bibliography{../references/references}
-\input{main.bbl} %% uncomment for arxiv version
-```
+	4.1 edit reference section as follows
+	```
+	%%\bibliography{../references/references}
+	\input{main.bbl} %% uncomment for arxiv version
+	```
 
-4.2 compile `main.tex`
-```
-cd files/
-bash ../C_pdflatex-pdflatex.bash
-```
+	4.2 compile `main.tex`
+	```
+	cd files/
+	bash ../C_pdflatex-pdflatex.bash
+	```
 
-4.3 check pdf 
-```
-cd files/
-evince main.pdf
-```
+	4.3 check pdf 
+	```
+	cd files/
+	evince main.pdf
+	```
 
-4.4 clean project 
-```
-cd files/
-bash ../D_clean-tex-project.bash
-```
+	4.4 clean project 
+	```
+	cd files/
+	bash ../D_clean-tex-project.bash
+	```
 
 5. compress it as zip 
 ```
@@ -57,6 +56,18 @@ bash E_zip_files.bash v01
 
 :tada: zip is ready to be submitted in arXiv
 
+
+6. CI-PDF Optional 
+Create files and edit bib path file
+```
+cp -r files files-for-ci-pdf
+cd files-for-ci-pdf
+vim main.tex ## change path for \bibliography
+```
+Amend yml, adding branch and change relevant paths and filenames for tex and pdf
+```
+vim .github/workflows/citex.yml
+```
 
 ## Submission
 
